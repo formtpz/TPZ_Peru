@@ -108,6 +108,7 @@ if iniciar_sesion_1:
                 st.session_state.Historial=False
                 st.session_state.Capacitacion=False
                 st.session_state.Otros_Registros=False
+                st.session_state.Bonos=False
                 st.session_state.Salir=False
                 st.session_state.IFI=False
 
