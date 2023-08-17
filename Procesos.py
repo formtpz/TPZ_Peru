@@ -158,7 +158,7 @@ def Procesos1(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
-            placeholder9_2.empty()
+            
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
