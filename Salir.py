@@ -96,14 +96,7 @@ def Salir():
                         st.session_state.Bonos=False
                         st.session_state.Salir=False
                         st.session_state.IFI=False
-                        st.session_state.IFII=False
-                        st.session_state.IFIII=False
-                        st.session_state.Conformacion=False
-                        st.session_state.CC_Conformacion=False
-                        st.session_state.CC_IFI=False
-                        st.session_state.Auxiliares=False
 
-                        
                         puesto=pd.read_sql(f"select puesto from usuarios where usuario ='{usuario}'",uri)
                         puesto= puesto.loc[0,'puesto']
 
@@ -137,6 +130,4 @@ def Salir():
 
             st.header("Aplicación de uso exclusivo para el personal de Telespazio Argentina S.A.")
 
-            st.subheader("En caso de dudas favor revisar el siguiente video tutorial en el apartado 15. Registros y Bonos de la wiki")
-
-            st.subheader("Para soporte técnico favor escribir a basilio.nunez@tpzcr.com")
+            st.subheader("Para soporte técnico favor escribir a luis.hidalgo@telespazio.pe")
