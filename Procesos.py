@@ -47,12 +47,7 @@ def Procesos1(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
+
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -69,12 +64,7 @@ def Procesos1(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
+
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -91,12 +81,7 @@ def Procesos1(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
+
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -114,11 +99,7 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
+
             st.session_state.Procesos=True
             st.session_state.Bonos=True
             Bonos.Bonos(usuario,puesto)
@@ -136,11 +117,7 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
+
             st.session_state.Ingreso= False
             st.session_state.Procesos=True
             st.session_state.Salir=True
@@ -159,11 +136,7 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()            
+          
             st.session_state.Procesos=True
             st.session_state.IFI=True
             IFI.IFI(usuario,puesto)
