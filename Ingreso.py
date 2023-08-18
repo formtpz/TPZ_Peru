@@ -7,7 +7,7 @@ import Autenticacion, Procesos
 
 # Estilos CSS personalizados
 custom_css = """
-<style>
+<style> 
 .custom-button {
     background-color: #B5CBD3; /* Cambia este color al color deseado para el botón */
     color: #FFFFFF; /* Cambia este color al color deseado para el texto del botón */
