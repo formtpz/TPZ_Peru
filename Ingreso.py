@@ -5,6 +5,40 @@ import pandas as pd
 from PIL import Image
 import Autenticacion, Procesos
 
+# Estilos CSS personalizados
+custom_css = """
+<style>
+.custom-button {
+    background-color: #B5CBD3; /* Cambia este color al color deseado para el botón */
+    color: #FFFFFF; /* Cambia este color al color deseado para el texto del botón */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+"""
+
+# Estilo para ocultar el menú
+hide_menu_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility:visible;}
+footer:after{
+    content:'V.1.1 Copyrigth @ 2023 Telespazio Argentina S.A.';
+    display: block;
+    position: relative;
+    color: tomato;
+}
+</style>
+"""
+
+# Combinar estilos CSS y ocultar menú
+combined_styles = hide_menu_style + custom_css
+
+# Insertar estilos combinados
+st.markdown(combined_styles, unsafe_allow_html=True)
+
 # ----- Formato General ---- #
 
 img=Image.open('logoicon.png')
@@ -42,7 +76,7 @@ placeholder3_1= st.sidebar.empty()
 contraseña_1 = placeholder3_1.text_input("Contraseña", type = 'password', key="contraseña_1")
 
 placeholder4_1 = st.sidebar.empty()
-iniciar_sesion_1 = placeholder4_1.button("Iniciar sesión",key="iniciar_sesion_1")
+iniciar_sesion_1 = placeholder4_1.button("Iniciar sesión",key="iniciar_sesion_1", class="custom-button")
 
 if "Ingreso" not in st.session_state:
      st.session_state.Ingreso = False
