@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos,Salir
 
-def IFI(usuario,puesto):
+def Produccion(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -87,7 +87,7 @@ def IFI(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     st.session_state.Procesos=False
-    st.session_state.IFI=False
+    st.session_state.Produccion=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -123,7 +123,7 @@ def IFI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.Produccion=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -145,7 +145,7 @@ def IFI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.Produccion=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -167,7 +167,7 @@ def IFI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.Produccion=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -189,7 +189,7 @@ def IFI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.Produccion=False
     st.session_state.Bonos=True
     Bonos.Bonos(usuario,puesto)    
 
@@ -212,7 +212,7 @@ def IFI(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.IFI=False
+    st.session_state.Produccion=False
     st.session_state.Salir=True
     Salir.Salir()
 
