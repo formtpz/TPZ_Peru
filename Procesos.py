@@ -135,8 +135,8 @@ def Procesos1(usuario,puesto):
             placeholder8_2.empty()
           
             st.session_state.Procesos=True
-            st.session_state.IFI=True
-            IFI.IFI(usuario,puesto)
+            st.session_state.Produccion=True
+            Produccion.Produccion(usuario,puesto)
 
     elif st.session_state.Procesos==True:
 
