@@ -111,7 +111,7 @@ if iniciar_sesion_1:
                 st.session_state.Otros_Registros=False
                 st.session_state.Bonos=False
                 st.session_state.Salir=False
-                st.session_state.IFI=False
+                st.session_state.Produccion=False
 
                 puesto=pd.read_sql(f"select puesto from usuarios where usuario ='{usuario}'",uri)
                 puesto= puesto.loc[0,'puesto']
