@@ -121,9 +121,9 @@ def Procesos1(usuario,puesto):
             st.session_state.Salir=True
             Salir.Salir()
 
-        # ----- IFI ---- #
+        # ----- Produccion ---- #
 
-        elif informacion_final_i_2:
+        elif Produccion:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -185,7 +185,7 @@ def Procesos2(usuario,puesto):
         registro_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        informacion_final_i_2 = placeholder8_2.button("Información Final I",key="informacion_final_i_2")
+        informacion_final_i_2 = placeholder8_2.button("Información Final I",key="Produccion")
 
         # ----- Historial ---- #
 
@@ -320,7 +320,7 @@ def Procesos3(usuario,puesto):
         registro_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        informacion_final_i_2 = placeholder8_2.button("Información Final I",key="informacion_final_i_2")
+        informacion_final_i_2 = placeholder8_2.button("Producción",key="Produccion")
 
         # ----- Historial ---- #
 
