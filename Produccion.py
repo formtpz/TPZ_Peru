@@ -231,6 +231,6 @@ def Produccion(usuario,puesto):
     supervisor_3= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_3 = supervisor_3.loc[0,'supervisor']
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,horario,puesto,supervisor,proceso,fecha,bloque,estado,tipo,predios,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{horario_3}','{puesto}','{supervisor_3}','Información Final I','{fecha_3}','{bloque_3}','{estado_3}','{tipo_3}','{predios_3}','{horas_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,horario,puesto,supervisor,proceso,fecha,bloque,estado,tipo,predios,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{horario_3}','{puesto}','{supervisor_3}','Produccion','{fecha_3}','{bloque_3}','{estado_3}','{tipo_3}','{predios_3}','{horas_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
