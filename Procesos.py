@@ -33,7 +33,7 @@ def Procesos1(usuario,puesto):
         procesos_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        informacion_final_i_2 = placeholder8_2.button("Producción",key="Produccion")
+        Produccion = placeholder8_2.button("Producción",key="Produccion")
 
         # ----- Historial ---- #
 
