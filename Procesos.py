@@ -152,7 +152,7 @@ def Procesos1(usuario,puesto):
         elif st.session_state.Bonos==True:
             Bonos.Bonos(usuario,puesto)
 
-        elif st.session_state.IFI==True:
+        elif st.session_state.Produccion==True:
             Produccion.Produccion(usuario,puesto)
 
 # ----- Procesos 2 ---- #
@@ -440,6 +440,6 @@ def Procesos3(usuario,puesto):
         elif st.session_state.Bonos==True:
             Bonos.Bonos(usuario,puesto)
 
-        elif st.session_state.IFI==True:
-            IFI.IFI(usuario,puesto)
+        elif st.session_state.Produccion==True:
+            Produccion.Produccion(usuario,puesto)
 
