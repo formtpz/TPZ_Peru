@@ -33,7 +33,7 @@ def Procesos1(usuario,puesto):
         procesos_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        Produccion = placeholder8_2.button("Producción",key="Produccion")
+        Produccion = placeholder8_2.button("Producción",key="produccion_2")
 
         # ----- Historial ---- #
 
@@ -123,7 +123,7 @@ def Procesos1(usuario,puesto):
 
         # ----- Produccion ---- #
 
-        elif Produccion_2:
+        elif produccion_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -185,7 +185,7 @@ def Procesos2(usuario,puesto):
         registro_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        informacion_final_i_2 = placeholder8_2.button("Produccion",key="Produccion_2")
+        informacion_final_i_2 = placeholder8_2.button("Produccion",key="produccion_2")
 
         # ----- Historial ---- #
 
@@ -320,7 +320,7 @@ def Procesos3(usuario,puesto):
         registro_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        informacion_final_i_2 = placeholder8_2.button("Producción",key="Produccion")
+        informacion_final_i_2 = placeholder8_2.button("Producción",key="produccion_2")
 
         # ----- Historial ---- #
 
@@ -410,7 +410,7 @@ def Procesos3(usuario,puesto):
 
         # ----- Produccion ---- #
 
-        elif Produccion_2:
+        elif produccion_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -423,7 +423,7 @@ def Procesos3(usuario,puesto):
 
             st.session_state.Procesos=True
             st.session_state.IFI=True
-            IFI.IFI(usuario,puesto)
+            Produccion.Produccion(usuario,puesto)
 
        
     elif st.session_state.Procesos==True:
