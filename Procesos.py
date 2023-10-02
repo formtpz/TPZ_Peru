@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos, Salir, IFI
+import Historial, Capacitacion, Otros_Registros, Bonos, Salir, Produccion
 
 # ----- Procesos 1 ---- #
 
