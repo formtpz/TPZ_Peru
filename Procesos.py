@@ -153,7 +153,7 @@ def Procesos1(usuario,puesto):
             Bonos.Bonos(usuario,puesto)
 
         elif st.session_state.IFI==True:
-            IFI.IFI(usuario,puesto)
+            Produccion.Produccion(usuario,puesto)
 
 # ----- Procesos 2 ---- #
 
