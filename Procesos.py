@@ -185,7 +185,7 @@ def Procesos2(usuario,puesto):
         registro_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        informacion_final_i_2 = placeholder8_2.button("Produccion",key="produccion_2")
+        Produccion = placeholder8_2.button("Produccion",key="produccion_2")
 
         # ----- Historial ---- #
 
@@ -422,7 +422,7 @@ def Procesos3(usuario,puesto):
             placeholder8_2.empty()
 
             st.session_state.Procesos=True
-            st.session_state.IFI=True
+            st.session_state.Produccion=True
             Produccion.Produccion(usuario,puesto)
 
        
