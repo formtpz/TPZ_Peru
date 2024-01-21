@@ -52,7 +52,7 @@ rich==13.1.0
 semver==2.13.0
 six==1.16.0
 smmap==5.0.0
-SQLAlchemy==1.4.46
+SQLAlchemy<=2.0.25
 streamlit==1.17.0
 tabula-py==2.7.0
 tenacity==8.1.0
