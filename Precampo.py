@@ -51,7 +51,7 @@ def Precampo(usuario,puesto):
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
 
   placeholder10_3= st.empty()
-  municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
+  municipio_3= placeholder10_3.multiselect("Municipio",options=["Cabuyaro", "Chalán", "Colombia", "Cuítiva", "Iza","Los Palmitos", "Morroa", "Trinidad", "San Estanislao","San Luis de Cubarral", "Zambrano"], key="municipio_3")
 
   placeholder11_3= st.empty()
   consecutivo_3= placeholder11_3.number_input("Consecutivo",min_value=0,max_value=50, step=1, key="consecutivo_3")
