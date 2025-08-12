@@ -84,7 +84,7 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             placeholder17_2.empty()
-            _2.empty()
+            #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -126,7 +126,7 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            #placeholder8_2.empty()
             #placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -260,7 +260,7 @@ def Procesos1(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             #placeholder8_2.empty()#
-            placeholder9_2.empty()
+            #placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -286,7 +286,7 @@ def Procesos1(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             #placeholder8_2.empty()#
-            placeholder9_2.empty()
+            #placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -364,7 +364,7 @@ def Procesos1(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             #placeholder8_2.empty()#
-            placeholder9_2.empty()
+            #placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -390,7 +390,7 @@ def Procesos1(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             #placeholder8_2.empty()#
-            placeholder9_2.empty()
+            #placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -416,7 +416,7 @@ def Procesos1(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             #placeholder8_2.empty()#
-            placeholder9_2.empty()
+            #placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
