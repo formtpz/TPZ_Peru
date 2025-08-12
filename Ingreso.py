@@ -132,12 +132,19 @@ if iniciar_sesion_1:
                 st.session_state.Salir=False
                 st.session_state.FMI=False
                 st.session_state.CC_FMI=False
+                st.session_state.Postcampo_FMI=False
+                st.session_state.Postcampo_CC_FMI=False
                 st.session_state.Consulta_Campo=False
-                st.session_state.Precampo=False
+                st.session_state.Restitucion_Tierras=False
+                st.session_state.Revision_Segregados=False
+                st.session_state.Calidad_externa_XTF=False
+                st.session_state.Precampo=False 
                 st.session_state.CC_Precampo=False
+                st.session_state.Preparacion_Insumos=False
+                st.session_state.Revision_Campo=False
                 st.session_state.Validacion=False
                 st.session_state.CC_Validacion=False
-                    
+                                    
                 puesto=pd.read_sql(f"select puesto from usuarios where usuario ='{usuario}'",uri)
                 puesto= puesto.loc[0,'puesto']
                    
@@ -173,7 +180,7 @@ if pivot!=1:
 
      st.subheader("En caso de dudas favor revisar el siguiente video tutorial")
 
-     st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
+     st.subheader("Para soporte técnico favor escribir a evelyn.burgos@external.telespazio.com")
 
 
 # ----- Pie de Página ---- #
@@ -199,7 +206,7 @@ footer = """
 
     </style>
     <div class="footer">
-        <p>V.1.3 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
+        <p>V.1.6 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
     </div>
 """
 st.markdown(footer, unsafe_allow_html=True)

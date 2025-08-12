@@ -1,6 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
+import numpy as np
 import pandas as pd
 import psycopg2
 from urllib.parse import urlparse
@@ -47,8 +48,8 @@ def Bonos_Extras(usuario,puesto):
   perfil_9= pd.read_sql(f"select perfil from usuarios where usuario='{usuario}'",uri)
   perfil_9 = perfil_9.loc[0,'perfil']
   
-  if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
-
+  if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
+    
     placeholder8_9 = st.empty()
     archivos = placeholder8_9.subheader("Archivos")
 
@@ -70,41 +71,57 @@ def Bonos_Extras(usuario,puesto):
     placeholder12_9 = st.empty()
     cargar_archivos_9 = placeholder12_9.button("Cargar Archivos",key="cargar_archivos_9")
 
+    #----INICIO CAMBIOS SUBIDA DE EXCEL INDIVIDUAL----#
     if cargar_archivos_9:
-
-      if bloques_nuevos_9 is None or bonos_nuevos_9 is None or extras_nuevas_9 is None or unidades_nuevas_9 is None or bonos_nuevos_juridico_9 is None :
-
-        st.error('Favor cargar los archivos solicitados')
-
-      else: 
-
-        bloques_nuevos_9=pd.DataFrame(pd.read_excel(bloques_nuevos_9))
-        bonos_nuevos_9=pd.DataFrame(pd.read_excel(bonos_nuevos_9))
-        extras_nuevas_9=pd.DataFrame(pd.read_excel(extras_nuevas_9))
-        unidades_nuevas_9 = pd.DataFrame(pd.read_excel(unidades_nuevas_9))
-        bonos_nuevos_juridico_9 = pd.DataFrame(pd.read_excel(bonos_nuevos_juridico_9))
-
-        con.cursor().execute('DELETE FROM bloques;',)
-        con.cursor().execute('DELETE FROM bonos;',)
-        con.cursor().execute('DELETE FROM extras;',)
-        con.cursor().execute('DELETE FROM unidades;',)
-        con.cursor().execute('DELETE FROM bonos_juridico;',)
-
-        con.commit()      
-
+      if bloques_nuevos_9 is not None:
+        df_bloques = pd.read_excel(bloques_nuevos_9) if bloques_nuevos_9.name.endswith('.xlsx') else pd.read_csv(bloques_nuevos_9)
+        con.cursor().execute('DELETE FROM bloques;')
+        con.commit()
         engine = create_engine(uri)
-    
-        bloques_nuevos_9.to_sql(name='bloques', con = engine, if_exists = 'append',index_label='id')
-    
-        bonos_nuevos_9.to_sql(name='bonos', con = engine, if_exists = 'append',index_label='id')
+        df_bloques.to_sql(name='bloques', con=engine, if_exists='append', index_label='id')
+        st.success('Archivo "bloques" cargado correctamente')
 
-        extras_nuevas_9.to_sql(name='extras', con = engine, if_exists = 'append',index_label='id')
 
-        unidades_nuevas_9.to_sql(name='unidades', con = engine, if_exists = 'append',index_label='id')
+      if bonos_nuevos_9 is not None:
+        df_bonos = pd.read_excel(bonos_nuevos_9) if bonos_nuevos_9.name.endswith('.xlsx') else pd.read_csv(bonos_nuevos_9)
+        con.cursor().execute('DELETE FROM bonos;')
+        con.commit()
+        engine = create_engine(uri)
+        df_bonos.to_sql(name='bonos', con=engine, if_exists='append', index_label='id')
+        st.success('Archivo "bonos" cargado correctamente')
 
-        bonos_nuevos_juridico_9.to_sql(name='bonos_juridico', con = engine, if_exists = 'append',index_label='id')
+ 
+      if extras_nuevas_9 is not None:
+        df_extras = pd.read_excel(extras_nuevas_9) if extras_nuevas_9.name.endswith('.xlsx') else pd.read_csv(extras_nuevas_9)
+        con.cursor().execute('DELETE FROM extras;')
+        con.commit()
+        engine = create_engine(uri)
+        df_extras.to_sql(name='extras', con=engine, if_exists='append', index_label='id')
+        st.success('Archivo "extras" cargado correctamente')
 
-        st.success('Archivos Cargados Correctamente')
+   
+      if unidades_nuevas_9 is not None:
+        df_unidades = pd.read_excel(unidades_nuevas_9) if unidades_nuevas_9.name.endswith('.xlsx') else pd.read_csv(unidades_nuevas_9)
+        con.cursor().execute('DELETE FROM unidades;')
+        con.commit()
+        engine = create_engine(uri)
+        df_unidades.to_sql(name='unidades', con=engine, if_exists='append', index_label='id')
+        st.success('Archivo "unidades" cargado correctamente')
+
+   
+      if bonos_nuevos_juridico_9 is not None:
+        df_bonos_juridico = pd.read_excel(bonos_nuevos_juridico_9) if bonos_nuevos_juridico_9.name.endswith('.xlsx') else pd.read_csv(bonos_nuevos_juridico_9)
+        con.cursor().execute('DELETE FROM bonos_juridico;')
+        con.commit()
+        engine = create_engine(uri)
+        df_bonos_juridico.to_sql(name='bonos_juridico', con=engine, if_exists='append', index_label='id')
+        st.success('Archivo "bonos_juridico" cargado correctamente')
+
+      if all(file is None for file in [bloques_nuevos_9, bonos_nuevos_9, extras_nuevas_9, unidades_nuevas_9, bonos_nuevos_juridico_9]):
+        st.warning("No se cargó ningún archivo.")
+#----FIN CAMBIOS SUBIDA DE EXCEL INDIVIDUAL----#
+
+      
 
   elif nombre_9=="Gabriel Martin Prieto" or nombre_9=="Madeline Hernandez Gamboa":
 
@@ -383,6 +400,129 @@ def Bonos_Extras(usuario,puesto):
         placeholder29_9 = st.empty()
         historial_9_extras=placeholder29_9.dataframe(data=data_extras)
   
+  elif nombre_9=="Ignacio Aguglino":
+
+    data_personal_9 = pd.read_sql(f"select nombre from usuarios where puesto='Profesional Jurídico' and estado='Activo'", con)
+    Todo = pd.DataFrame({"nombre": ["Todos"]})
+    data_personal_9 = pd.concat([data_personal_9,Todo],ignore_index=True)
+
+    placeholder101_9 = st.empty()
+    personal_9= placeholder101_9.selectbox("Personal",data_personal_9,key="personal_9")
+
+    placeholder102_9 = st.empty()
+    periodo_9 = placeholder102_9.selectbox("Periodo de Bono", options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_9")    
+
+    if personal_9 == "Todos" :
+
+      placeholder103_9 = st.empty()
+      titulo_bonos_9 = placeholder103_9.subheader("Bonos")
+      
+      bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos_juridico where a24='{periodo_9}'", con)
+      bonos_juridico_9=  pd.DataFrame(data=bonos_juridico_9)
+      
+      pivot101= len(bonos_juridico_9.iloc[:,0])
+
+      if pivot101==0:
+
+        placeholder104_9 = st.empty()
+        error_9 = placeholder104_9.error('No existen datos para mostrar')
+
+      else:
+        
+        placeholder105_9 = st.empty()
+        total = placeholder105_9.metric(label="Total Bonos Jurídicos (COP)", value= pd.to_numeric(bonos_juridico_9['a23']).sum())   
+
+    else:
+    
+      placeholder106_9 = st.empty()
+      titulo_bonos_9 = placeholder106_9.subheader("Bonos")
+      
+      bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos_juridico where a0='{personal_9}' and a24='{periodo_9}'", con)
+      bonos_juridico_9=  pd.DataFrame(data=bonos_juridico_9)
+  
+      pivot102= len(bonos_juridico_9.iloc[:,0])
+  
+      if pivot102==0:
+  
+        placeholder107_9 = st.empty()
+        error_9 = placeholder107_9.error('No existen datos para mostrar')
+  
+      else:
+  
+        # Procesos #
+        
+        variables_1_9=["Producción (Según Reportes)","Producción (Limpia)","Producción (Estándar)","Bono (COP)","Bonificación Otras Funciones (COP)","Observaciones","Bonificación Total (COP)"]								
+  
+        fmi_9=[0]*7
+        cc_fmi_9=[0]*7
+        consultas_campo_9=[0]*7
+  
+        bonos_procesos_9= pd.DataFrame(data={"Variables":variables_1_9,"Folios de Matricula Inmobiliaria":fmi_9,"CC Folios de Matricula Inmobiliaria":cc_fmi_9,"Consultas de Campo":consultas_campo_9})
+  
+        # Folios de Matricula Inmobiliaria #
+        
+        bonos_procesos_9.iloc[0,1] = bonos_juridico_9.iloc[0,4]
+        bonos_procesos_9.iloc[1,1] = bonos_juridico_9.iloc[0,8]
+        bonos_procesos_9.iloc[2,1] = bonos_juridico_9.iloc[0,12]
+        bonos_procesos_9.iloc[3,1] = bonos_juridico_9.iloc[0,16]
+        bonos_procesos_9.iloc[4,1] = bonos_juridico_9.iloc[0,20]
+        bonos_procesos_9.iloc[5,1] = bonos_juridico_9.iloc[0,22]
+        bonos_procesos_9.iloc[6,1] = bonos_juridico_9.iloc[0,23]
+  
+        # CC_Folios de Matricula Inmobiliaria #
+        
+        bonos_procesos_9.iloc[0,2] = bonos_juridico_9.iloc[0,5]
+        bonos_procesos_9.iloc[1,2] = bonos_juridico_9.iloc[0,9]
+        bonos_procesos_9.iloc[2,2] = bonos_juridico_9.iloc[0,13]
+        bonos_procesos_9.iloc[3,2] = bonos_juridico_9.iloc[0,17]
+        bonos_procesos_9.iloc[4,2] = " "
+        bonos_procesos_9.iloc[5,2] = " "
+        bonos_procesos_9.iloc[6,2] = " "
+  
+        # Consultas de Campo #
+        
+        bonos_procesos_9.iloc[0,3] = bonos_juridico_9.iloc[0,6]
+        bonos_procesos_9.iloc[1,3] = bonos_juridico_9.iloc[0,10]
+        bonos_procesos_9.iloc[2,3] = bonos_juridico_9.iloc[0,14]
+        bonos_procesos_9.iloc[3,3] = bonos_juridico_9.iloc[0,18]
+        bonos_procesos_9.iloc[4,3] = " "
+        bonos_procesos_9.iloc[5,3] = " "
+        bonos_procesos_9.iloc[6,3] = " "
+  
+        placeholder108_9 = st.empty()
+        dataframe_bonos_procesos_9=placeholder108_9.dataframe(data=bonos_procesos_9)
+  
+      # Unidades #
+  
+      placeholder109_9 = st.empty()
+      titulo_bloques_9 = placeholder109_9.subheader("Unidades de Asignación")
+  
+      placeholder110_9 = st.empty()
+      periodo_bloques_9 = placeholder110_9.selectbox("Fecha de Producción", options=("Todos","Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
+  
+      if periodo_bloques_9=="Todos":
+  
+        bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_bono from unidades where nombre='{personal_9}'", con)
+        bloques_9=  pd.DataFrame(data=bloques_9)
+      
+      else:
+  
+        bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_bono from unidades where nombre='{personal_9}' and fecha_produccion='{periodo_bloques_9}'", con)
+        bloques_9=  pd.DataFrame(data=bloques_9)
+      
+  
+      pivot103= len(bloques_9.iloc[:,1])
+  
+      if pivot103 ==0:
+  
+        placeholder111_9 = st.empty()
+        error_9 = placeholder111_9.error('No existen datos para mostrar')
+  
+      else:
+  
+        placeholder112_9 = st.empty()
+        dataframe_bloques_9=placeholder112_9.dataframe(data=bloques_9)
+
   elif perfil_9 == "2":
     
     placeholder30_9 = st.empty()
@@ -630,7 +770,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder45_9 = st.empty()
     titulo_bonos_9 = placeholder45_9.subheader("Bonos")
     
-    bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos where a0='{usuario}' and a24='{periodo_9}'", con)
+    bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos_juridico where a0='{usuario}' and a24='{periodo_9}'", con)
     bonos_juridico_9=  pd.DataFrame(data=bonos_juridico_9)
 
     pivot8= len(bonos_juridico_9.iloc[:,0])
@@ -644,7 +784,7 @@ def Bonos_Extras(usuario,puesto):
 
       # Procesos #
       
-      variables_1_9=["Producción (Según Reportes)","Producción Limpia","Producción (Estándar)","Bono (COP)","Bonificación Otras Funciones (COP)","Observaciones","Bonificación Total (COP)"]								
+      variables_1_9=["Producción (Según Reportes)","Producción (Limpia)","Producción (Estándar)","Bono (COP)","Bonificación Otras Funciones (COP)","Observaciones","Bonificación Total (COP)"]								
 
       fmi_9=[0]*7
       cc_fmi_9=[0]*7
@@ -676,8 +816,8 @@ def Bonos_Extras(usuario,puesto):
       
       bonos_procesos_9.iloc[0,3] = bonos_juridico_9.iloc[0,6]
       bonos_procesos_9.iloc[1,3] = bonos_juridico_9.iloc[0,10]
-      bonos_procesos_9.iloc[2,3] = bonos_juridico_9.iloc[0,13]
-      bonos_procesos_9.iloc[3,3] = bonos_juridico_9.iloc[0,15]
+      bonos_procesos_9.iloc[2,3] = bonos_juridico_9.iloc[0,14]
+      bonos_procesos_9.iloc[3,3] = bonos_juridico_9.iloc[0,18]
       bonos_procesos_9.iloc[4,3] = " "
       bonos_procesos_9.iloc[5,3] = " "
       bonos_procesos_9.iloc[6,3] = " "
@@ -685,7 +825,7 @@ def Bonos_Extras(usuario,puesto):
       placeholder47_9 = st.empty()
       dataframe_bonos_procesos_9=placeholder47_9.dataframe(data=bonos_procesos_9)
 
-    # Bloques #
+    # Unidades #
 
     placeholder48_9 = st.empty()
     titulo_bloques_9 = placeholder48_9.subheader("Unidades de Asignación")
@@ -728,7 +868,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
+    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -787,6 +927,45 @@ def Bonos_Extras(usuario,puesto):
 
           placeholder28_9.empty()
           placeholder29_9.empty()
+
+    elif nombre_9== "Ignacio Aguglino":
+
+      placeholder101_9.empty()
+      placeholder102_9.empty()
+
+      if personal_9=="Todos":
+        
+        placeholder103_9.empty()
+    
+        if pivot101==0:
+        
+          placeholder104_9.empty()
+      
+        else:
+
+          placeholder105_9.empty()
+
+      else:
+
+        placeholder106_9.empty()
+        placeholder109_9.empty()
+        placeholder110_9.empty()
+        
+        if pivot102==0:
+
+          placeholder107_9.empty()
+
+        else:
+
+          placeholder108_9.empty()
+
+        if pivot103==0:
+
+          placeholder111_9.empty()
+
+        else:
+
+          placeholder112_9.empty()
 
     elif perfil_9== "2": 
       
@@ -865,9 +1044,9 @@ def Bonos_Extras(usuario,puesto):
       Procesos.Procesos3(usuario,puesto)
 
   # ----- Historial ---- #
-    
-  elif historial_9:
 
+  if historial_9:
+    
     placeholder1_9.empty()
     placeholder2_9.empty()
     placeholder3_9.empty()
@@ -876,7 +1055,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
+    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -936,6 +1115,45 @@ def Bonos_Extras(usuario,puesto):
           placeholder28_9.empty()
           placeholder29_9.empty()
 
+    elif nombre_9== "Ignacio Aguglino":
+
+      placeholder101_9.empty()
+      placeholder102_9.empty()
+
+      if personal_9=="Todos":
+        
+        placeholder103_9.empty()
+    
+        if pivot101==0:
+        
+          placeholder104_9.empty()
+      
+        else:
+
+          placeholder105_9.empty()
+
+      else:
+
+        placeholder106_9.empty()
+        placeholder109_9.empty()
+        placeholder110_9.empty()
+        
+        if pivot102==0:
+
+          placeholder107_9.empty()
+
+        else:
+
+          placeholder108_9.empty()
+
+        if pivot103==0:
+
+          placeholder111_9.empty()
+
+        else:
+
+          placeholder112_9.empty()
+
     elif perfil_9== "2": 
       
       placeholder30_9.empty()
@@ -993,7 +1211,7 @@ def Bonos_Extras(usuario,puesto):
       else:
 
         placeholder51_9.empty()
-    
+        
     st.session_state.Bonos_Extras=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)
@@ -1010,7 +1228,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
+    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -1069,6 +1287,45 @@ def Bonos_Extras(usuario,puesto):
 
           placeholder28_9.empty()
           placeholder29_9.empty()
+
+    elif nombre_9== "Ignacio Aguglino":
+
+      placeholder101_9.empty()
+      placeholder102_9.empty()
+
+      if personal_9=="Todos":
+        
+        placeholder103_9.empty()
+    
+        if pivot101==0:
+        
+          placeholder104_9.empty()
+      
+        else:
+
+          placeholder105_9.empty()
+
+      else:
+
+        placeholder106_9.empty()
+        placeholder109_9.empty()
+        placeholder110_9.empty()
+        
+        if pivot102==0:
+
+          placeholder107_9.empty()
+
+        else:
+
+          placeholder108_9.empty()
+
+        if pivot103==0:
+
+          placeholder111_9.empty()
+
+        else:
+
+          placeholder112_9.empty()
 
     elif perfil_9== "2": 
       
@@ -1127,7 +1384,7 @@ def Bonos_Extras(usuario,puesto):
       else:
 
         placeholder51_9.empty()
-    
+        
     st.session_state.Bonos_Extras=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -1144,7 +1401,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
+    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -1203,6 +1460,45 @@ def Bonos_Extras(usuario,puesto):
 
           placeholder28_9.empty()
           placeholder29_9.empty()
+
+    elif nombre_9== "Ignacio Aguglino":
+
+      placeholder101_9.empty()
+      placeholder102_9.empty()
+
+      if personal_9=="Todos":
+        
+        placeholder103_9.empty()
+    
+        if pivot101==0:
+        
+          placeholder104_9.empty()
+      
+        else:
+
+          placeholder105_9.empty()
+
+      else:
+
+        placeholder106_9.empty()
+        placeholder109_9.empty()
+        placeholder110_9.empty()
+        
+        if pivot102==0:
+
+          placeholder107_9.empty()
+
+        else:
+
+          placeholder108_9.empty()
+
+        if pivot103==0:
+
+          placeholder111_9.empty()
+
+        else:
+
+          placeholder112_9.empty()
 
     elif perfil_9== "2": 
       
@@ -1278,7 +1574,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
+    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -1337,6 +1633,45 @@ def Bonos_Extras(usuario,puesto):
 
           placeholder28_9.empty()
           placeholder29_9.empty()
+
+    elif nombre_9== "Ignacio Aguglino":
+
+      placeholder101_9.empty()
+      placeholder102_9.empty()
+
+      if personal_9=="Todos":
+        
+        placeholder103_9.empty()
+    
+        if pivot101==0:
+        
+          placeholder104_9.empty()
+      
+        else:
+
+          placeholder105_9.empty()
+
+      else:
+
+        placeholder106_9.empty()
+        placeholder109_9.empty()
+        placeholder110_9.empty()
+        
+        if pivot102==0:
+
+          placeholder107_9.empty()
+
+        else:
+
+          placeholder108_9.empty()
+
+        if pivot103==0:
+
+          placeholder111_9.empty()
+
+        else:
+
+          placeholder112_9.empty()
 
     elif perfil_9== "2": 
       

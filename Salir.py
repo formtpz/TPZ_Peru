@@ -95,14 +95,21 @@ def Salir():
                         st.session_state.Otros_Registros=False
                         st.session_state.Bonos_Extras=False
                         st.session_state.Salir=False
+                        st.session_state.Estado_UIT_Hito=False
                         st.session_state.FMI=False
                         st.session_state.CC_FMI=False
+                        st.session_state.Postcampo_FMI=False
+                        st.session_state.Postcampo_CC_FMI=False
+                        st.session_state.Restitucion_Tierras=False
+                        st.session_state.Revision_Segregados=False
                         st.session_state.Consulta_Campo=False
                         st.session_state.Precampo=False
                         st.session_state.CC_Precampo=False
+                        st.session_state.Preparacion_Insumos=False
+                        st.session_state.Revision_Campo=False
                         st.session_state.Validacion=False
                         st.session_state.CC_Validacion=False
-                        
+                                                
                         puesto=pd.read_sql(f"select puesto from usuarios where usuario ='{usuario}'",uri)
                         puesto= puesto.loc[0,'puesto']
 
@@ -138,4 +145,4 @@ def Salir():
 
             st.subheader("En caso de dudas favor revisar el siguiente video tutorial")
 
-            st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
+            st.subheader("Para soporte técnico favor escribir a evelyn.burgos@tpzco.com")

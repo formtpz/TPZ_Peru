@@ -43,7 +43,7 @@ def CC_Validacion(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  informacion_final_i_3 = placeholder8_3.title("Control de Calidad Validación")
+  control_calidad_validacion_3 = placeholder8_3.title(":blue[Control de Calidad Postcampo]")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
@@ -52,24 +52,33 @@ def CC_Validacion(usuario,puesto):
   
   placeholder10_3= st.empty()
   municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
-
+  
   placeholder11_3= st.empty()
-  consecutivo_3= placeholder11_3.number_input("Número de Paquete",min_value=0,max_value=600, step=1, key="consecutivo_3")
+  zona_3= placeholder11_3.selectbox("Zona", options=("Urbano","Rural","Sin Geometría"), key="zona_3")
 
   placeholder12_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Reinspección"), key="tipo_3")
-  
+  operador_3= placeholder12_3.selectbox("Operador objeto de CC",options=("Ana Paula Perez Poveda","Brayan Steven Jimenez Garro","Djean Jafet Guerrero Gutierrez","Hemerson Barrantes Salmeron","Alondra de los Angeles Cubero Segura","Jeison Rene Fallas Vega","Jennifer Marcela Castro Duarte","Jordy Fernandez De La Vega","Jose Aristides Garcia Cordero","Juan Carlos Pereira Rodriguez","Karol Milena Delgado Herrera","Katherine Maria Hernandez Vargas","Keyla Veronica Chacon Castro","Kimberlyn Tatiana Mora Soto","Maria Paula Rojas Doza","Marian Alejandra Sanchez Elizondo","Maryangel Gonzalez Mesen","Monserrath Maria Varela Miranda","Ricardo Antonio Solano Leiton","Weslyn Francisco Herrera Mora","Maria Celeste Acuna Leiva","Isaac Francisco Salazar Calvo","Maria del Milagro Garro Quesada","Luis Fernando Venegas Luna","Jeison Steven Alvarado Fernandez","Gilberto Antonio Munoz Morales","Estefania de los Angeles Chavarria Cruz","Brayan Antonio Retana Mena","Andres Steven Masis Cortes","Ana Gabriel Fung Mendez","Jorge Daniel Garcia Giron","Yency Alejandra Vargas Miranda","Adrian de Jesus Jimenez Gamboa","Tatiana Ballestero Munoz","Luis Andres Quesada Cerdas","Angie de los Angeles Rojas Martinez","Steven Antonio Guillen Rivera","Zairy Nayarit Vargas Naranjo","Pablo Cesar Marin Pacheco","Iliana Arrieta Acuna","Martin Alonso Ramirez Leiva","Marita de Jesus Fonseca Lopez","Alejandra Maria Alvarado Chacon","Valery Cristal Villalobos Rojas","Maricruz Valverde Valdez","Older Romario Torres Blanco","Bryan Eduardo Ruiz Soto","Andi Joan Morera Fonseca","Yerlin Gabriela Morales Picado","Paula Maria Mora Mora","Katherine Beatriz Hurtado Romero","Maria Cristina Gonzalez Zuniga","Aaron Daniel Camacho Quesada","Keilor Gerardo Alvarado Fernandez","Hayariht Tiare Aguilar Perez","Maria Jose Aguero Fernandez","Yeimy Carolina Perez","Milka Dayanna Jimenez Arguello","Di Dylana Montoya Cubillo","Jose Andres Ortega Urena","Keythy Vanessa Lindo Araya","Tania Castro Solano","Arelys Campos Loria","Josue Enoc lopez Ibarra","Keneth Fabian Calderon Navarro","Josue Ricardo Brenes Campos","Silvia Elena Jimenez Salvatierra"), key="operador_3")
+
   placeholder13_3= st.empty()
-  aprobados_3= placeholder13_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
+  tipo_3= placeholder13_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección"," Reproceso Segunda Reinspección"), key="tipo_3")
 
   placeholder14_3= st.empty()
-  rechazados_3= placeholder14_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
-  
+  tipo_de_errores_3= placeholder14_3.multiselect("Tipo Errores", options=("Errores topológicos","Ejecución de códigos","Dirección","Digitalización de construcciones","Consecutivos de NPN","Derecho interesado fuente","Georreferenciación","Informacion Catastral","Notas en aplicativo","Creación de F","Método de captura","Validadores","Novedades","Rechazo por espacios vacios","N/A"), key="tipo_de_errores_3")
+    
   placeholder15_3= st.empty()
-  horas_3= placeholder15_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  aprobados_3= placeholder15_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
 
-  placeholder16_3 = st.empty()
-  reporte_3 = placeholder16_3.button("Generar Reporte",key="reporte_3")
+  placeholder16_3= st.empty()
+  rechazados_3= placeholder16_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
+  
+  placeholder17_3= st.empty()
+  horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  
+  placeholder18_3= st.empty()
+  tipo_calidad_3= placeholder18_3.selectbox("Tipo de Calidad", options=("Interna","Externa"),key="tipo_calidad_3")
+  
+  placeholder19_3 = st.empty()
+  reporte_3 = placeholder19_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -90,6 +99,9 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
+    placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.Procesos=False
     st.session_state.CC_Validacion=False
 
@@ -127,6 +139,9 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
+    placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -150,6 +165,9 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
+    placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -173,6 +191,9 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
+    placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -196,6 +217,9 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
+    placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -219,6 +243,9 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
+    placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.Ingreso = False
     st.session_state.CC_Validacion=False
     st.session_state.Salir=True
@@ -242,8 +269,26 @@ def CC_Validacion(usuario,puesto):
 
     año_3 = fecha_3.isocalendar()[0]
 
-    unidad_3=municipio_3+'-'+str(consecutivo_3)
+    unidad_3=municipio_3
+    horas_bi = float(horas_3)
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Validación','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}')")
+    tipos_de_errores_3 = ',' .join(tipo_de_errores_3)
+
+    conteo_3 = len(tipo_de_errores_3)
+  
+      # ----- Almacenar Lote_3 según municipio seleccionado ---- #
+    
+    lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}
+    lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
+   
+    if municipio_3 in lote_3_municipios:
+      lote_3 = '3'
+    elif municipio_3 in lote_2_municipios:
+      lote_3 = '2'
+    else:
+      lote_3 = '1'
+      # ----- Fin del script ---- #
+    
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Postcampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','N/A','0','0','N/A','{zona_3}','{tipo_calidad_3}','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')

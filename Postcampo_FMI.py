@@ -9,7 +9,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
-def FMI(usuario,puesto):
+def Postcampo_FMI(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -22,8 +22,8 @@ def FMI(usuario,puesto):
   port_id = result.port
   con = psycopg2.connect(host=hostname,dbname= database,user= username,password=pwd,port= port_id)
 
-  placeholder1_3= st.sidebar.empty()
-  titulo= placeholder1_3.title("Menú")
+  placeholder1_3 = st.sidebar.empty()
+  titulo = placeholder1_3.title("Menú")
 
   placeholder2_3 = st.sidebar.empty()
   procesos_3 = placeholder2_3.button("Procesos",key="procesos_3")
@@ -44,7 +44,7 @@ def FMI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  fmi_3 = placeholder8_3.title("Procesos Juridico")
+  postcampo_fmi_3 = placeholder8_3.title("Postcampo Folios de Matricula Inmobiliaria")
 
   default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
@@ -52,31 +52,19 @@ def FMI(usuario,puesto):
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
 
   placeholder10_3= st.empty()
-  proceso_3= placeholder10_3.selectbox("Proceso", options=("Precampo Folios de Matricula Inmobiliaria","Postcampo Folios de Matricula Inmobiliaria"), key="proceso_3")
-   
+  municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
+  
   placeholder11_3= st.empty()
-  municipio_3= placeholder11_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
-  
+  unidad_inter_3=placeholder11_3.selectbox("Unidad de Intervención", options=("UITR-1","UITR-2","UITR-3","UITR-4","UITR-5","UITR-6","UITR-7","UITR-8","UITR-9","UITR-10","UITR-11","UITR-12","UITR-13","UITR-14","UITR-15","UITR-16","UITR-17","UITR-18","UITR-19","UITR-20","UITR-21","UITR-22","UITR-23","UITR-24","UITR-25","UITR-26","UITR-27","UITR-28","UITR-29","UITR-30","UITR-31","UITR-32","UITR-33","UITR-34","UITR-35","UITR-36","UITR-37","UITR-38","UITR-39","UITR-40","UITU-1","UITU-2","UITU-3","UITU-4","UITU-5","UITU-6","UITU-7","UITU-8","UITU-9","UITU-10","UITU-11","UITU-12","UITU-13","UITU-14","UITU-15","UITU-16","UITU-17","UITU-18","UITU-19","UITU-20","UITU-21","UITU-22","UITU-23","UITU-24","UITU-25","UITU-25","UITU-26","UITU-27","UITU-28","UITU-29","UITU-30","UITU-31","UITU-32","UITU-33","UITU-34","UITU-35","UITU-36","UITU-37","UITU-38","UITU-39","UITU-40","Sin Geometría"), key="unidad_inter_3")
+
   placeholder12_3= st.empty()
-  unidad_inter_3=placeholder12_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=60, key="unidad_inter_3")
-  
-  placeholder13_3= st.empty()
-  estado_3= placeholder13_3.selectbox("Tipo de Proceso", options=("Revisión de Folios","Control de Calidad Precampo", "Devuelto a Campo", "Control de Calidad Post Campo", "Control de Calidad Previo XTF (Externo)","Homologación NPN","Migracion de Estudio Juridico","Asociacion FMI","Folio Antiguo", "Revisión de Predios Segregados","En Revisión", "Otros"), key="estado_3")
-  
-  placeholder14_3= st.empty()
-  tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Corrección"), key="tipo_3")
+  tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Corrección"), key="tipo_3")
                   
-  placeholder15_3= st.empty()
-  produccion_3= placeholder15_3.number_input("Cantidad de Predios Revisados",min_value=0,step=1,key="produccion_3")
+  placeholder13_3= st.empty()
+  produccion_3= placeholder13_3.number_input("Cantidad de Folios Revisados",min_value=0,step=1,key="produccion_3")
 
-  placeholder16_3= st.empty()
-  predios_sin_fmi_3= placeholder16_3.number_input("Cantidad de Predios sin FMI",min_value=0,step=1,key="predios_sin_fmi_3")
-
-  placeholder17_3= st.empty()
-  observaciones_3= placeholder17_3.text_input("Observaciones",key="observaciones_3")
-
-  placeholder18_3 = st.empty()
-  reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
+  placeholder14_3 = st.empty()
+  reporte_3 = placeholder14_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -95,12 +83,8 @@ def FMI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
-    placeholder16_3.empty()
-    placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.Procesos=False
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -135,11 +119,7 @@ def FMI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
-    placeholder16_3.empty()
-    placeholder17_3.empty()
-    placeholder18_3.empty()
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -160,11 +140,7 @@ def FMI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
-    placeholder16_3.empty()
-    placeholder17_3.empty()
-    placeholder18_3.empty()
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -185,11 +161,7 @@ def FMI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
-    placeholder16_3.empty()
-    placeholder17_3.empty()
-    placeholder18_3.empty()
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -210,11 +182,7 @@ def FMI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
-    placeholder16_3.empty()
-    placeholder17_3.empty()
-    placeholder18_3.empty()
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
@@ -235,12 +203,8 @@ def FMI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
-    placeholder16_3.empty()
-    placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
     st.session_state.Salir=True
     Salir.Salir()
 
@@ -259,20 +223,9 @@ def FMI(usuario,puesto):
     semana_3 = fecha_3.isocalendar()[1]
 
     año_3 = fecha_3.isocalendar()[0]
-    
-    # ----- Almacenar Lote_3 según municipio seleccionado ---- #
-    
-    lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}
-    lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
-   
-    if municipio_3 in lote_3_municipios:
-      lote_3 = '3'
-    elif municipio_3 in lote_2_municipios:
-      lote_3 = '2'
-    else:
-      lote_3 = '1'
-      # ----- Fin del script ---- #
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','{proceso_3}','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','0.0','{unidad_inter_3}','0','{lote_3}','{estado_3}','0.0','0','0','P0','0','{predios_sin_fmi_3}','{observaciones_3}','N/A','N/A','0','0','N/A','0','0','N/A','0')")
+    unidad_3=municipio_3+'-'+unidad_inter_3
+
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo Folios de Matricula Inmobiliaria','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')

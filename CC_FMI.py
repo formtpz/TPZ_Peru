@@ -43,7 +43,7 @@ def CC_FMI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  informacion_final_i_3 = placeholder8_3.title("Control de Calidad Folios de Matricula Inmobiliaria")
+  control_calidad_fmi_3 = placeholder8_3.title("Control de Calidad Folios de Matricula Inmobiliaria")
 
   default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
@@ -54,7 +54,7 @@ def CC_FMI(usuario,puesto):
   municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
   
   placeholder11_3= st.empty()
-  unidad_inter_3=placeholder11_3.selectbox("Unidad de Intervención", options=("UITR-1","UITR-2","UITR-3","UITR-4","UITR-5","UITR-6","UITR-7","UITR-8","UITR-9","UITR-10","UITR-11","UITR-12","UITR-13","UITR-14","UITR-15","UITR-16","UITR-17","UITR-18","UITR-19","UITR-20","UITR-21","UITR-22","UITR-22","UITR-23","UITR-24","UITR-25","UITU-1","UITU-2","UITU-3","UITU-4","UITU-5","UITU-6","UITU-7","UITU-8","UITU-9","UITU-10","UITU-11","UITU-12","UITU-13","UITU-14","UITU-15","UTU-16","UITU-17","UITU- 18","UITU-19","UITU-20","UITU-21","UITU-22","UITU-22","UITU-23","UITU-24","UITU-25","Sin Geometría"), key="unidad_inter_3")
+  unidad_inter_3=placeholder11_3.selectbox("Unidad de Intervención", options=("UITR-1","UITR-2","UITR-3","UITR-4","UITR-5","UITR-6","UITR-7","UITR-8","UITR-9","UITR-10","UITR-11","UITR-12","UITR-13","UITR-14","UITR-15","UITR-16","UITR-17","UITR-18","UITR-19","UITR-20","UITR-21","UITR-22","UITR-23","UITR-24","UITR-25","UITR-26","UITR-27","UITR-28","UITR-29","UITR-30","UITR-31","UITR-32","UITR-33","UITR-34","UITR-35","UITR-36","UITR-37","UITR-38","UITR-39","UITR-40","UITU-1","UITU-2","UITU-3","UITU-4","UITU-5","UITU-6","UITU-7","UITU-8","UITU-9","UITU-10","UITU-11","UITU-12","UITU-13","UITU-14","UITU-15","UITU-16","UITU-17","UITU-18","UITU-19","UITU-20","UITU-21","UITU-22","UITU-23","UITU-24","UITU-25","UITU-25","UITU-26","UITU-27","UITU-28","UITU-29","UITU-30","UITU-31","UITU-32","UITU-33","UITU-34","UITU-35","UITU-36","UITU-37","UITU-38","UITU-39","UITU-40","Sin Geometría"), key="unidad_inter_3")
 
   placeholder12_3= st.empty()
   tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Reinspección"), key="tipo_3")
