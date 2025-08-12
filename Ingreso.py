@@ -117,7 +117,7 @@ if iniciar_sesion_1:
 
                 nombre_1=pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
                 nombre_1 = nombre_1.loc[0,'nombre']
-                st.success(f'¡Bienvenido {nombre_1}!')
+                st.success(f'¡Saludos {nombre_1}!')
 
                 placeholder1_1.empty()
                 placeholder2_1.empty()
@@ -176,7 +176,7 @@ if pivot!=1:
 
      st.title("Telespazio Argentina S.A.")
 
-     st.header("Aplicación de uso exclusivo para el personal de Telespazio Argentina S.A.")
+     st.header("Aplicación de uso exclusivo para el personal de Telespazio Argentina S.A. proyecto Perú")
 
      st.subheader("En caso de dudas favor revisar el siguiente video tutorial")
 
