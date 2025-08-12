@@ -176,9 +176,9 @@ if pivot!=1:
 
      st.title("Telespazio Argentina S.A.")
 
-     st.header("Aplicación de uso exclusivo para el personal de Telespazio Argentina S.A. proyecto Perú")
+     st.header("Aplicación de uso exclusivo para el personal de Telespazio Argentina S.A.")
 
-     st.subheader("En caso de dudas favor revisar el siguiente video tutorial")
+     st.subheader("Proyecto Perú")
 
      st.subheader("Para soporte técnico favor escribir a evelyn.burgos@external.telespazio.com")
 
