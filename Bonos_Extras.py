@@ -403,7 +403,6 @@ def Bonos_Extras(usuario,puesto):
         historial_9_extras=placeholder29_9.dataframe(data=data_extras)
   
   elif nombre_9=="Ignacio Aguglino":
-
     data_personal_9 = pd.read_sql(f"select nombre from usuarios where puesto='Profesional Jurídico' and estado='Activo'", con)
     Todo = pd.DataFrame({"nombre": ["Todos"]})
     data_personal_9 = pd.concat([data_personal_9,Todo],ignore_index=True)
@@ -447,7 +446,7 @@ def Bonos_Extras(usuario,puesto):
       pivot102= len(bonos_juridico_9.iloc[:,0])
   
       if pivot102==0:
-  
+        
         placeholder107_9 = st.empty()
         error_9 = placeholder107_9.error('No existen datos para mostrar')
   
@@ -530,26 +529,23 @@ def Bonos_Extras(usuario,puesto):
   elif perfil_9 == "2":
     
     placeholder30_9 = st.empty()
-    periodo_9 = placeholder30_9.selectbox(
-        "Periodo",
-        options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
+    periodo_9 = placeholder30_9.selectbox("Periodo", options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
 
     placeholder31_9 = st.empty()
     titulo_bonos_9 = placeholder31_9.subheader("Bonos")
     
-    bonos_9 = pd.read_sql(
-        f"""SELECT a0, a99, a100, a102, a103 FROM bonos WHERE a0='{usuario}' AND a103='{periodo_9}'""",con)
+    bonos_9 = pd.read_sql(f"""SELECT a0, a99, a100, a102, a103 FROM bonos WHERE a0='{usuario}' AND a103='{periodo_9}'""",con)
 
     if bonos_9.empty:
-        st.error('No existen datos para mostrar')
+      st.error('No existen datos para mostrar')
     else:
-        # Reemplaza nulos por 0 y suma solo las columnas necesarias
-        bonos_sum = bonos_9[['a99', 'a100', 'a102']].fillna(0).sum().sum()
+      # Reemplaza nulos por 0 y suma solo las columnas necesarias
+      bonos_sum = bonos_9[['a99', 'a100', 'a102']].fillna(0).sum().sum()
 
-        placeholder33_9 = st.empty()
-        col1, col2 = placeholder33_9.columns(2)
-        col1.metric("Suma de a99+a100+a102", bonos_sum)
-        col2.metric("Total", bonos_sum)  # Aquí puedes cambiar si quieres otro total
+      placeholder33_9 = st.empty()
+      col1, col2 = placeholder33_9.columns(2)
+      col1.metric("Suma de a99+a100+a102", bonos_sum)
+      col2.metric("Total", bonos_sum)  # Aquí puedes cambiar si quieres otro total
 
 
       # Procesos #
