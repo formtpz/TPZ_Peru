@@ -535,8 +535,8 @@ def Bonos_Extras(usuario,puesto):
     placeholder31_9 = st.empty()
     titulo_bonos_9 = placeholder31_9.subheader("Bonos")
     
-    bonos_9 = pd.read_sql(f"""SELECT a0, a99, a100, a102, a103 FROM bonos WHERE a0='{usuario}' AND a103='{periodo_9}'""",con)
-    bonos_9= pd.dataframe(bonos_9)
+    bonos_9 = pd.read_sql(f"SELECT a0, a99, a100, a102, a103 FROM bonos WHERE a0='{usuario}' AND a103='{periodo_9}'", con)
+    bonos_9= pd.DataFrame(bonos_9)
     
     pivot5= len(bonos_9.iloc[:,0])
 
