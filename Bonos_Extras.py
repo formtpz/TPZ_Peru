@@ -528,7 +528,6 @@ def Bonos_Extras(usuario,puesto):
         dataframe_bloques_9=placeholder112_9.dataframe(data=bloques_9)
 #------PERFIL OPERADOR-----
   elif perfil_9 == "2":
-  elif perfil_9 == "2":
     
     placeholder30_9 = st.empty()
     periodo_9 = placeholder30_9.selectbox(
@@ -538,36 +537,20 @@ def Bonos_Extras(usuario,puesto):
     placeholder31_9 = st.empty()
     titulo_bonos_9 = placeholder31_9.subheader("Bonos")
     
-    bonos_9 = pd.read_sql(f"""select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64,a65,a66,a67,a68,a69,a70,a71,a72,a73,a74,a75,a76,a77,a78,a79,a80,a81,a82,a83,a84,a85,a86,a87,a88,a89,a90,a91,a92,a93,a94,a95,a96,a97,a98,a99,a100,a101,a102,a103 from bonos where a0='{usuario}' and a103='{periodo_9}'""", con)
+    bonos_9 = pd.read_sql(
+        f"""SELECT a0, a99, a100, a102, a103 FROM bonos WHERE a0='{usuario}' AND a103='{periodo_9}'""",con)
 
-    pivot5 = len(bonos_9.iloc[:,0])
-
-    if pivot5 == 0:
-        placeholder32_9 = st.empty()
-        error_9 = placeholder32_9.error('No existen datos para mostrar')
-
+    if bonos_9.empty:
+        st.error('No existen datos para mostrar')
     else:
-        #---Conversión segura evitando None/NaN
-        bonos_variables_9 = pd.to_numeric(
-            bonos_9.iloc[0, 65:74], errors='coerce'
-        ).fillna(0).sum()
-
-        bonos_fijos_9 = pd.to_numeric(
-            bonos_9.iloc[0, 75:84], errors='coerce'
-        ).fillna(0).sum()
-
-        otros_bonos_9 = pd.to_numeric(
-            bonos_9.iloc[0, 95:100], errors='coerce'
-        ).fillna(0).sum()
+        # Reemplaza nulos por 0 y suma solo las columnas necesarias
+        bonos_sum = bonos_9[['a99', 'a100', 'a102']].fillna(0).sum().sum()
 
         placeholder33_9 = st.empty()
-        col1, col2, col3, col4 = placeholder33_9.columns(4)
-        col1.metric("Bonos Variables", bonos_variables_9)
-        col2.metric("Bonos Fijos", bonos_fijos_9)
-        col3.metric("Otros Bonos", otros_bonos_9)
-        col4.metric("Total", bonos_9.iloc[0, 102])
+        col1, col2 = placeholder33_9.columns(2)
+        col1.metric("Suma de a99+a100+a102", bonos_sum)
+        col2.metric("Total", bonos_sum)  # Aquí puedes cambiar si quieres otro total
 
- 
 
       # Procesos #
       
