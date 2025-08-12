@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, Consulta_Campo,Restitucion_Tierras,Revision_Segregados,Estado_UIT_Hito,Precampo, CC_Precampo, Preparacion_Insumos, Revision_Campo, Validacion, CC_Validacion
+import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, Consulta_Campo,Restitucion_Tierras,Revision_Segregados,Estado_UIT_Hito,Precampo, CC_Precampo, Preparacion_Insumos, Revision_Campo, Postcampo, CC_Postcampo
 
 def Procesos1(usuario,puesto):
 
@@ -49,10 +49,10 @@ def Procesos1(usuario,puesto):
         revision_campo_2 = placeholder13_2.button("Revisión de Campo",key="revision_campo_2")
 
         placeholder14_2 = st.empty()
-        validacion_2 = placeholder14_2.button(":blue[Postcampo]",key="validacion_2")
+        postcampo_2 = placeholder14_2.button(":blue[Postcampo]",key="postcampo_2")
 
         placeholder15_2 = st.empty()
-        cc_validacion_2 = placeholder15_2.button(":blue[Control de Calidad Postcampo]",key="cc_validacion_2")
+        cc_postcampo_2 = placeholder15_2.button(":blue[Control de Calidad Postcampo]",key="cc_postcampo_2")
 
         placeholder16_2 = st.empty()
         restitucion_tierras_2 = placeholder16_2.button("Restitución de Tierras",key="restitucion_tierras_2")
@@ -354,7 +354,7 @@ def Procesos1(usuario,puesto):
 
         # ----- Validación ---- #
 
-        elif validacion_2:
+        elif postcampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -375,12 +375,12 @@ def Procesos1(usuario,puesto):
             placeholder17_2.empty()
             placeholder18_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Validacion=True
-            Validacion.Validacion(usuario,puesto)
+            st.session_state.Postcampo=True
+            Postcampo.Postcampo(usuario,puesto)
 
          # ----- CC Validación ---- #
 
-        elif cc_validacion_2:
+        elif cc_postcampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -401,8 +401,8 @@ def Procesos1(usuario,puesto):
             placeholder17_2.empty()
             placeholder18_2.empty()
             st.session_state.Procesos=True
-            st.session_state.CC_Validacion=True
-            CC_Validacion.CC_Validacion(usuario,puesto)
+            st.session_state.CC_Postcampo=True
+            CC_Postcampo.CC_Postcampo(usuario,puesto)
 
         # ----- Restitución de Tierras ---- #
 
@@ -517,11 +517,11 @@ def Procesos1(usuario,puesto):
         elif st.session_state.Revision_Campo==True:
             Revision_Campo.Revision_Campo(usuario,puesto)
 
-        elif st.session_state.Validacion==True:
-            Validacion.Validacion(usuario,puesto)
+        elif st.session_state.Postcampo==True:
+            Postcampo.Postcampo(usuario,puesto)
 
-        elif st.session_state.CC_Validacion==True:
-            CC_Validacion.CC_Validacion(usuario,puesto)
+        elif st.session_state.CC_Postcampo==True:
+            CC_Postcampo.CC_Postcampo(usuario,puesto)
 
         elif st.session_state.Restitucion_Tierras==True:
             Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
@@ -574,10 +574,10 @@ def Procesos2(usuario,puesto):
         revision_campo_2 = placeholder11_2.button("Revisión de Campo",key="revision_campo_2")
 
         placeholder12_2 = st.empty()
-        validacion_2 = placeholder12_2.button("Postcampo",key="validacion_2")
+        postcampo_2 = placeholder12_2.button("Postcampo",key="postcampo_2")
 
         placeholder13_2 = st.empty()
-        cc_validacion_2 = placeholder13_2.button("Control de Calidad Postcampo",key="cc_validacion_2")
+        cc_postcampo_2 = placeholder13_2.button("Control de Calidad Postcampo",key="cc_postcampo_2")
        
         # ----- Historial ---- #
 
@@ -769,9 +769,9 @@ def Procesos2(usuario,puesto):
             st.session_state.Revision_Campo=True
             Revision_Campo.Revision_Campo(usuario,puesto)
 
-        # ----- Validacion ---- #
+        # ----- Postcampo ---- #
 
-        elif validacion_2:
+        elif postcampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -787,12 +787,12 @@ def Procesos2(usuario,puesto):
             placeholder12_2.empty()
             placeholder13_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Validacion=True
-            Validacion.Validacion(usuario,puesto)
+            st.session_state.Postcampo=True
+            Postcampo.Postcampo(usuario,puesto)
             
-        # ----- CC_Validacion ---- #
+        # ----- CC_Postcampo ---- #
 
-        elif cc_validacion_2:
+        elif cc_postcampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -808,8 +808,8 @@ def Procesos2(usuario,puesto):
             placeholder12_2.empty()
             placeholder13_2.empty()
             st.session_state.Procesos=True
-            st.session_state.CC_Validacion=True
-            CC_Validacion.CC_Validacion(usuario,puesto)
+            st.session_state.CC_Postcampo=True
+            CC_Postcampo.CC_Postcampo(usuario,puesto)
             
     elif st.session_state.Procesos==True:
 
@@ -837,11 +837,11 @@ def Procesos2(usuario,puesto):
         elif st.session_state.Revision_Campo==True:
             Revision_Campo.Revision_Campo(usuario,puesto)
 
-        elif st.session_state.Validacion==True:
-            Validacion.Validacion(usuario,puesto)
+        elif st.session_state.Postcampo==True:
+            Postcampo.Postcampo(usuario,puesto)
 
-        elif st.session_state.CC_Validacion==True:
-            CC_Validacion.CC_Validacion(usuario,puesto)
+        elif st.session_state.CC_Postcampo==True:
+            CC_Postcampo.CC_Postcampo(usuario,puesto)
 
 # ----- Procesos 3 (Jurídicos) ---- #
 
