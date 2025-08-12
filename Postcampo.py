@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
-def Validacion(usuario,puesto):
+def Postcampo(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -43,7 +43,7 @@ def Validacion(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  validacion_3 = placeholder8_3.title("Postcampo")
+  postcampo_3 = placeholder8_3.title("Postcampo")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
@@ -119,7 +119,7 @@ def Validacion(usuario,puesto):
     placeholder22_3.empty()
     placeholder23_3.empty()
     st.session_state.Procesos=False
-    st.session_state.Validacion=False
+    st.session_state.Postcampo=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -162,7 +162,7 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
-    st.session_state.Validacion=False
+    st.session_state.Postcampo=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -192,7 +192,7 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
-    st.session_state.Validacion=False
+    st.session_state.Postcampo=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -222,7 +222,7 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
-    st.session_state.Validacion=False
+    st.session_state.Postcampo=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -252,7 +252,7 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
-    st.session_state.Validacion=False
+    st.session_state.Postcampo=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
@@ -283,7 +283,7 @@ def Validacion(usuario,puesto):
     placeholder22_3.empty()
     placeholder23_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.Validacion=False
+    st.session_state.Postcampo=False
     st.session_state.Salir=True
     Salir.Salir()
 
