@@ -547,7 +547,7 @@ def Bonos_Extras(usuario,puesto):
     else:
       # Reemplaza nulos por 0 y suma solo las columnas necesarias
       #bonos_sum = bonos_9[['a99', 'a100', 'a102']].fillna(0).sum().sum()
-      bonos_variables_9 = sum([float(bonos_9.iloc[0,99]),float(bonos_9.iloc[0,100]))
+      bonos_variables_9 = sum(float(bonos_9.iloc[0,99]),float(bonos_9.iloc[0,100]))
       bonos_fijos_9 = sum([float(bonos_9.iloc[0,99]),float(bonos_9.iloc[0,102]))
       
       placeholder33_9 = st.empty()
