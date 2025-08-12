@@ -142,8 +142,8 @@ if iniciar_sesion_1:
                 st.session_state.CC_Precampo=False
                 st.session_state.Preparacion_Insumos=False
                 st.session_state.Revision_Campo=False
-                st.session_state.Validacion=False
-                st.session_state.CC_Validacion=False
+                st.session_state.Postcampo=False
+                st.session_state.CC_Postcampo=False
                                     
                 puesto=pd.read_sql(f"select puesto from usuarios where usuario ='{usuario}'",uri)
                 puesto= puesto.loc[0,'puesto']
