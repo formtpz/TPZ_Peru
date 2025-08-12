@@ -153,9 +153,9 @@ def Bonos_Extras(usuario,puesto):
 
       else:
 
-        bonos_variables_9=0.0
-        bonos_fijos_9=0.0
-        otros_bonos_9=0.0
+        bonos_variables_9=0
+        bonos_fijos_9=0
+        otros_bonos_9=0
         
         for a in range(0,pivot1):
 
