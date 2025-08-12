@@ -525,7 +525,8 @@ def Bonos_Extras(usuario,puesto):
   
         placeholder112_9 = st.empty()
         dataframe_bloques_9=placeholder112_9.dataframe(data=bloques_9)
-#------PERFIL OPERADOR-----
+        
+#------PERFIL OPERADOR----#
   elif perfil_9 == "2":
     
     placeholder30_9 = st.empty()
@@ -535,9 +536,14 @@ def Bonos_Extras(usuario,puesto):
     titulo_bonos_9 = placeholder31_9.subheader("Bonos")
     
     bonos_9 = pd.read_sql(f"""SELECT a0, a99, a100, a102, a103 FROM bonos WHERE a0='{usuario}' AND a103='{periodo_9}'""",con)
+    bonos_9= pd.dataframe(bonos_9)
+    
+    pivot5= len(bonos_9.iloc[:,0])
 
-    if bonos_9.empty:
-      st.error('No existen datos para mostrar')
+    if pivot5==0:
+
+      placeholder32_9 = st.empty()
+      error_9 = placeholder32_9.error('No existen datos para mostrar')
     else:
       # Reemplaza nulos por 0 y suma solo las columnas necesarias
       bonos_sum = bonos_9[['a99', 'a100', 'a102']].fillna(0).sum().sum()
