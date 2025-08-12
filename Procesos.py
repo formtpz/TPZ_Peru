@@ -30,8 +30,8 @@ def Procesos1(usuario,puesto):
         placeholder7_2 = st.empty()
         procesos_2 = placeholder7_2.title("Procesos")
 
-        #placeholder8_2 = st.empty()
-        fmi_2 = placeholder8_2.button("Procesos Jurídico", key="fmi_2")#
+        #placeholder8_2 = st.empty()#
+        #fmi_2 = placeholder8_2.button("Procesos Jurídico", key="fmi_2")#
 
         placeholder9_2 = st.empty()
         consulta_campo_2 = placeholder9_2.button("Consultas de Campo",key="consulta_campo_2")
@@ -590,7 +590,7 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -611,7 +611,7 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -632,7 +632,7 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -653,7 +653,7 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -674,7 +674,7 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -696,7 +696,7 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -717,7 +717,7 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -738,7 +738,7 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -759,7 +759,7 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -780,7 +780,7 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -801,7 +801,7 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -895,7 +895,7 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -914,7 +914,7 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -933,7 +933,7 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -952,7 +952,7 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -971,7 +971,7 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -991,7 +991,7 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -1011,7 +1011,7 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -1030,7 +1030,7 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -1049,7 +1049,7 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
