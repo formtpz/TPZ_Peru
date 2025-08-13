@@ -558,43 +558,43 @@ def Bonos_Extras(usuario,puesto):
 
       # Procesos #
       
-      variables_1_9=["Ratio Promedio por Bloque (Predio/Día)","Duración (Día)","Producción (Según Reportes)","Producción Limpia","Producción (Según Ratio)","Producción (Estándar)","Bono Variable","Bono Fijo","Cantidad de Personal"]								
+      #variables_1_9=["Ratio Promedio por Bloque (Predio/Día)","Duración (Día)","Producción (Según Reportes)","Producción Limpia","Producción (Según Ratio)","Producción (Estándar)","Bono Variable","Bono Fijo","Cantidad de Personal"]								
 
-      conciliacion_9=[0]*9
-      ubicacion_9=[0]*9
-      conformacion_9=[0]*9
-      cc_conformacion_9=[0]*9 	
-      validacion_9=[0]*9	
-      if_i_9=[0]*9
-      cc_if_i_9=[0]*9
-      if_ii_9=[0]*9
-      if_iii_9=[0]*9
+      #conciliacion_9=[0]*9
+      #ubicacion_9=[0]*9
+      #conformacion_9=[0]*9
+      #cc_conformacion_9=[0]*9 	
+      #validacion_9=[0]*9	
+      #if_i_9=[0]*9
+      #cc_if_i_9=[0]*9
+      #if_ii_9=[0]*9
+      #if_iii_9=[0]*9
 
-      bonos_procesos_9= pd.DataFrame(data={"Variables":variables_1_9,"Conciliación":conciliacion_9,"Ubicación":ubicacion_9,"Conformación":conformacion_9,"CC Conformación":cc_conformacion_9,"Validación":validacion_9,"Información Final I":if_i_9,"CC Información Final I":cc_if_i_9,"Información Final II":if_ii_9,"Información Final III":if_iii_9})
+      #bonos_procesos_9= pd.DataFrame(data={"Variables":variables_1_9,"Conciliación":conciliacion_9,"Ubicación":ubicacion_9,"Conformación":conformacion_9,"CC Conformación":cc_conformacion_9,"Validación":validacion_9,"Información Final I":if_i_9,"CC Información Final I":cc_if_i_9,"Información Final II":if_ii_9,"Información Final III":if_iii_9})
 
       # Conciliación #
       
-      bonos_procesos_9.iloc[0,1] = bonos_9.iloc[0,5]
-      bonos_procesos_9.iloc[1,1] = bonos_9.iloc[0,15]
-      bonos_procesos_9.iloc[2,1] = bonos_9.iloc[0,25]
-      bonos_procesos_9.iloc[3,1] = bonos_9.iloc[0,35]
-      bonos_procesos_9.iloc[4,1] = bonos_9.iloc[0,45]
-      bonos_procesos_9.iloc[5,1] = bonos_9.iloc[0,55]
-      bonos_procesos_9.iloc[6,1] = bonos_9.iloc[0,65]
-      bonos_procesos_9.iloc[7,1] = bonos_9.iloc[0,75]
-      bonos_procesos_9.iloc[8,1] = bonos_9.iloc[0,85]
+      #bonos_procesos_9.iloc[0,1] = bonos_9.iloc[0,5]
+      #bonos_procesos_9.iloc[1,1] = bonos_9.iloc[0,15]
+      #bonos_procesos_9.iloc[2,1] = bonos_9.iloc[0,25]
+      #bonos_procesos_9.iloc[3,1] = bonos_9.iloc[0,35]
+      #bonos_procesos_9.iloc[4,1] = bonos_9.iloc[0,45]
+      #bonos_procesos_9.iloc[5,1] = bonos_9.iloc[0,55]
+      #bonos_procesos_9.iloc[6,1] = bonos_9.iloc[0,65]
+      #bonos_procesos_9.iloc[7,1] = bonos_9.iloc[0,75]
+      #bonos_procesos_9.iloc[8,1] = bonos_9.iloc[0,85]
 
       # Ubicación #
       
-      bonos_procesos_9.iloc[0,2] = bonos_9.iloc[0,6]
-      bonos_procesos_9.iloc[1,2] = bonos_9.iloc[0,16]
-      bonos_procesos_9.iloc[2,2] = bonos_9.iloc[0,26]
-      bonos_procesos_9.iloc[3,2] = bonos_9.iloc[0,36]
-      bonos_procesos_9.iloc[4,2] = bonos_9.iloc[0,46]
-      bonos_procesos_9.iloc[5,2] = bonos_9.iloc[0,56]
-      bonos_procesos_9.iloc[6,2] = bonos_9.iloc[0,66]
-      bonos_procesos_9.iloc[7,2] = bonos_9.iloc[0,76]
-      bonos_procesos_9.iloc[8,2] = bonos_9.iloc[0,86]
+      #bonos_procesos_9.iloc[0,2] = bonos_9.iloc[0,6]
+      #bonos_procesos_9.iloc[1,2] = bonos_9.iloc[0,16]
+      #bonos_procesos_9.iloc[2,2] = bonos_9.iloc[0,26]
+      #bonos_procesos_9.iloc[3,2] = bonos_9.iloc[0,36]
+      #bonos_procesos_9.iloc[4,2] = bonos_9.iloc[0,46]
+      #bonos_procesos_9.iloc[5,2] = bonos_9.iloc[0,56]
+      #bonos_procesos_9.iloc[6,2] = bonos_9.iloc[0,66]
+      #bonos_procesos_9.iloc[7,2] = bonos_9.iloc[0,76]
+      #bonos_procesos_9.iloc[8,2] = bonos_9.iloc[0,86]
 
       # Conformación #
       
@@ -610,128 +610,128 @@ def Bonos_Extras(usuario,puesto):
 
       #  Control de Calidad Conformación #
       
-      bonos_procesos_9.iloc[0,4] = bonos_9.iloc[0,8]
-      bonos_procesos_9.iloc[1,4] = bonos_9.iloc[0,18]
-      bonos_procesos_9.iloc[2,4] = bonos_9.iloc[0,28]
-      bonos_procesos_9.iloc[3,4] = bonos_9.iloc[0,38]
-      bonos_procesos_9.iloc[4,4] = bonos_9.iloc[0,48]
-      bonos_procesos_9.iloc[5,4] = bonos_9.iloc[0,58]
-      bonos_procesos_9.iloc[6,4] = bonos_9.iloc[0,68]
-      bonos_procesos_9.iloc[7,4] = bonos_9.iloc[0,78]
-      bonos_procesos_9.iloc[8,4] = bonos_9.iloc[0,88]
+      #bonos_procesos_9.iloc[0,4] = bonos_9.iloc[0,8]
+      #bonos_procesos_9.iloc[1,4] = bonos_9.iloc[0,18]
+      #bonos_procesos_9.iloc[2,4] = bonos_9.iloc[0,28]
+      #bonos_procesos_9.iloc[3,4] = bonos_9.iloc[0,38]
+      #bonos_procesos_9.iloc[4,4] = bonos_9.iloc[0,48]
+      #bonos_procesos_9.iloc[5,4] = bonos_9.iloc[0,58]
+      #bonos_procesos_9.iloc[6,4] = bonos_9.iloc[0,68]
+      #bonos_procesos_9.iloc[7,4] = bonos_9.iloc[0,78]
+      #bonos_procesos_9.iloc[8,4] = bonos_9.iloc[0,88]
 
       # Validación #
       
-      bonos_procesos_9.iloc[0,5] = bonos_9.iloc[0,9]
-      bonos_procesos_9.iloc[1,5] = bonos_9.iloc[0,19]
-      bonos_procesos_9.iloc[2,5] = bonos_9.iloc[0,29]
-      bonos_procesos_9.iloc[3,5] = bonos_9.iloc[0,39]
-      bonos_procesos_9.iloc[4,5] = bonos_9.iloc[0,49]
-      bonos_procesos_9.iloc[5,5] = bonos_9.iloc[0,59]
-      bonos_procesos_9.iloc[6,5] = bonos_9.iloc[0,69]
-      bonos_procesos_9.iloc[7,5] = bonos_9.iloc[0,79]
-      bonos_procesos_9.iloc[8,5] = bonos_9.iloc[0,89]
+      #bonos_procesos_9.iloc[0,5] = bonos_9.iloc[0,9]
+      #bonos_procesos_9.iloc[1,5] = bonos_9.iloc[0,19]
+      #bonos_procesos_9.iloc[2,5] = bonos_9.iloc[0,29]
+      #bonos_procesos_9.iloc[3,5] = bonos_9.iloc[0,39]
+      #bonos_procesos_9.iloc[4,5] = bonos_9.iloc[0,49]
+      #bonos_procesos_9.iloc[5,5] = bonos_9.iloc[0,59]
+      #bonos_procesos_9.iloc[6,5] = bonos_9.iloc[0,69]
+      #bonos_procesos_9.iloc[7,5] = bonos_9.iloc[0,79]
+      #bonos_procesos_9.iloc[8,5] = bonos_9.iloc[0,89]
 
       # Información Final I #
 
-      bonos_procesos_9.iloc[0,6] = bonos_9.iloc[0,10]
-      bonos_procesos_9.iloc[1,6] = bonos_9.iloc[0,20]
-      bonos_procesos_9.iloc[2,6] = bonos_9.iloc[0,30]
-      bonos_procesos_9.iloc[3,6] = bonos_9.iloc[0,40]
-      bonos_procesos_9.iloc[4,6] = bonos_9.iloc[0,50]
-      bonos_procesos_9.iloc[5,6] = bonos_9.iloc[0,60]
-      bonos_procesos_9.iloc[6,6] = bonos_9.iloc[0,70]
-      bonos_procesos_9.iloc[7,6] = bonos_9.iloc[0,80]
-      bonos_procesos_9.iloc[8,6] = bonos_9.iloc[0,90]
+      #bonos_procesos_9.iloc[0,6] = bonos_9.iloc[0,10]
+      #bonos_procesos_9.iloc[1,6] = bonos_9.iloc[0,20]
+      #bonos_procesos_9.iloc[2,6] = bonos_9.iloc[0,30]
+      #bonos_procesos_9.iloc[3,6] = bonos_9.iloc[0,40]
+      #bonos_procesos_9.iloc[4,6] = bonos_9.iloc[0,50]
+      #bonos_procesos_9.iloc[5,6] = bonos_9.iloc[0,60]
+      #bonos_procesos_9.iloc[6,6] = bonos_9.iloc[0,70]
+      #bonos_procesos_9.iloc[7,6] = bonos_9.iloc[0,80]
+      #bonos_procesos_9.iloc[8,6] = bonos_9.iloc[0,90]
 
       # Control de Calidad Información Final I #
 
-      bonos_procesos_9.iloc[0,7] = bonos_9.iloc[0,11]
-      bonos_procesos_9.iloc[1,7] = bonos_9.iloc[0,21]
-      bonos_procesos_9.iloc[2,7] = bonos_9.iloc[0,31]
-      bonos_procesos_9.iloc[3,7] = bonos_9.iloc[0,41]
-      bonos_procesos_9.iloc[4,7] = bonos_9.iloc[0,51]
-      bonos_procesos_9.iloc[5,7] = bonos_9.iloc[0,61]
-      bonos_procesos_9.iloc[6,7] = bonos_9.iloc[0,71]
-      bonos_procesos_9.iloc[7,7] = bonos_9.iloc[0,81]
-      bonos_procesos_9.iloc[8,7] = bonos_9.iloc[0,91]
+      #bonos_procesos_9.iloc[0,7] = bonos_9.iloc[0,11]
+      #bonos_procesos_9.iloc[1,7] = bonos_9.iloc[0,21]
+      #bonos_procesos_9.iloc[2,7] = bonos_9.iloc[0,31]
+      #bonos_procesos_9.iloc[3,7] = bonos_9.iloc[0,41]
+      #bonos_procesos_9.iloc[4,7] = bonos_9.iloc[0,51]
+      #bonos_procesos_9.iloc[5,7] = bonos_9.iloc[0,61]
+      #bonos_procesos_9.iloc[6,7] = bonos_9.iloc[0,71]
+      #bonos_procesos_9.iloc[7,7] = bonos_9.iloc[0,81]
+      #bonos_procesos_9.iloc[8,7] = bonos_9.iloc[0,91]
 
       # Información Final II #
 
-      bonos_procesos_9.iloc[0,8] = bonos_9.iloc[0,12]
-      bonos_procesos_9.iloc[1,8] = bonos_9.iloc[0,22]
-      bonos_procesos_9.iloc[2,8] = bonos_9.iloc[0,32]
-      bonos_procesos_9.iloc[3,8] = bonos_9.iloc[0,42]
-      bonos_procesos_9.iloc[4,8] = bonos_9.iloc[0,52]
-      bonos_procesos_9.iloc[5,8] = bonos_9.iloc[0,62]
-      bonos_procesos_9.iloc[6,8] = bonos_9.iloc[0,72]
-      bonos_procesos_9.iloc[7,8] = bonos_9.iloc[0,82]
-      bonos_procesos_9.iloc[8,8] = bonos_9.iloc[0,92]
+      #bonos_procesos_9.iloc[0,8] = bonos_9.iloc[0,12]
+      #bonos_procesos_9.iloc[1,8] = bonos_9.iloc[0,22]
+      #bonos_procesos_9.iloc[2,8] = bonos_9.iloc[0,32]
+      #bonos_procesos_9.iloc[3,8] = bonos_9.iloc[0,42]
+      #bonos_procesos_9.iloc[4,8] = bonos_9.iloc[0,52]
+      #bonos_procesos_9.iloc[5,8] = bonos_9.iloc[0,62]
+      #bonos_procesos_9.iloc[6,8] = bonos_9.iloc[0,72]
+      #bonos_procesos_9.iloc[7,8] = bonos_9.iloc[0,82]
+      #bonos_procesos_9.iloc[8,8] = bonos_9.iloc[0,92]
 
       # Información Final III #
 
-      bonos_procesos_9.iloc[0,9] = bonos_9.iloc[0,13]
-      bonos_procesos_9.iloc[1,9] = bonos_9.iloc[0,23]
-      bonos_procesos_9.iloc[2,9] = bonos_9.iloc[0,33]
-      bonos_procesos_9.iloc[3,9] = bonos_9.iloc[0,43]
-      bonos_procesos_9.iloc[4,9] = bonos_9.iloc[0,53]
-      bonos_procesos_9.iloc[5,9] = bonos_9.iloc[0,63]
-      bonos_procesos_9.iloc[6,9] = bonos_9.iloc[0,73]
-      bonos_procesos_9.iloc[7,9] = bonos_9.iloc[0,83]
-      bonos_procesos_9.iloc[8,9] = bonos_9.iloc[0,93]
+      #bonos_procesos_9.iloc[0,9] = bonos_9.iloc[0,13]
+      #bonos_procesos_9.iloc[1,9] = bonos_9.iloc[0,23]
+      #bonos_procesos_9.iloc[2,9] = bonos_9.iloc[0,33]
+      #bonos_procesos_9.iloc[3,9] = bonos_9.iloc[0,43]
+      #bonos_procesos_9.iloc[4,9] = bonos_9.iloc[0,53]
+      #bonos_procesos_9.iloc[5,9] = bonos_9.iloc[0,63]
+      #bonos_procesos_9.iloc[6,9] = bonos_9.iloc[0,73]
+      #bonos_procesos_9.iloc[7,9] = bonos_9.iloc[0,83]
+      #bonos_procesos_9.iloc[8,9] = bonos_9.iloc[0,93]
 
-      placeholder34_9 = st.empty()
-      dataframe_bonos_procesos_9=placeholder34_9.dataframe(data=bonos_procesos_9)
+      #placeholder34_9 = st.empty()
+      #dataframe_bonos_procesos_9=placeholder34_9.dataframe(data=bonos_procesos_9)
 
       # Otros Bonos #
 
-      variables_2_9=["Bonos Variables","Bonos Fijos","Bonificación por Entregas","Bonificación Cumplimiento RN","Bonificación Supervisión","Bonificación Exposiciones Públicas","Bonificación Otras Funciones","Observaciones","Bonificación Total"]								
-      valor_9=[0]*9
+      #variables_2_9=["Bonos Variables","Bonos Fijos","Bonificación por Entregas","Bonificación Cumplimiento RN","Bonificación Supervisión","Bonificación Exposiciones Públicas","Bonificación Otras Funciones","Observaciones","Bonificación Total"]								
+      #valor_9=[0]*9
 
-      otros_bonos_9= pd.DataFrame(data={"Variables":variables_2_9,"Valor":valor_9})
+      #otros_bonos_9= pd.DataFrame(data={"Variables":variables_2_9,"Valor":valor_9})
       
-      otros_bonos_9.iloc[0,1] = bonos_variables_9
-      otros_bonos_9.iloc[1,1] = bonos_fijos_9
-      otros_bonos_9.iloc[2,1] = bonos_9.iloc[0,95]
-      otros_bonos_9.iloc[3,1] = bonos_9.iloc[0,96]
-      otros_bonos_9.iloc[4,1] = bonos_9.iloc[0,97]
-      otros_bonos_9.iloc[5,1] = bonos_9.iloc[0,98]
-      otros_bonos_9.iloc[6,1] = bonos_9.iloc[0,99]
-      otros_bonos_9.iloc[7,1] = bonos_9.iloc[0,101]
-      otros_bonos_9.iloc[8,1] = bonos_9.iloc[0,102]
+      #otros_bonos_9.iloc[0,1] = bonos_variables_9
+      #otros_bonos_9.iloc[1,1] = bonos_fijos_9
+      #otros_bonos_9.iloc[2,1] = bonos_9.iloc[0,95]
+      #otros_bonos_9.iloc[3,1] = bonos_9.iloc[0,96]
+      #otros_bonos_9.iloc[4,1] = bonos_9.iloc[0,97]
+      #otros_bonos_9.iloc[5,1] = bonos_9.iloc[0,98]
+      #otros_bonos_9.iloc[6,1] = bonos_9.iloc[0,99]
+      #otros_bonos_9.iloc[7,1] = bonos_9.iloc[0,101]
+      #otros_bonos_9.iloc[8,1] = bonos_9.iloc[0,102]
 
-      placeholder35_9 = st.empty()
-      dataframe_otros_bonos_9=placeholder35_9.dataframe(data=otros_bonos_9)
+      #placeholder35_9 = st.empty()
+      #dataframe_otros_bonos_9=placeholder35_9.dataframe(data=otros_bonos_9)
 
     # Bloques #
 
-    placeholder36_9 = st.empty()
-    titulo_bloques_9 = placeholder36_9.subheader("Bloques")
+    #placeholder36_9 = st.empty()
+    #titulo_bloques_9 = placeholder36_9.subheader("Bloques")
 
-    placeholder37_9 = st.empty()
-    periodo_bloques_9 = placeholder37_9.selectbox("Fecha de Producción", options=("Todos","Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
+    #placeholder37_9 = st.empty()
+    #periodo_bloques_9 = placeholder37_9.selectbox("Fecha de Producción", options=("Todos","Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
 
-    if periodo_bloques_9=="Todos":
+    #if periodo_bloques_9=="Todos":
 
-      bloques_9= pd.read_sql(f"select usuario,nombre,supervisor,proceso,tipo_revision,bloque_distrito,produccion_segun_reporte,horas,produccion_estandar,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,ratio_limpio_predio_por_dia,primera_reinspeccion,segunda_reinspeccion,porcentage_penalizacion_ratio,ratio_penalizado_predio_por_dia,fecha_produccion,fecha_corte,fecha_bono from bloques where usuario='{usuario}'", con)
-      bloques_9=  pd.DataFrame(data=bloques_9)
+      #bloques_9= pd.read_sql(f"select usuario,nombre,supervisor,proceso,tipo_revision,bloque_distrito,produccion_segun_reporte,horas,produccion_estandar,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,ratio_limpio_predio_por_dia,primera_reinspeccion,segunda_reinspeccion,porcentage_penalizacion_ratio,ratio_penalizado_predio_por_dia,fecha_produccion,fecha_corte,fecha_bono from bloques where usuario='{usuario}'", con)
+      #bloques_9=  pd.DataFrame(data=bloques_9)
     
-    else:
+    #else:
 
-      bloques_9= pd.read_sql(f"select usuario,nombre,supervisor,proceso,tipo_revision,bloque_distrito,produccion_segun_reporte,horas,produccion_estandar,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,ratio_limpio_predio_por_dia,primera_reinspeccion,segunda_reinspeccion,porcentage_penalizacion_ratio,ratio_penalizado_predio_por_dia,fecha_produccion,fecha_corte,fecha_bono from bloques where usuario='{usuario}' and fecha_produccion='{periodo_bloques_9}'", con)
-      bloques_9=  pd.DataFrame(data=bloques_9)
+      #bloques_9= pd.read_sql(f"select usuario,nombre,supervisor,proceso,tipo_revision,bloque_distrito,produccion_segun_reporte,horas,produccion_estandar,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,ratio_limpio_predio_por_dia,primera_reinspeccion,segunda_reinspeccion,porcentage_penalizacion_ratio,ratio_penalizado_predio_por_dia,fecha_produccion,fecha_corte,fecha_bono from bloques where usuario='{usuario}' and fecha_produccion='{periodo_bloques_9}'", con)
+      #bloques_9=  pd.DataFrame(data=bloques_9)
 
-    pivot6= len(bloques_9.iloc[:,1])
+    #pivot6= len(bloques_9.iloc[:,1])
 
-    if pivot6 ==0:
+    #if pivot6 ==0:
 
-      placeholder38_9 = st.empty()
-      error_9 = placeholder38_9.error('No existen datos para mostrar')
+      #placeholder38_9 = st.empty()
+      #error_9 = placeholder38_9.error('No existen datos para mostrar')
 
-    else:
+    #else:
 
-      placeholder39_9 = st.empty()
-      dataframe_bloques_9=placeholder39_9.dataframe(data=bloques_9)
+      #placeholder39_9 = st.empty()
+      #dataframe_bloques_9=placeholder39_9.dataframe(data=bloques_9)
 
     placeholder40_9 = st.empty()
     titulo_extras_9 = placeholder40_9.subheader("Horas Extras")
