@@ -598,15 +598,15 @@ def Bonos_Extras(usuario,puesto):
 
       # Conformación #
       
-      bonos_procesos_9.iloc[0,3] = bonos_9.iloc[0,7]
-      bonos_procesos_9.iloc[1,3] = bonos_9.iloc[0,17]
-      bonos_procesos_9.iloc[2,3] = bonos_9.iloc[0,27]
-      bonos_procesos_9.iloc[3,3] = bonos_9.iloc[0,37]
-      bonos_procesos_9.iloc[4,3] = bonos_9.iloc[0,47]
-      bonos_procesos_9.iloc[5,3] = bonos_9.iloc[0,57]
-      bonos_procesos_9.iloc[6,3] = bonos_9.iloc[0,67]
-      bonos_procesos_9.iloc[7,3] = bonos_9.iloc[0,77]
-      bonos_procesos_9.iloc[8,3] = bonos_9.iloc[0,87]
+      #bonos_procesos_9.iloc[0,3] = bonos_9.iloc[0,7]
+      #bonos_procesos_9.iloc[1,3] = bonos_9.iloc[0,17]
+      #bonos_procesos_9.iloc[2,3] = bonos_9.iloc[0,27]
+      #bonos_procesos_9.iloc[3,3] = bonos_9.iloc[0,37]
+      #bonos_procesos_9.iloc[4,3] = bonos_9.iloc[0,47]
+      #bonos_procesos_9.iloc[5,3] = bonos_9.iloc[0,57]
+      #bonos_procesos_9.iloc[6,3] = bonos_9.iloc[0,67]
+      #bonos_procesos_9.iloc[7,3] = bonos_9.iloc[0,77]
+      #bonos_procesos_9.iloc[8,3] = bonos_9.iloc[0,87]
 
       #  Control de Calidad Conformación #
       
