@@ -532,8 +532,8 @@ def Bonos_Extras(usuario,puesto):
     placeholder30_9 = st.empty()
     periodo_9 = placeholder30_9.selectbox("Periodo", options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
 
-    placeholder31_9 = st.empty()
-    titulo_bonos_9 = placeholder31_9.subheader("Bonos")
+    #placeholder31_9 = st.empty()
+    #titulo_bonos_9 = placeholder31_9.subheader("Bonos")
     
     bonos_9 = pd.read_sql(f"select a0, a99, a100, a102, a103 FROM bonos WHERE a0='{usuario}' AND a103='{periodo_9}'", con)
     bonos_9= pd.DataFrame(data=bonos_9)
