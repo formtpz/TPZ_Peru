@@ -57,7 +57,7 @@ def CC_Postcampo(usuario,puesto):
   zona_3= placeholder11_3.selectbox("Zona", options=("Urbano","Rural","Sin Geometría"), key="zona_3")
 
   placeholder12_3= st.empty()
-  operador_3= placeholder12_3.selectbox("Operador objeto de CC",options=("Aguilar Quirós Estefanía","Anchía Román Kevin","Bonilla Bonilla Kevin Jesús","Chavarría Barquero María Stefannie","Coto Molina Andrés Mauricio","González Arce Pamela","Gutiérrez Rojas Tatiana","Hernández Smith Ansil Andrés","Jiménez Serrano Cristopher","Luna Salas Daniela María","Orozco Fernández Verónica María","Quirós Elizondo Keilor Antonio","Rojas Arias José Javier","Romero Carazo Brayan Jose","Sanchez Álvarez Mariel","Sánchez Moreira Steve Alberto","Solís Hernández Daniel Alfredo","Vargas  Naranjo Zairy","Vivas Sequeira Seidy Pamela"), key="operador_3")
+  operador_3= placeholder12_3.selectbox("Operador objeto de CC",options=("Estefanía Aguilar Quirós","Kevin Anchía Román","Kevin Jesús Bonilla Bonilla","María Stefannie Chavarría Barquero","Andrés Mauricio Coto Molina","Pamela  González Arce","Tatiana  Gutiérrez Rojas","Ansil Andrés Hernández Smith","Cristopher Jiménez Serrano","Daniela María Luna Salas","Verónica María Orozco Fernández","Keilor Antonio Quirós Elizondo","José Javier Rojas Arias","Brayan Jose Romero Carazo","Mariel  Sanchez Álvarez","Steve Alberto Sánchez Moreira","Daniel Alfredo Solís Hernández","Seidy Pamela Vivas Sequeira"), key="operador_3")
 
   placeholder13_3= st.empty()
   tipo_3= placeholder13_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección"," Reproceso Segunda Reinspección"), key="tipo_3")
