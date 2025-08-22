@@ -140,7 +140,7 @@ def Bonos_Extras(usuario,puesto):
       placeholder15_9 = st.empty()
       titulo_bonos_9 = placeholder15_9.subheader("Bonos")
       
-      bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23 from bonos where a103='{periodo_9}'", con)
+      bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23 from bonos where a23='{periodo_9}'", con)
       bonos_9=  pd.DataFrame(data=bonos_9)
 
 
@@ -153,23 +153,34 @@ def Bonos_Extras(usuario,puesto):
 
       else:
 
+        bono_productividad_9=0
+        bono_calidad_9=0
+        bono_supervision_9=0
+        bono_calidad_externa_igac_9=0
         bonos_variables_9=0
         bonos_fijos_9=0
-        otros_bonos_9=0
+        bono_total_9=0
         
         for a in range(0,pivot1):
-
-            bonos_variables_9 = bonos_variables_9 + sum([float(bonos_9.iloc[a,65]),float(bonos_9.iloc[a,66]),float(bonos_9.iloc[a,67]),float(bonos_9.iloc[a,68]),float(bonos_9.iloc[a,69]),float(bonos_9.iloc[a,70]),float(bonos_9.iloc[a,71]),float(bonos_9.iloc[a,72]),float(bonos_9.iloc[a,73])])
-            bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,75]),float(bonos_9.iloc[a,76]),float(bonos_9.iloc[a,77]),float(bonos_9.iloc[a,78]),float(bonos_9.iloc[a,79]),float(bonos_9.iloc[a,80]),float(bonos_9.iloc[a,81]),float(bonos_9.iloc[a,82]),float(bonos_9.iloc[a,83])])
-            otros_bonos_9 = otros_bonos_9 + sum([float(bonos_9.iloc[a,95]),float(bonos_9.iloc[a,96]),float(bonos_9.iloc[a,97]),float(bonos_9.iloc[a,98]),float(bonos_9.iloc[a,99])])
-            bonos_total=sum([float(bonos_variables_9),float(bonos_fijos_9),float(otros_bonos_9)])
-            
+          bono_productividad_9 = bono_productividad_9 + sum([float(bonos_9.iloc[a,8])])
+          bono_calidad_9 = bono_calidad_9 + sum([float(bonos_9.iloc[a,15])])
+          bono_supervision_9 = bono_supervision_9 + sum([float(bonos_9.iloc[a,17])])
+          bono_calidad_externa_igac_9 = bono_calidad_externa_igac_9 + sum([float(bonos_9.iloc[a,18])])
+          bonos_variables_9 = bonos_variables_9 + sum([float(bonos_9.iloc[a,21])])
+          bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,16])])
+          #bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,75]),float(bonos_9.iloc[a,76]),float(bonos_9.iloc[a,77]),float(bonos_9.iloc[a,78]),float(bonos_9.iloc[a,79]),float(bonos_9.iloc[a,80]),float(bonos_9.iloc[a,81]),float(bonos_9.iloc[a,82]),float(bonos_9.iloc[a,83])])
+          bono_total_9= bono_total_9 + sum([float(bonos_9.iloc[a,22])])
+          #a8-bono productividad a15-bono calidad a16-bono fijo a17-bono por supervision a18-bono calidad externa igac a21 bono variable a22 bono total
+        
         placeholder17_9 = st.empty()
-        col1, col2, col3, col4 = placeholder17_9.columns(4)
-        col1.metric("Bonos Variables",bonos_variables_9)
-        col2.metric("Bonos Fijos",bonos_fijos_9)
-        col3.metric("Otros Bonos",otros_bonos_9)
-        col4.metric("Total",bonos_total)
+        col1, col2, col3, col4, col5, col6, col7 = placeholder17_9.columns(7)
+        col1.metric("Bono Productividad", bono_productividad_9)
+        col2.metric("Bono Calidad", bono_calidad_9)
+        col3.metric("Bono Supervisión", bono_supervision_9)
+        col4.metric("Bono Calidad Externa IGAC", bono_calidad_externa_igac_9)
+        col5.metric("Bono Variable", bonos_variables_9)
+        col6.metric("Bono Fijo", bonos_fijos_9)
+        col7.metric("Bono Total", bono_total_9)
 
       placeholder18_9 = st.empty()
       titulo_extras_9 = placeholder18_9.subheader("Horas Extra")
@@ -200,7 +211,7 @@ def Bonos_Extras(usuario,puesto):
       placeholder21_9 = st.empty()
       titulo_bonos_9 = placeholder21_9.subheader("Bonos")
       
-      bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23 from bonos where a1='{personal_9}' and a103='{periodo_9}'", con)
+      bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23 from bonos where a1='{personal_9}' and a23='{periodo_9}'", con)
       bonos_9=  pd.DataFrame(data=bonos_9)
     
 
