@@ -554,7 +554,7 @@ def Bonos_Extras(usuario,puesto):
       col1, col2 = placeholder33_9.columns(2)
       col1.metric("Bonos Variables", bonos_variables_9)
       col2.metric("Bonos Fijos", bonos_fijos_9)
-      col2.metric("Bono Total", bonos_fijos_9)
+      col2.metric("Bono Total", bonos_total_9)
 
       # Procesos #
       
