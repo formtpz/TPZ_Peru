@@ -225,13 +225,13 @@ def Bonos_Extras(usuario,puesto):
       else:
 
         # Resumen #
-        bono_productividad_9=sum([float(bonos_9.iloc[a,8])])
-        bono_calidad_9=sum([float(bonos_9.iloc[a,15])])
-        bono_supervision_9=sum([float(bonos_9.iloc[a,17])])
-        bono_calidad_externa_igac_9=sum([float(bonos_9.iloc[a,18])])
-        bonos_variables_9=sum([float(bonos_9.iloc[a,21])])
-        bonos_fijos_9=sum([float(bonos_9.iloc[a,16])])
-        bono_total_9=sum([float(bonos_9.iloc[a,22])])
+        bono_productividad_9=sum([float(bonos_9.iloc[0,8])])
+        bono_calidad_9=sum([float(bonos_9.iloc[0,15])])
+        bono_supervision_9=sum([float(bonos_9.iloc[0,17])])
+        bono_calidad_externa_igac_9=sum([float(bonos_9.iloc[0,18])])
+        bonos_variables_9=sum([float(bonos_9.iloc[0,21])])
+        bonos_fijos_9=sum([float(bonos_9.iloc[0,16])])
+        bono_total_9=sum([float(bonos_9.iloc[0,22])])
         
         placeholder23_9 = st.empty()
         col1, col2, col3, col4, col5, col6, col7 = placeholder23_9.columns(7)
