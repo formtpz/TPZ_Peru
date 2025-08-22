@@ -551,10 +551,10 @@ def Bonos_Extras(usuario,puesto):
       bonos_fijos_9 = float(bonos_9.iloc[0, 2]) #+ float(bonos_9.iloc[0, 2])
       bono_total_9 = float(bonos_9.iloc[0, 6])
       placeholder33_9 = st.empty()
-      col1, col2 = placeholder33_9.columns(2)
+      col1, col2, col3 = placeholder33_9.columns(3)
       col1.metric("Bonos Variables", bonos_variables_9)
       col2.metric("Bonos Fijos", bonos_fijos_9)
-      col2.metric("Bono Total", bono_total_9)
+      col3.metric("Bono Total", bono_total_9)
 
       # Procesos #
       
