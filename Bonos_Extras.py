@@ -534,8 +534,8 @@ def Bonos_Extras(usuario,puesto):
 
     #placeholder31_9 = st.empty()
     #titulo_bonos_9 = placeholder31_9.subheader("Bonos")
-    
-    bonos_9 = pd.read_sql(f"select a0, a99, a100, a102, a103 FROM bonos WHERE a0='{usuario}' AND a103='{periodo_9}'", con)
+    #a8-bono productividad a15-bono calidad a16-bono fijo a17-bono por supervision a18-bono calidad externa igac a21 bono variable a22 bono total
+    bonos_9 = pd.read_sql(f"select a8, a15, a16, a17, a18, a21, a22, a23 FROM bonos WHERE a0='{usuario}' AND a23='{periodo_9}'", con)
     bonos_9= pd.DataFrame(data=bonos_9)
     
     pivot5= len(bonos_9.iloc[:,0])
@@ -547,14 +547,14 @@ def Bonos_Extras(usuario,puesto):
     else:
       # Reemplaza nulos por 0 y suma solo las columnas necesarias
 
-      bonos_variables_9 = float(bonos_9.iloc[0, 3]) + float(bonos_9.iloc[0, 1])
-      bonos_fijos_9 = float(bonos_9.iloc[0, 3]) + float(bonos_9.iloc[0, 2])
-      
+      bonos_variables_9 = float(bonos_9.iloc[0, 5]) # + float(bonos_9.iloc[0, 1])
+      bonos_fijos_9 = float(bonos_9.iloc[0, 2]) #+ float(bonos_9.iloc[0, 2])
+      bono_total_9 = float(bonos_9.iloc[0, 6])
       placeholder33_9 = st.empty()
       col1, col2 = placeholder33_9.columns(2)
       col1.metric("Bonos Variables", bonos_variables_9)
-      col2.metric("Bonos Fijos", bonos_fijos_9)  # Aquí puedes cambiar si quieres otro total
-
+      col2.metric("Bonos Fijos", bonos_fijos_9)
+      col2.metric("Bono Total", bonos_fijos_9)
 
       # Procesos #
       
