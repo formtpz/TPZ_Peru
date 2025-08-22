@@ -547,13 +547,22 @@ def Bonos_Extras(usuario,puesto):
     else:
       # Reemplaza nulos por 0 y suma solo las columnas necesarias
 
-      bonos_variables_9 = float(bonos_9.iloc[0, 5]) # + float(bonos_9.iloc[0, 1])
-      bonos_fijos_9 = float(bonos_9.iloc[0, 2]) #+ float(bonos_9.iloc[0, 2])
+      bono_productividad_9= float(bonos_9.iloc[0, 0]) 
+      bono_calidad_9= float(bonos_9.iloc[0, 1]) 
+      bono_supervision_9= float(bonos_9.iloc[0, 3])
+      bono_calidad_externa_igac_9= float(bonos_9.iloc[0, 4]) 
+      bonos_variables_9 = float(bonos_9.iloc[0, 5]) 
+      bonos_fijos_9 = float(bonos_9.iloc[0, 2]) 
       bono_total_9 = float(bonos_9.iloc[0, 6])
+      
       placeholder33_9 = st.empty()
-      col1, col2, col3 = placeholder33_9.columns(3)
-      col1.metric("Bonos Variables", bonos_variables_9)
-      col2.metric("Bonos Fijos", bonos_fijos_9)
+      col1, col2, col3 = placeholder33_9.columns(7)
+      col1.metric("Bono Productividad", bono_productividad_9)
+      col2.metric("Bono Calidad", bono_calidad_9)
+      col3.metric("Bono Supervisión", bono_supervision_9)
+      col3.metric("Bono Calidad Externa IGAC", bono_calidad_externa_igac_9)
+      col3.metric("Bono Variable", bonos_variables_9)
+      col3.metric("Bono Fijo", bonos_fijos_9)
       col3.metric("Bono Total", bono_total_9)
 
       # Procesos #
