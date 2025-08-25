@@ -54,11 +54,11 @@ def Procesos1(usuario,puesto):
         placeholder15_2 = st.empty()
         cc_postcampo_2 = placeholder15_2.button(":blue[Control de Calidad Postcampo]",key="cc_postcampo_2")
 
-        #placeholder16_2 = st.empty()
-        #restitucion_tierras_2 = placeholder16_2.button("Restitución de Tierras",key="restitucion_tierras_2")
+        placeholder16_2 = st.empty()
+        restitucion_tierras_2 = placeholder16_2.button("Restitución de Tierras",key="restitucion_tierras_2")
 
-        #placeholder17_2 = st.empty()
-        #revision_segregados_2 = placeholder17_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
+        placeholder17_2 = st.empty()
+        revision_segregados_2 = placeholder17_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
 
         #placeholder18_2 = st.empty()
         #estado_uit_hito_2 = placeholder18_2.button("Calidad Externa XTF",key="estado_uit_hito_2")
@@ -82,8 +82,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
@@ -108,8 +108,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
@@ -134,8 +134,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
@@ -160,8 +160,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos_Extras=True
@@ -186,8 +186,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Ingreso= False
             st.session_state.Procesos=True
@@ -267,8 +267,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Precampo=True
@@ -293,8 +293,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Precampo=True
@@ -319,8 +319,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Preparacion_Insumos=True
@@ -371,8 +371,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Postcampo=True
@@ -397,8 +397,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Postcampo=True
@@ -406,55 +406,55 @@ def Procesos1(usuario,puesto):
 
         # ----- Restitución de Tierras ---- #
 
-        #elif restitucion_tierras_2:
+        elif restitucion_tierras_2:
 
-            #placeholder1_2.empty()
-            #placeholder2_2.empty()
-            #placeholder3_2.empty()
-            #placeholder4_2.empty()
-            #placeholder5_2.empty()
-            #placeholder6_2.empty()
-            #placeholder7_2.empty()
-            #placeholder8_2.empty()#
-            #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
-            #placeholder12_2.empty()
-            #placeholder13_2.empty()
-            #placeholder14_2.empty()
-            #placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            #placeholder18_2.empty()
-            #st.session_state.Procesos=True
-            #st.session_state.Restitucion_Tierras=True
-            #Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()#
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            placeholder13_2.empty()
+            placeholder14_2.empty()
+            placeholder15_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            placeholder18_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Restitucion_Tierras=True
+            Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
 
         # ----- Revisión de Predios Segredados ---- #
 
         #elif revision_segregados_2:
 
-            #placeholder1_2.empty()
-            #placeholder2_2.empty()
-            #placeholder3_2.empty()
-            #placeholder4_2.empty()
-            #placeholder5_2.empty()
-            #placeholder6_2.empty()
-            #placeholder7_2.empty()
-            #placeholder8_2.empty()#
-            #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
-            #placeholder12_2.empty()
-            #placeholder13_2.empty()
-            #placeholder14_2.empty()
-            #placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            #placeholder18_2.empty()
-            #st.session_state.Procesos=True
-            #st.session_state.Revision_Segregados=True
-            #Revision_Segregados.Revision_Segregados(usuario,puesto)
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()#
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            placeholder13_2.empty()
+            placeholder14_2.empty()
+            placeholder15_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            placeholder18_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Revision_Segregados=True
+            Revision_Segregados.Revision_Segregados(usuario,puesto)
                    
         # ----- Estado UIT Hito ---- #
 
@@ -593,7 +593,7 @@ def Procesos2(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
             st.session_state.Procesos=True
@@ -614,7 +614,7 @@ def Procesos2(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
             st.session_state.Procesos=True
@@ -635,7 +635,7 @@ def Procesos2(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
             st.session_state.Procesos=True
@@ -656,7 +656,7 @@ def Procesos2(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
             st.session_state.Procesos=True
@@ -677,7 +677,7 @@ def Procesos2(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
             st.session_state.Ingreso = False
@@ -699,7 +699,7 @@ def Procesos2(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
             st.session_state.Procesos=True
@@ -720,7 +720,7 @@ def Procesos2(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
             st.session_state.Procesos=True
@@ -878,11 +878,11 @@ def Procesos3(usuario,puesto):
         #placeholder9_2 = st.empty()
         #consulta_campo_2 = placeholder9_2.button("Consultas de Campo",key="consulta_campo_2")
 
-        #placeholder10_2 = st.empty()
-        #restitucion_tierras_2 = placeholder10_2.button("Restitución de Tierras",key="restitucion_tierras_2")
+        placeholder10_2 = st.empty()
+        restitucion_tierras_2 = placeholder10_2.button("Restitución de Tierras",key="restitucion_tierras_2")
 
-        #placeholder11_2 = st.empty()
-        #revision_segregados_2 = placeholder11_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
+        placeholder11_2 = st.empty()
+        revision_segregados_2 = placeholder11_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
               
        # ----- Historial ---- #
 
@@ -897,8 +897,8 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             #placeholder8_2.empty()
             #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -916,8 +916,8 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             #placeholder8_2.empty()
             #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -935,8 +935,8 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             #placeholder8_2.empty()
             #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -954,8 +954,8 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             #placeholder8_2.empty()
             #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos_Extras=True
             Bonos_Extras.Bonos_Extras(usuario,puesto)
@@ -973,8 +973,8 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             #placeholder8_2.empty()
             #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
             st.session_state.Ingreso = False
             st.session_state.Procesos = True
             st.session_state.Salir=True
@@ -1021,41 +1021,41 @@ def Procesos3(usuario,puesto):
         
         # ----- Restitución de Tierras ---- #
 
-        #elif restitucion_tierras_2:
+        elif restitucion_tierras_2:
 
-            #placeholder1_2.empty()
-            #placeholder2_2.empty()
-            #placeholder3_2.empty()
-            #placeholder4_2.empty()
-            #placeholder5_2.empty()
-            #placeholder6_2.empty()
-            #placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
-            #st.session_state.Procesos=True
-            #st.session_state.Restitucion_Tierras=True
-            #Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Restitucion_Tierras=True
+            Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
 
         # ----- Revisión de Predios Segredados ---- #
 
-        #elif revision_segregados_2:
+        elif revision_segregados_2:
 
-            #placeholder1_2.empty()
-            #placeholder2_2.empty()
-            #placeholder3_2.empty()
-            #placeholder4_2.empty()
-            #placeholder5_2.empty()
-            #placeholder6_2.empty()
-            #placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
-            #st.session_state.Procesos=True
-            #st.session_state.Revision_Segregados=True
-            #Revision_Segregados.Revision_Segregados(usuario,puesto)
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Revision_Segregados=True
+            Revision_Segregados.Revision_Segregados(usuario,puesto)
     
     elif st.session_state.Procesos==True:
 
