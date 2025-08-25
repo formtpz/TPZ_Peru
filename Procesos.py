@@ -267,8 +267,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
+            #placeholder16_2.empty()
+            #placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Precampo=True
@@ -293,9 +293,9 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            placeholder18_2.empty()
+            #placeholder16_2.empty()
+            #placeholder17_2.empty()
+            #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Precampo=True
             CC_Precampo.CC_Precampo(usuario,puesto)
@@ -311,17 +311,17 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
+            #placeholder8_2.empty()
+            #placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            placeholder18_2.empty()
+            #placeholder16_2.empty()
+            #placeholder17_2.empty()
+            #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Preparacion_Insumos=True
             Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
@@ -371,8 +371,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
+            #placeholder16_2.empty()
+            #placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Postcampo=True
@@ -397,8 +397,8 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
+            #placeholder16_2.empty()
+            #placeholder17_2.empty()
             #placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Postcampo=True
