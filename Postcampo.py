@@ -62,8 +62,8 @@ def Postcampo(usuario,puesto):
   placeholder13_3= st.empty()
   manzana_3= placeholder13_3.selectbox("Manzana", options=("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"),key="manzana_3")
   
-  placeholder14_3= st.empty()
-  paquete_3= placeholder14_3.text_input("Número de Paquete",max_chars=60,key="paquete_3")
+  #placeholder14_3= st.empty()
+  #paquete_3= placeholder14_3.text_input("Número de Paquete",max_chars=60,key="paquete_3")
   
   placeholder15_3= st.empty()
   tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Corrección de Calidad"), key="tipo_3")
@@ -314,6 +314,6 @@ def Postcampo(usuario,puesto):
     #else:
       #lote_3 = '1'
       # ----- Fin del script ---- #
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','{area_3}','{efes_3}','{informales_3}','{paquete_3}','0','0','{observaciones_3}','{zona_3}','N/A','{horas_bi}','{area_bi}','N/A','0','0','N/A','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','{area_3}','{efes_3}','{informales_3}','N/A','0','0','{observaciones_3}','{zona_3}','N/A','{horas_bi}','{area_bi}','N/A','0','0','N/A','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
