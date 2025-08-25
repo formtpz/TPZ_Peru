@@ -51,13 +51,13 @@ def Revision_Campo(usuario,puesto):
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
   
   placeholder10_3= st.empty()
-  municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
+  distrito_3= placeholder10_3.selectbox("Distrito", options=("Chorrillos","San Juan De Miraflores","Villa el Salvador"), key="distrito_3")
 
   placeholder11_3= st.empty()
   consecutivo_3= placeholder11_3.text_input("Número de Paquete",max_chars=15,key="consecutivo_3")
 
   placeholder12_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Tercera Reinspección","Cuarta Reinspección","Reproceso Inspección","Reproceso Primera Reinspección","Reproceso Segunda Reinspección","Reproceso Tercera Reinspección","Reproceso cuarta Reinspección"), key="tipo_3")
+  tipo_3= placeholder12_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección"), key="tipo_3")
 
   placeholder13_3= st.empty()
   zona_3= placeholder13_3.selectbox("zona", options=("Rural","Urbano"), key="zona_3")
@@ -253,18 +253,18 @@ def Revision_Campo(usuario,puesto):
 
     # ----- Almacenar Lote_3 según municipio seleccionado ---- #
     
-    lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}
-    lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
+    #lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}
+    #lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
    
-    if municipio_3 in lote_3_municipios:
-      lote_3 = '3'
-    elif municipio_3 in lote_2_municipios:
-      lote_3 = '2'
-    else:
-      lote_3 = '1'
+    #if municipio_3 in lote_3_municipios:
+      #lote_3 = '3'
+    #elif municipio_3 in lote_2_municipios:
+      #lote_3 = '2'
+    #else:
+      #lote_3 = '1'
       # ----- Fin del script ---- #
-    unidad_3=municipio_3
+    #unidad_3=municipio_3
     horas_bi = float(horas_3)
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Revisión de Campo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','{consecutivo_3}','0','0','N/A','{zona_3}','N/A','{horas_bi}','0','N/A','0','0','N/A','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Revisión de Campo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','{consecutivo_3}','0','0','N/A','{zona_3}','N/A','{horas_bi}','0','N/A','0','0','N/A','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
