@@ -406,7 +406,7 @@ def Procesos1(usuario,puesto):
 
         # ----- Restitución de Tierras ---- #
 
-        elif restitucion_tierras_2:
+        #elif restitucion_tierras_2:
 
             #placeholder1_2.empty()
             #placeholder2_2.empty()
@@ -750,24 +750,24 @@ def Procesos2(usuario,puesto):
 
          # ----- Revisión de Campo ---- #
 
-        #elif revision_campo_2:
+        elif revision_campo_2:
 
-            #placeholder1_2.empty()
-            #placeholder2_2.empty()
-            #placeholder3_2.empty()
-            #placeholder4_2.empty()
-            #placeholder5_2.empty()
-            #placeholder6_2.empty()
-            #placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
-            #placeholder12_2.empty()
-            #placeholder13_2.empty()
-            #st.session_state.Procesos=True
-            #st.session_state.Revision_Campo=True
-            #Revision_Campo.Revision_Campo(usuario,puesto)
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            placeholder13_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Revision_Campo=True
+            Revision_Campo.Revision_Campo(usuario,puesto)
 
         # ----- Postcampo ---- #
 
