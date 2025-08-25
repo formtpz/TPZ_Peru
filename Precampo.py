@@ -51,19 +51,19 @@ def Precampo(usuario,puesto):
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
   
   placeholder10_3= st.empty()
-  municipio_3= placeholder10_3.selectbox("Distrito", options=("Chorrillos","San Juan De Miraflores","Villa el Salvador"), key="municipio_3")
+  municipio_3= placeholder10_3.selectbox("Distrito", options=("Chorrillos","San Juan De Miraflores","Villa el Salvador"),key="municipio_3")
   
   placeholder11_3= st.empty()
-  sector_3= placeholder11_3.selectbox("Sector", options=("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"), key="sector_3")
+  sector_3= placeholder11_3.selectbox("Sector", options=("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"),key="sector_3")
 
   placeholder12_3= st.empty()
-  manzana_3= placeholder12_3.selectbox("Manzana", options=("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"), key="manzana_3")
+  manzana_3= placeholder12_3.selectbox("Manzana", options=("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"),key="manzana_3")
 
   placeholder13_3= st.empty()
-  zona_3= placeholder13_3.selectbox("Zona",options=("Urbano","Rural","Sin Geometría"), key="zona_3")
+  zona_3= placeholder13_3.selectbox("Zona",options=("Urbano","Rural","Sin Geometría"),key="zona_3")
   
   placeholder14_3= st.empty()
-  tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Corrección de Calidad"), key="tipo_3")
+  tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Corrección de Calidad"),key="tipo_3")
   
   placeholder15_3= st.empty()
   estado_3= placeholder15_3.selectbox("Estado" , options=("En Proceso", "Finalizado"),key="estado_3")
