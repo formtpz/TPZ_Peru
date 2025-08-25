@@ -108,7 +108,7 @@ def Postcampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
+    #placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
@@ -152,7 +152,7 @@ def Postcampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
+    #placeholder14_3.empty()#
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
@@ -182,7 +182,7 @@ def Postcampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
+    #placeholder14_3.empty()#
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
@@ -212,7 +212,7 @@ def Postcampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
+    #placeholder14_3.empty()#
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
@@ -272,7 +272,7 @@ def Postcampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
+    #placeholder14_3.empty()#
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
