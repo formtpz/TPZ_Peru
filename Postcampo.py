@@ -242,7 +242,7 @@ def Postcampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
+    #placeholder14_3.empty()#
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
@@ -304,15 +304,15 @@ def Postcampo(usuario,puesto):
     area_bi= float(area_3)
       # ----- Almacenar Lote_3 según municipio seleccionado ---- #
     
-    #lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}
-    #lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
+    #lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}#
+    #lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}#
    
-    #if municipio_3 in lote_3_municipios:
-      #lote_3 = '3'
-    #elif municipio_3 in lote_2_municipios:
-      #3lote_3 = '2'
-    #else:
-      #lote_3 = '1'
+    #if municipio_3 in lote_3_municipios:#
+      #lote_3 = '3'#
+    #elif municipio_3 in lote_2_municipios:#
+      #3lote_3 = '2'#
+    #else:#
+      #lote_3 = '1'#
       # ----- Fin del script ---- #
     cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','{area_3}','{efes_3}','{informales_3}','N/A','0','0','{observaciones_3}','{zona_3}','N/A','{horas_bi}','{area_bi}','N/A','0','0','N/A','0')")
     con.commit()                                                                                                                                 
