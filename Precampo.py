@@ -72,10 +72,10 @@ def Precampo(usuario,puesto):
   produccion_3= placeholder16_3.number_input("Cantidad Total de Predios Producidos",min_value=0,key="produccion_3")
 
   placeholder17_3= st.empty()
-  informales_3= placeholder17_3.number_input("Cantidad de Predios Informales",min_value=0,key="informales_3")
+  informales_3= placeholder17_3.number_input("Cantidad de Edficas",min_value=0,key="informales_3")
   
   placeholder18_3= st.empty()
-  efes_3= placeholder18_3.number_input("Cantidad de F",min_value=0,key="efes_3")
+  efes_3= placeholder18_3.number_input("Cantidad de Construcciones",min_value=0,key="efes_3")
   
   placeholder19_3= st.empty()
   horas_3= placeholder19_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
