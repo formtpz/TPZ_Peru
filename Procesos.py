@@ -37,16 +37,16 @@ def Procesos1(usuario,puesto):
         #consulta_campo_2 = placeholder9_2.button("Consultas de Campo",key="consulta_campo_2")
 
         placeholder10_2 = st.empty()
-        precampo_2 = placeholder10_2.button("Precampo",key="precampo_2")
+        precampo_2 = placeholder10_2.button(":green[Precampo]",key="precampo_2")
 
         placeholder11_2 = st.empty()
-        cc_precampo_2 = placeholder11_2.button("Control de Calidad Precampo",key="cc_precampo_2")
+        cc_precampo_2 = placeholder11_2.button(":green[Control de Calidad Precampo]",key="cc_precampo_2")
         
         placeholder12_2 = st.empty()
-        preparacion_insumos_2 = placeholder12_2.button("Preparación de Insumos",key="preparacion_insumos_2") 
+        preparacion_insumos_2 = placeholder12_2.button(":gray[Preparación de Insumos]",key="preparacion_insumos_2") 
         
         placeholder13_2 = st.empty()
-        revision_campo_2 = placeholder13_2.button("Revisión de Campo",key="revision_campo_2")
+        revision_campo_2 = placeholder13_2.button(":gray[Revisión de Campo]",key="revision_campo_2")
 
         placeholder14_2 = st.empty()
         postcampo_2 = placeholder14_2.button(":blue[Postcampo]",key="postcampo_2")
