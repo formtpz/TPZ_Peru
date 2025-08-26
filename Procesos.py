@@ -478,9 +478,9 @@ def Procesos1(usuario,puesto):
             placeholder16_2.empty()
             placeholder17_2.empty()
             placeholder18_2.empty()
-           st.session_state.Procesos=True
-           st.session_state.Estado_UIT_Hito=True
-           Estado_UIT_Hito.Estado_UIT_Hito(usuario,puesto)
+            st.session_state.Procesos=True
+            st.session_state.Estado_UIT_Hito=True
+            Estado_UIT_Hito.Estado_UIT_Hito(usuario,puesto)
 
     elif st.session_state.Procesos==True:
 
