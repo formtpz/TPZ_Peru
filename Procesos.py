@@ -54,14 +54,14 @@ def Procesos1(usuario,puesto):
         placeholder15_2 = st.empty()
         cc_postcampo_2 = placeholder15_2.button(":blue[Control de Calidad Postcampo]",key="cc_postcampo_2")
 
-        placeholder16_2 = st.empty()
-        restitucion_tierras_2 = placeholder16_2.button("Restitución de Tierras",key="restitucion_tierras_2")
+        #placeholder16_2 = st.empty()
+        #restitucion_tierras_2 = placeholder16_2.button("Restitución de Tierras",key="restitucion_tierras_2")
 
-        placeholder17_2 = st.empty()
-        revision_segregados_2 = placeholder17_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
+        #placeholder17_2 = st.empty()
+        #revision_segregados_2 = placeholder17_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
 
         placeholder18_2 = st.empty()
-        estado_uit_hito_2 = placeholder18_2.button("Calidad Externa XTF",key="estado_uit_hito_2")
+        estado_uit_hito_2 = placeholder18_2.button("Calidad Interna XTF",key="estado_uit_hito_2")
 
         # ----- Historial ---- #
 
