@@ -33,7 +33,7 @@ def Procesos1(usuario,puesto):
         #placeholder8_2 = st.empty()
         #fmi_2 = placeholder8_2.button("Procesos Jurídico", key="fmi_2")
 
-       #placeholder9_2 = st.empty()
+        #placeholder9_2 = st.empty()
         #consulta_campo_2 = placeholder9_2.button("Consultas de Campo",key="consulta_campo_2")
 
         placeholder10_2 = st.empty()
@@ -84,7 +84,7 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             placeholder17_2.empty()
-            #placeholder18_2.empty()
+            placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -110,7 +110,7 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             placeholder17_2.empty()
-            #placeholder18_2.empty()
+            placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -136,7 +136,7 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             placeholder17_2.empty()
-            #placeholder18_2.empty()
+            placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -162,7 +162,7 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             placeholder17_2.empty()
-            #placeholder18_2.empty()
+            placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos_Extras=True
             Bonos_Extras.Bonos_Extras(usuario,puesto)
@@ -188,7 +188,7 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             placeholder17_2.empty()
-            #placeholder18_2.empty()
+            placeholder18_2.empty()
             st.session_state.Ingreso= False
             st.session_state.Procesos=True
             st.session_state.Salir=True
@@ -269,7 +269,7 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             placeholder17_2.empty()
-            #placeholder18_2.empty()
+            placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Precampo=True
             Precampo.Precampo(usuario,puesto)
@@ -295,7 +295,7 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             placeholder17_2.empty()
-            #placeholder18_2.empty()
+            placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Precampo=True
             CC_Precampo.CC_Precampo(usuario,puesto)
@@ -321,7 +321,7 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             placeholder17_2.empty()
-            #placeholder18_2.empty()
+            placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Preparacion_Insumos=True
             Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
@@ -373,7 +373,7 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             placeholder17_2.empty()
-            #placeholder18_2.empty()
+            placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Postcampo=True
             Postcampo.Postcampo(usuario,puesto)
@@ -399,7 +399,7 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             placeholder17_2.empty()
-            #placeholder18_2.empty()
+            placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Postcampo=True
             CC_Postcampo.CC_Postcampo(usuario,puesto)
