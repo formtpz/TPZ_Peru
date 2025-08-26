@@ -53,7 +53,7 @@ uri=st.secrets.db_credentials.URI
 pivot=0 # Se requiere para mantener las indicaciones generales en caso de errores de ingreso
 
 placeholder1_1= st.sidebar.empty()
-titulo_1= placeholder1_1.title("Ingresos")
+titulo_1= placeholder1_1.title("Ingreso")
 
 placeholder2_1= st.sidebar.empty()
 usuario=placeholder2_1.text_input("Usuario",key="usuario")
