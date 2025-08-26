@@ -5,9 +5,8 @@ import pandas as pd
 from PIL import Image
 import Autenticacion, Procesos
 import importlib
-import utils  # tu módulo auxiliar
 
-importlib.reload(utils)
+importlib.reload(Procesos)
 
 # ----- Formato General ---- #
 
