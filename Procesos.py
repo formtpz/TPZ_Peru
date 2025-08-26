@@ -28,7 +28,7 @@ def Procesos1(usuario,puesto):
         salir_2 = placeholder6_2.button("Salir",key="salir_2")
 
         placeholder7_2 = st.empty()
-        procesos_2 = placeholder7_2.title(":blue[Procesos]")
+        procesos_2 = placeholder7_2.title("Procesos")
 
         #placeholder8_2 = st.empty()
         #fmi_2 = placeholder8_2.button("Procesos Jurídico", key="fmi_2")
