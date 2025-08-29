@@ -100,7 +100,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.Procesos=False
     st.session_state.CC_Postcampo=False
@@ -140,7 +140,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.CC_Postcampo=False
     st.session_state.Historial=True
@@ -166,7 +166,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.CC_Postcampo=False
     st.session_state.Capacitacion=True
@@ -192,7 +192,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.CC_Postcampo=False
     st.session_state.Otros_Registros=True
@@ -218,7 +218,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.CC_Postcampo=False
     st.session_state.Bonos_Extras=True
@@ -244,7 +244,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.Ingreso = False
     st.session_state.CC_Postcampo=False
