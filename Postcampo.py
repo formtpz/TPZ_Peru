@@ -53,35 +53,35 @@ def Postcampo(usuario,puesto):
   placeholder10_3= st.empty()
   distrito_3= placeholder10_3.selectbox("Distrito", options=("Chorrillos","San Juan De Miraflores","Villa el Salvador"), key="distrito_3")
 
-  placeholder11_3= st.empty()
-  zona_3= placeholder11_3.selectbox("Zona", options=("Urbano","Rural","Sin Geometría"), key="zona_3")
+  #placeholder11_3= st.empty()
+  #zona_3= placeholder11_3.selectbox("Zona", options=("Urbano","Rural","Sin Geometría"), key="zona_3")
   
   placeholder12_3= st.empty()
-  sector_3= placeholder12_3.selectbox("Sector", options=("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"), key="sector_3")
+  sector_3= placeholder12_3.selectbox("Sector", options=("001","002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018","019","020","021","022","023","024","025","026","027","028","029","030"), key="sector_3")
 
   placeholder13_3= st.empty()
-  manzana_3= placeholder13_3.selectbox("Manzana", options=("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"),key="manzana_3")
+  manzana_3= placeholder13_3.selectbox("Manzana", options=("001","002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018","019","020","021","022","023","024","025","026","027","028","029","030"),key="manzana_3")
   
   #placeholder14_3= st.empty()
   #paquete_3= placeholder14_3.text_input("Número de Paquete",max_chars=60,key="paquete_3")
   
   placeholder15_3= st.empty()
-  tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Corrección de Calidad"), key="tipo_3")
+  tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","reproceso Ordinario","Corrección de Calidad"), key="tipo_3")
   
   placeholder16_3= st.empty()
-  estado_3= placeholder16_3.selectbox("Estado" , options=("En Proceso", "Finalizado"),key="estado_3")
+  estado_3= placeholder16_3.selectbox("Estado" , options=("Finalizado","En Conflicto"),key="estado_3")
   
   placeholder17_3= st.empty()
   area_3= placeholder17_3.number_input("Area en m²",min_value=0.0,key="area_3")
   
   placeholder18_3= st.empty()
-  produccion_3= placeholder18_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="produccion_3")
+  produccion_3= placeholder18_3.number_input("Cantidad de lotes Producidos",min_value=0,step=1,key="produccion_3")
   
   placeholder19_3= st.empty()
   informales_3= placeholder19_3.number_input("Cantidad de Edificas",min_value=0,step=1,key="informales_3")
   
-  placeholder20_3= st.empty()
-  efes_3= placeholder20_3.number_input("Cantidad de Construcciones",min_value=0,step=1,key="efes_3")
+  #placeholder20_3= st.empty()
+  #efes_3= placeholder20_3.number_input("Cantidad de Construcciones",min_value=0,step=1,key="efes_3")
   
   placeholder21_3= st.empty()
   horas_3= placeholder21_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
@@ -105,7 +105,7 @@ def Postcampo(usuario,puesto):
     placeholder8_3.empty()
     placeholder9_3.empty()
     placeholder10_3.empty()
-    placeholder11_3.empty()
+    #placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
     #placeholder14_3.empty()
@@ -114,7 +114,7 @@ def Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    placeholder20_3.empty()
+    #placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -149,7 +149,7 @@ def Postcampo(usuario,puesto):
     placeholder8_3.empty()
     placeholder9_3.empty()
     placeholder10_3.empty()
-    placeholder11_3.empty()
+    #placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
     #placeholder14_3.empty()#
@@ -158,7 +158,7 @@ def Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    placeholder20_3.empty()
+    #placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -179,7 +179,7 @@ def Postcampo(usuario,puesto):
     placeholder8_3.empty()
     placeholder9_3.empty()
     placeholder10_3.empty()
-    placeholder11_3.empty()
+    #placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
     #placeholder14_3.empty()#
@@ -188,7 +188,7 @@ def Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    placeholder20_3.empty()
+    #placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -209,7 +209,7 @@ def Postcampo(usuario,puesto):
     placeholder8_3.empty()
     placeholder9_3.empty()
     placeholder10_3.empty()
-    placeholder11_3.empty()
+    #placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
     #placeholder14_3.empty()#
@@ -218,7 +218,7 @@ def Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    placeholder20_3.empty()
+    #placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -239,7 +239,7 @@ def Postcampo(usuario,puesto):
     placeholder8_3.empty()
     placeholder9_3.empty()
     placeholder10_3.empty()
-    placeholder11_3.empty()
+    #placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
     #placeholder14_3.empty()#
@@ -248,7 +248,7 @@ def Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    placeholder20_3.empty()
+    #placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -269,7 +269,7 @@ def Postcampo(usuario,puesto):
     placeholder8_3.empty()
     placeholder9_3.empty()
     placeholder10_3.empty()
-    placeholder11_3.empty()
+    #placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
     #placeholder14_3.empty()#
@@ -278,7 +278,7 @@ def Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    placeholder20_3.empty()
+    #placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -314,6 +314,6 @@ def Postcampo(usuario,puesto):
     #else:#
       #lote_3 = '1'#
       # ----- Fin del script ---- #
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','{area_3}','{efes_3}','{informales_3}','N/A','0','0','{observaciones_3}','{zona_3}','N/A','{horas_bi}','{area_bi}','N/A','0','0','N/A','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','{area_3}','N/A','{informales_3}','N/A','0','0','{observaciones_3}','N/A','N/A','{horas_bi}','{area_bi}','N/A','0','0','N/A','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
