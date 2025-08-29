@@ -66,7 +66,7 @@ def Precampo(usuario,puesto):
   tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Reproceso Ordinario","Corrección de Calidad"),key="tipo_3")
   
   placeholder15_3= st.empty()
-  estado_3= placeholder15_3.selectbox("Estado" , options=("En Proceso", "En conflicto"),key="estado_3")
+  estado_3= placeholder15_3.selectbox("Estado" , options=("Finalizado", "En conflicto"),key="estado_3")
   
   placeholder16_3= st.empty()
   produccion_3= placeholder16_3.number_input("Cantidad Total de Lotes Producidos",min_value=0,key="produccion_3")
