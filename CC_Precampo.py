@@ -54,7 +54,7 @@ def CC_Precampo(usuario,puesto):
   municipio_3= placeholder10_3.selectbox("Distrito", options=("Chorrillos","San Juan De Miraflores","Villa el Salvador"),key="municipio_3")
   
   placeholder11_3= st.empty()
-  zona_3= placeholder11_3.selectbox("Zona", options=("Urbano","Rural","Sin Geometría"), key="zona_3")
+  zona_3= placeholder11_3.selectbox("Manzana", options=("Urbano","Rural","Sin Geometría"), key="zona_3")
 
   placeholder12_3= st.empty()
   operador_3= placeholder12_3.selectbox("Operador objeto de CC",options=("Estefanía Aguilar Quirós","Kevin Anchía Román","Kevin Jesús Bonilla Bonilla","María Stefannie Chavarría Barquero","Andrés Mauricio Coto Molina","Pamela  González Arce","Tatiana  Gutiérrez Rojas","Ansil Andrés Hernández Smith","Cristopher Jiménez Serrano","Daniela María Luna Salas","Verónica María Orozco Fernández","Keilor Antonio Quirós Elizondo","José Javier Rojas Arias","Brayan Jose Romero Carazo","Mariel  Sanchez Álvarez","Steve Alberto Sánchez Moreira","Daniel Alfredo Solís Hernández","Seidy Pamela Vivas Sequeira"), key="operador_3")
