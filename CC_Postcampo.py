@@ -66,10 +66,10 @@ def CC_Postcampo(usuario,puesto):
   tipo_de_errores_3= placeholder14_3.multiselect("Tipo Errores", options=("Numeración errónea o incompleta","Errores geométricos y/o de forma","Polígonos y/o puntos duplicados","Omisión/Comisión de polígonos","Polígonos no se ajustan a ortofoto","Omisión/Comisión de puertas"), key="tipo_de_errores_3")
     
   placeholder15_3= st.empty()
-  aprobados_3= placeholder15_3.number_input("Cantidad de Lotes Aprobados",min_value=0,step=1,key="aprobados_3")
+  aprobados_3= placeholder15_3.number_input("Cantidad de Edificas Aprobados",min_value=0,step=1,key="aprobados_3")
 
   placeholder16_3= st.empty()
-  rechazados_3= placeholder16_3.number_input("Cantidad de Lotes Rechazados",min_value=0,step=1,key="rechazados_3")
+  rechazados_3= placeholder16_3.number_input("Cantidad de Edificas Rechazados",min_value=0,step=1,key="rechazados_3")
   
   placeholder17_3= st.empty()
   horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
