@@ -291,9 +291,9 @@ def Historial(usuario,puesto):
     placeholder21_7 = st.empty()
     producción_7=placeholder21_7.subheader("Resumen de Producción")  
 
-    data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["lotes","horas"]].agg(np.sum)
+    data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["l","horas"]].agg(np.sum)
 
-    data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["lotes"]].agg(np.sum)
+    data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["edificas"]].agg(np.sum)
 
     if pivot_r==0:  
 
@@ -302,14 +302,14 @@ def Historial(usuario,puesto):
 
     else:
 
-      data_2_r ["rendimiento"] = data_2_r["lotes"]/data_2_r["horas"]
+      data_2_r ["rendimiento"] = data_2_r["edificas"]/data_2_r["horas"]
       data_2_r['rendimiento'] *= 8.5 
       
       placeholder23_7 = st.empty()
       historial_7_producción= placeholder23_7.dataframe(data=data_2_r)
 
       data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 0 for x in data_4_r['proceso']]    
-      data_4_r ["diferencia"] = data_4_r["lotes"] - data_4_r["valor esperado"]
+      data_4_r ["diferencia"] = data_4_r["edificas"] - data_4_r["valor esperado"]
 
       placeholder23_2_7 = st.empty()
       historial_7_diferencia= placeholder23_2_7.subheader("Resumen Semanal")  
@@ -336,7 +336,7 @@ def Historial(usuario,puesto):
       
     # ----- Total ---- #
 
-    data_3_r= data_1_r.groupby(["fecha","proceso"], as_index=False)["lotes"].agg(np.sum)
+    data_3_r= data_1_r.groupby(["fecha","proceso"], as_index=False)["edificas"].agg(np.sum)
 
     placeholder27_7 = st.empty()
     total_7=placeholder27_7.subheader("Totales")
@@ -348,7 +348,7 @@ def Historial(usuario,puesto):
 
     else:
          
-      fig_producción_total = px.bar(data_3_r, x="fecha", y="lotes", text="lotes", color="proceso", barmode="group")
+      fig_producción_total = px.bar(data_3_r, x="fecha", y="edificas", text="edificas", color="proceso", barmode="group")
       fig_producción_total.update_traces(textposition="outside")
       placeholder29_7 = st.empty()
       grafico_producción_total= placeholder29_7.plotly_chart(fig_producción_total)
@@ -473,9 +473,9 @@ def Historial(usuario,puesto):
     placeholder43_7 = st.empty()
     producción_7=placeholder43_7.subheader("Resumen de Producción")  
 
-    data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["lotes","horas"]].agg(np.sum)
+    data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["edificas","horas"]].agg(np.sum)
 
-    data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["lotes"]].agg(np.sum)
+    data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["edificas"]].agg(np.sum)[["lotes"]].agg(np.sum)
 
     if pivot_r==0:  
 
@@ -484,7 +484,7 @@ def Historial(usuario,puesto):
 
     else:
 
-      data_2_r ["rendimiento"] = data_2_r["lotes"]/data_2_r["horas"]
+      data_2_r ["rendimiento"] = data_2_r["edificas"]/data_2_r["horas"]
       data_2_r['rendimiento'] *= 8.5 
        
       placeholder45_7 = st.empty()
@@ -494,7 +494,7 @@ def Historial(usuario,puesto):
       descarga_7_producción = placeholder46_7.download_button("Decargar CSV",data=data_2_r.to_csv(),mime="text/csv",key="descarga_7_producción")
 
       data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 0 for x in data_4_r['proceso']]    
-      data_4_r ["diferencia"] = data_4_r["lotes"] - data_4_r["valor esperado"]
+      data_4_r ["diferencia"] = data_4_r["edificas"] - data_4_r["valor esperado"]
 
       placeholder45_2_7 = st.empty()
       historial_7_diferencia= placeholder45_2_7.dataframe(data=data_4_r)
@@ -522,7 +522,7 @@ def Historial(usuario,puesto):
 
     # ----- Total ---- #
 
-    data_3_r= data_1_r.groupby(["fecha","proceso"], as_index=False)["lotes"].agg(np.sum)
+    data_3_r= data_1_r.groupby(["fecha","proceso"], as_index=False)["edificas"].agg(np.sum)
 
     placeholder49_7 = st.empty()
     total_7=placeholder49_7.subheader("Totales")
@@ -534,7 +534,7 @@ def Historial(usuario,puesto):
 
     else:
          
-      fig_producción_total = px.bar(data_3_r, x="fecha", y="lotes", text="lotes", color="proceso", barmode="group")
+      fig_producción_total = px.bar(data_3_r, x="fecha", y="edificas", text="edificas", color="proceso", barmode="group")
       fig_producción_total.update_traces(textposition="outside")
       placeholder51_7 = st.empty()
       grafico_producción_total= placeholder51_7.plotly_chart(fig_producción_total)
