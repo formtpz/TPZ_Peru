@@ -72,7 +72,7 @@ def Precampo(usuario,puesto):
   produccion_3= placeholder16_3.number_input("Cantidad Total de Lotes Producidos",min_value=0,key="produccion_3")
 
   placeholder17_3= st.empty()
-  informales_3= placeholder17_3.number_input("Cantidad de Edficas",min_value=0,key="informales_3")
+  edficas_3= placeholder17_3.number_input("Cantidad de Edficas",min_value=0,key="edficas_3")
   
   #placeholder18_3= st.empty()
   #efes_3= placeholder18_3.number_input("Cantidad de Construcciones",min_value=0,key="efes_3")
@@ -304,6 +304,6 @@ def Precampo(usuario,puesto):
     area_bi = float(0.0)
 
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Precampo','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','0.0','0','{informales_3}','P0','0','0','{observaciones_3}','N/A','N/A','{horas_bi}','{area_bi}','N/A','0','0','N/A','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Precampo','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','0.0','0','{edficas_3}','P0','0','0','{observaciones_3}','N/A','N/A','{horas_bi}','{area_bi}','N/A','0','0','N/A','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
