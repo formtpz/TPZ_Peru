@@ -65,17 +65,17 @@ def CC_Precampo(usuario,puesto):
   placeholder14_3= st.empty()
   tipo_3= placeholder14_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Control de Calidad Supervisión"), key="tipo_3")
 
-  placeholder14_3= st.empty()
-  tipo_de_errores_3= placeholder14_3.multiselect("Tipo de Errores", options=("Numeración errónea o incompleta","Errores geométricos y/o de forma","Polígonos y/o puntos duplicados","Omisión/Comisión de polígonos","Polígonos no se ajustan a ortofoto","Omisión/Comisión de puertas"), key="tipo_de_errores_3")
-
   placeholder15_3= st.empty()
-  aprobados_3= placeholder15_3.number_input("Cantidad de Edificas Aprobados",min_value=0,step=1,key="aprobados_3")
+  tipo_de_errores_3= placeholder15_3.multiselect("Tipo de Errores", options=("Numeración errónea o incompleta","Errores geométricos y/o de forma","Polígonos y/o puntos duplicados","Omisión/Comisión de polígonos","Polígonos no se ajustan a ortofoto","Omisión/Comisión de puertas"), key="tipo_de_errores_3")
 
   placeholder16_3= st.empty()
-  rechazados_3= placeholder16_3.number_input("Cantidad de Edificas Rechazados",min_value=0,step=1,key="rechazados_3")
-  
+  aprobados_3= placeholder16_3.number_input("Cantidad de Edificas Aprobados",min_value=0,step=1,key="aprobados_3")
+
   placeholder17_3= st.empty()
-  horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  rechazados_3= placeholder17_3.number_input("Cantidad de Edificas Rechazados",min_value=0,step=1,key="rechazados_3")
+  
+  placeholder18_3= st.empty()
+  horas_3= placeholder18_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
   
   placeholder19_3 = st.empty()
   reporte_3 = placeholder19_3.button("Generar Reporte",key="reporte_3")
@@ -100,7 +100,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.Procesos=False
     st.session_state.CC_FMI=False
@@ -140,7 +140,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Historial=True
@@ -166,7 +166,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Capacitacion=True
@@ -192,7 +192,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Otros_Registros=True
@@ -218,7 +218,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Bonos_Extras=True
@@ -244,7 +244,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    #placeholder18_3.empty()#
+    placeholder18_3.empty()#
     placeholder19_3.empty()
     st.session_state.Ingreso = False
     st.session_state.CC_FMI=False
