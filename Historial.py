@@ -291,9 +291,9 @@ def Historial(usuario,puesto):
     placeholder21_7 = st.empty()
     producción_7=placeholder21_7.subheader("Resumen de Producción")  
 
-    data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["edificas","horas"]].agg(np.sum)
+    data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["lotes","edificas","horas"]].agg(np.sum)
 
-    data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["lotes","edificas"]].agg(np.sum)
+    data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["edificas"]].agg(np.sum)
 
     if pivot_r==0:  
 
@@ -473,9 +473,9 @@ def Historial(usuario,puesto):
     placeholder43_7 = st.empty()
     producción_7=placeholder43_7.subheader("Resumen de Producción")  
 
-    data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["edificas","horas"]].agg(np.sum)
+    data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["lotes","edificas","horas"]].agg(np.sum)
 
-    data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["lotes","edificas"]].agg(np.sum)
+    data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["edificas"]].agg(np.sum)
 
     if pivot_r==0:  
 
