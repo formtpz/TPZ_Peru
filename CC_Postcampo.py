@@ -51,7 +51,7 @@ def CC_Postcampo(usuario,puesto):
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
   
   placeholder10_3= st.empty()
-  municipio_3= placeholder10_3.selectbox("Distrito", options=("Chorrillos","San Juan De Miraflores","Villa el Salvador"),key="municipio_3")
+  distrito_3= placeholder10_3.selectbox("Distrito", options=("Chorrillos","San Juan De Miraflores","Villa el Salvador"),key="municipio_3")
   
   placeholder11_3= st.empty()
   manzana_3= placeholder11_3.selectbox("Mazana", options=("001","002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018","019","020","021","022","023","024","025","026","027","028","029","030","031","032","033","034","035","036","037","038","039","040","041","042","043","044","045","046","047","048","049","050","051","052","053","054","055","056","057","058","058","059","060","061","062","063","064","065","066","067","068","069","070","071","072","073","074","075","076","077","078","079","080","081","082","083","084","085","086","087","088","089","090","091","092","093","094","095","096","097","098","099","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120"), key="manzana_3")
@@ -263,13 +263,13 @@ def CC_Postcampo(usuario,puesto):
     supervisor_3= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_3 = supervisor_3.loc[0,'supervisor']
 
-    produccion_3 = aprobados_3 + rechazados_3
+    edificas_3 = aprobados_3 + rechazados_3
 
     semana_3 = fecha_3.isocalendar()[1]
 
     año_3 = fecha_3.isocalendar()[0]
 
-    unidad_3=municipio_3
+    unidad_3 = distrito_3
     horas_bi = float(horas_3)
 
     tipos_de_errores_3 = ',' .join(tipo_de_errores_3)
@@ -289,6 +289,6 @@ def CC_Postcampo(usuario,puesto):
       #lote_3 = '1'#
       # ----- Fin del script ---- #
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Postcampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','0','N/A','0.0','0','0','N/A','0','0','N/A','{manzana_3}','{sector_3}','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito,tipo,lotes,aprobados,rechazados,horas,manzana,sector,lote,estado,area,efes,edificas,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Precampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','0','{aprobados_3}','{rechazados_3}','{horas_3}','{manzana_3}','{sector_3}','0','N/A','0.0','0','{edificas_3}','N/A','0','0','N/A','N/A','N/A','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
