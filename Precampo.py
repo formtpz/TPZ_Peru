@@ -51,7 +51,7 @@ def Precampo(usuario,puesto):
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
   
   placeholder10_3= st.empty()
-  municipio_3= placeholder10_3.selectbox("Distrito", options=("Chorrillos","San Juan De Miraflores","Villa el Salvador"),key="municipio_3")
+  distrito_3= placeholder10_3.selectbox("Distrito", options=("Chorrillos","San Juan De Miraflores","Villa el Salvador"),key="distrito_3")
   
   placeholder11_3= st.empty()
   sector_3= placeholder11_3.selectbox("Sector", options=("01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120"),key="sector_3")
@@ -304,6 +304,6 @@ def Precampo(usuario,puesto):
     area_bi = float(0.0)
 
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Precampo','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','0.0','0','{edficas_3}','P0','0','0','{observaciones_3}','N/A','N/A','{horas_bi}','{area_bi}','N/A','0','0','N/A','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Precampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','0.0','0','{edficas_3}','P0','0','0','{observaciones_3}','N/A','N/A','{horas_bi}','{area_bi}','N/A','0','0','N/A','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
