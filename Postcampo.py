@@ -78,7 +78,7 @@ def Postcampo(usuario,puesto):
   lotes_3= placeholder18_3.number_input("Cantidad de lotes Producidos",min_value=0,step=1,key="lotes_3")
   
   placeholder19_3= st.empty()
-  informales_3= placeholder19_3.number_input("Cantidad de Edificas",min_value=0,step=1,key="informales_3")
+  edificas_3= placeholder19_3.number_input("Cantidad de Edificas",min_value=0,step=1,key="edificas_3")
   
   #placeholder20_3= st.empty()
   #efes_3= placeholder20_3.number_input("Cantidad de Construcciones",min_value=0,step=1,key="efes_3")
