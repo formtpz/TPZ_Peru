@@ -269,7 +269,7 @@ def CC_Precampo(usuario,puesto):
 
     año_3 = fecha_3.isocalendar()[0]
 
-    unidad_3=dsitrito_3
+    unidad_3 = distrito_3
 
     horas_bi = float(horas_3)
     
