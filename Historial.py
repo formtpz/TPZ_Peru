@@ -371,7 +371,7 @@ def Historial(usuario,puesto):
 
   # ----- Operario Catastral y Profesional Jurídico ---- #
 
-  elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+  elif puesto=="Operario Catastral" or puesto=="Entregas" or puesto=="QC" or puesto=="Profesional Jurídico":
 
     placeholder33_7 = st.empty()
     proceso_7_o = placeholder33_7.selectbox("Proceso", options=("Todos","Control de Calidad Folios de Matricula Inmobiliaria","Postcampo Control de Calidad FMI","Consultas de Campo","Postcampo Folios de Matricula Inmobiliaria","Folios de Matricula Inmobiliaria","Precampo", "Control de Calidad Precampo","Preparación de Insumos","Revisión de Campo","Postcampo","Control de Calidad Postcampo","Restitución de Tierras","Revisión de Predios Segregados"), key="proceso_7_s")
