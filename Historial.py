@@ -58,7 +58,7 @@ def Historial(usuario,puesto):
 
   # ----- Supervisor y Coordinador ---- #
 
-  if puesto=="Supervisor" or puesto=="Coordinador":    
+  if puesto=="Supervisor" or puesto=="Técnico SIG" or puesto=="Coordinador": 
 
     placeholder10_7 = st.empty()
     personal_7 = placeholder10_7.selectbox("Personal", options=("Todos","Operarios","Profesional Jurídico","Propio","Personal Asignado"), key="filtro_7")
