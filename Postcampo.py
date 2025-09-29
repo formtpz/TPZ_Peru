@@ -63,7 +63,7 @@ def Postcampo(usuario,puesto):
   manzana_3= placeholder13_3.selectbox("Manzana", options=("001","002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018","019","020","021","022","023","024","025","026","027","028","029","030","031","032","033","034","035","036","037","038","039","040","041","042","043","044","045","046","047","048","049","050","051","052","053","054","055","056","057","058","058","059","060","061","062","063","064","065","066","067","068","069","070","071","072","073","074","075","076","077","078","079","080","081","082","083","084","085","086","087","088","089","090","091","092","093","094","095","096","097","098","099","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120"),key="manzana_3")
   
   #placeholder14_3= st.empty()
-  #paquete_3= placeholder14_3.text_input("Número de Paquete",max_chars=60,key="paquete_3")
+  #unidades_catrastales_3= placeholder14_3.text_input("Cantidad de Unidades Catrastales",max_chars=60,key="unidades_catrastales_3")
   
   placeholder15_3= st.empty()
   tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Reproceso Ordinario","Corrección de Calidad"), key="tipo_3")
@@ -80,8 +80,8 @@ def Postcampo(usuario,puesto):
   placeholder19_3= st.empty()
   edificas_3= placeholder19_3.number_input("Cantidad de Edificas",min_value=0,step=1,key="edificas_3")
   
-  #placeholder20_3= st.empty()
-  #efes_3= placeholder20_3.number_input("Cantidad de Construcciones",min_value=0,step=1,key="efes_3")
+  placeholder20_3= st.empty()
+  unidades_catrastales_3= placeholder20_3.number_input("Cantidad de Unidades Catrastales",min_value=0,step=1,key="unidades_catrastales_3")
   
   placeholder21_3= st.empty()
   horas_3= placeholder21_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
@@ -114,7 +114,7 @@ def Postcampo(usuario,puesto):
     #placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    #placeholder20_3.empty()
+    placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -158,7 +158,7 @@ def Postcampo(usuario,puesto):
     #placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    #placeholder20_3.empty()
+    placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -188,7 +188,7 @@ def Postcampo(usuario,puesto):
     #placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    #placeholder20_3.empty()
+    placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -218,7 +218,7 @@ def Postcampo(usuario,puesto):
     #placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    #placeholder20_3.empty()
+    placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -248,7 +248,7 @@ def Postcampo(usuario,puesto):
     #placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    #placeholder20_3.empty()
+    placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -278,7 +278,7 @@ def Postcampo(usuario,puesto):
     #placeholder17_3.empty()
     placeholder18_3.empty()
     placeholder19_3.empty()
-    #placeholder20_3.empty()
+    placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
@@ -314,6 +314,6 @@ def Postcampo(usuario,puesto):
     #else:#
       #lote_3 = '1'#
       # ----- Fin del script ---- #
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito,tipo,lotes,aprobados,rechazados,horas,manzana,sector,lote,estado,area,efes,edificas,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores) VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','{lotes_3}','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','0.0','0','{edificas_3}','N/A','0','0','{observaciones_3}','N/A','N/A','{horas_bi}','0.0','N/A','0','0','N/A','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito,tipo,lotes,aprobados,rechazados,horas,manzana,sector,lote,estado,area,unidades_catastrales,edificas,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores) VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','{lotes_3}','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','0.0','{unidades_catastrales_3}','{edificas_3}','N/A','0','0','{observaciones_3}','N/A','N/A','{horas_bi}','0.0','N/A','0','0','N/A','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
