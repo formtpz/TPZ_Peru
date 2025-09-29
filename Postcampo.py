@@ -81,7 +81,7 @@ def Postcampo(usuario,puesto):
   edificas_3= placeholder19_3.number_input("Cantidad de Edificas",min_value=0,step=1,key="edificas_3")
   
   placeholder20_3= st.empty()
-  unidades_catrastales_3= placeholder20_3.number_input("Cantidad de Unidades Catrastales",min_value=0,step=1,key="unidades_catrastales_3")
+  unidades_catastrales_3= placeholder20_3.number_input("Cantidad de Unidades Catrastales",min_value=0,step=1,key="unidades_catastrales_3")
   
   placeholder21_3= st.empty()
   horas_3= placeholder21_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
