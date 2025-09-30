@@ -66,7 +66,7 @@ def CC_Precampo(usuario,puesto):
   tipo_3= placeholder14_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Control de Calidad Supervisión"), key="tipo_3")
 
   placeholder15_3= st.empty()
-  tipo_de_errores_3= placeholder15_3.multiselect("Tipo de Errores", options=("Numeración errónea o incompleta","Errores geométricos y/o de forma","Polígonos y/o puntos duplicados","Omisión/Comisión de polígonos","Polígonos no se ajustan a ortofoto","Omisión/Comisión de puertas"), key="tipo_de_errores_3")
+  tipo_de_errores_3= placeholder15_3.multiselect("Tipo de Errores", options=("Exceso de Polígonos","Exceso de Puertas","Omisión de Polígonos","Omisión de Puertas","Topología","Atributos","Geometría"), key="tipo_de_errores_3")
 
   placeholder16_3= st.empty()
   aprobados_3= placeholder16_3.number_input("Cantidad de Edificas Aprobados",min_value=0,step=1,key="aprobados_3")
