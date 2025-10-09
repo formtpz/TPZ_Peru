@@ -61,7 +61,7 @@ def Otros_Registros(usuario,puesto):
     fecha_13= placeholder10_13.date_input("Fecha",value=default_date_13,key="fecha_13")
     
     placeholder11_13= st.empty()
-    motivo_13= placeholder11_13.selectbox("Motivo", options=("Reposición de tiempo","Cita CCSS","Entregas","Incapacidad","Control de Calidad Informalidades Especiales", "Informalidades Especiales","Fallos en Aplicativo o Conexión","Horas Extras","Licencia por Fallecimiento de Familiar","Licencia por Maternidad, Paternidad o Lactancia","Paneo de Omisiones y Comisiones", "Reunión", "Supervisión","Ubicación","Vacaciones", "Otros"),key="motivo_13")
+    motivo_13= placeholder11_13.selectbox("Motivo", options=("Reposición de tiempo","Cita CCSS","Entregas","Incapacidad","Control de Calidad Informalidades Especiales", "Informalidades Especiales","Fallos en Aplicativo o Conexión","Horas Extras","Licencia por Fallecimiento de Familiar","Licencia por Maternidad, Paternidad o Lactancia","Paneo de Omisiones y Comisiones", "Reunión", "Supervisión","Ubicación","Vacaciones","Horas Extra Apoyo Otros Proyectos", "Horas Ordinarias Apoyo a Otros Proyectos","Otros"),key="motivo_13")
         
     placeholder12_13= st.empty()
     horas_13= placeholder12_13.number_input("Cantidad de Horas Individuales",min_value=0.0,key="horas_13")
