@@ -316,6 +316,26 @@ def Historial(usuario,puesto):
     
       placeholder24_2_7 = st.empty()
       descarga_7_diferencia = placeholder24_2_7.    dataframe(data=data_4_r)
+
+
+      #------Creando el dataframe de Resumen Calidad--------
+      
+      # Filtramos los datos antes del groupby
+      data_filtrada = data_1_r[(data_1_r["tipo"] == "Inspección") & (data_1_r["operador_cc"].notna()) & (data_1_r["operador_cc"] != "N/A")]
+      # Agrupamos los datos filtrados
+      data_5_r = (data_filtrada.groupby(["operador_cc", "semana"], as_index=False)[["edificas", "aprobados", "rechazados"]].agg(np.sum))
+
+      # Calculamos el porcentaje de aprobación
+      data_5_r["porcentaje_aprobacion"] = ((data_5_r["aprobados"] / data_5_r["edificas"]) * 100).round(2).astype(str) + "%" 
+                  
+      placeholder25_2_7 = st.empty()
+      titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
+    
+      placeholder26_2_7 = st.empty()
+      tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5_r)
+      
+      #-----Fin data frame Resumen Calidad-------
+      
       
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
@@ -369,6 +389,13 @@ def Historial(usuario,puesto):
       placeholder32_7 = st.empty()
       grafico_horas_total_2 = placeholder32_7.plotly_chart(fig_horas_total_2)
 
+
+
+
+
+
+
+  
   # ----- Operario Catastral y Profesional Jurídico ---- #
 
   elif puesto=="Operario Catastral" or puesto=="Entregas" or puesto=="QC" or puesto=="Profesional Jurídico":
@@ -383,6 +410,9 @@ def Historial(usuario,puesto):
         
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),aprobados,rechazados,operador_cc,tipo_de_errores,conteo_de_errores,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
+      #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
@@ -390,7 +420,10 @@ def Historial(usuario,puesto):
     elif proceso_7_o =="Todos" and tipo_7_o!="Todos":
       
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),aprobados,rechazados,operador_cc,tipo_de_errores,conteo_de_errores,cast(horas as float)from registro where usuario='{usuario}' and tipo='{tipo_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
-
+      
+      #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
@@ -399,6 +432,9 @@ def Historial(usuario,puesto):
       
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),aprobados,rechazados,operador_cc,tipo_de_errores,conteo_de_errores,cast(horas as float)from registro where usuario='{usuario}' and proceso='{proceso_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
+      #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
@@ -407,6 +443,9 @@ def Historial(usuario,puesto):
       
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),aprobados,rechazados,operador_cc,tipo_de_errores,conteo_de_errores,cast(horas as float)from registro where usuario='{usuario}' and proceso='{proceso_7_o}' and tipo='{tipo_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
+      #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
@@ -428,6 +467,29 @@ def Historial(usuario,puesto):
       placeholder37_7 = st.empty()
       historial_7_reportes=placeholder37_7.dataframe(data=data_1_r)
 
+    #------Creando el dataframe de Resumen calidad 
+    placeholder25_2_7 = st.empty()
+    titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
+    
+    # Filtramos los datos antes del groupby
+    data_filtrada_1 = data_5_r[(data_5_r["tipo"] == "Inspección")]
+    # Agrupamos los datos filtrados
+    data_5=(data_filtrada_1.groupby(["operador_cc", "semana"], as_index=False)[["edificas", "aprobados", "rechazados"]].agg(np.sum))
+       
+    pivot_calidad=len(data_5.iloc[:,0])
+    
+    if pivot_calidad==0:
+      placeholder55_7 = st.empty()
+      error_reportes= placeholder55_7.error('No existen reportes para mostrar')
+      
+    else:
+      data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / data_5["produccion"]) * 100).round(2).astype(str) + "%"         
+   
+      placeholder26_2_7 = st.empty()
+      tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5)
+    #-------fin del dataframe para resumen calidad-------
+    
+    
     # ----- Resumen de Horas ---- #
 
     placeholder39_7 = st.empty()
@@ -604,6 +666,8 @@ def Historial(usuario,puesto):
         placeholder23_7.empty()
         placeholder23_2_7.empty()
         placeholder24_2_7.empty()
+        placeholder25_2_7.empty()
+        placeholder26_2_7.empty()
         placeholder25_7.empty()
         placeholder26_7.empty()
         placeholder29_7.empty()
@@ -615,6 +679,13 @@ def Historial(usuario,puesto):
       placeholder39_7.empty()
       placeholder43_7.empty()
       placeholder49_7.empty()
+      placeholder25_2_7.empty()
+
+      if pivot_calidad==0:
+        placeholder55_7.empty()
+
+      else:
+        placeholder26_2_7.empty()
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -715,6 +786,8 @@ def Historial(usuario,puesto):
         placeholder23_7.empty()
         placeholder23_2_7.empty()
         placeholder24_2_7.empty()
+        placeholder25_2_7.empty()
+        placeholder26_2_7.empty()
         placeholder25_7.empty()
         placeholder26_7.empty()
         placeholder29_7.empty()
@@ -726,6 +799,14 @@ def Historial(usuario,puesto):
       placeholder39_7.empty()
       placeholder43_7.empty()
       placeholder49_7.empty()
+      placeholder25_2_7.empty()
+
+      if pivot_calidad==0:
+        placeholder55_7.empty()
+
+      else:
+        placeholder26_2_7.empty()
+
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -812,6 +893,8 @@ def Historial(usuario,puesto):
         placeholder23_7.empty()
         placeholder23_2_7.empty()
         placeholder24_2_7.empty()
+        placeholder25_2_7.empty()
+        placeholder26_2_7.empty()
         placeholder25_7.empty()
         placeholder26_7.empty()
         placeholder29_7.empty()
@@ -823,6 +906,14 @@ def Historial(usuario,puesto):
       placeholder39_7.empty()
       placeholder43_7.empty()
       placeholder49_7.empty()
+      placeholder25_2_7.empty()
+
+      if pivot_calidad==0:
+        placeholder55_7.empty()
+
+      else:
+        placeholder26_2_7.empty()
+
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -909,6 +1000,8 @@ def Historial(usuario,puesto):
         placeholder23_7.empty()
         placeholder23_2_7.empty()
         placeholder24_2_7.empty()
+        placeholder25_2_7.empty()
+        placeholder26_2_7.empty()
         placeholder25_7.empty()
         placeholder26_7.empty()
         placeholder29_7.empty()
@@ -920,6 +1013,14 @@ def Historial(usuario,puesto):
       placeholder39_7.empty()
       placeholder43_7.empty()
       placeholder49_7.empty()
+      placeholder25_2_7.empty()
+
+      if pivot_calidad==0:
+        placeholder55_7.empty()
+
+      else:
+        placeholder26_2_7.empty()
+
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -1007,6 +1108,8 @@ def Historial(usuario,puesto):
         placeholder23_7.empty()
         placeholder23_2_7.empty()
         placeholder24_2_7.empty()
+        placeholder25_2_7.empty()
+        placeholder26_2_7.empty()
         placeholder25_7.empty()
         placeholder26_7.empty()
         placeholder29_7.empty()
@@ -1018,6 +1121,14 @@ def Historial(usuario,puesto):
       placeholder39_7.empty()
       placeholder43_7.empty()
       placeholder49_7.empty()
+      placeholder25_2_7.empty()
+
+      if pivot_calidad==0:
+        placeholder55_7.empty()
+
+      else:
+        placeholder26_2_7.empty()
+
 
       if pivot_reportes==0:
         placeholder36_7.empty()
