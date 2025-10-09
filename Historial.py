@@ -483,7 +483,7 @@ def Historial(usuario,puesto):
       error_reportes= placeholder55_7.error('No existen reportes para mostrar')
       
     else:
-      data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / data_5["produccion"]) * 100).round(2).astype(str) + "%"         
+      data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / data_5["edificas"]) * 100).round(2).astype(str) + "%"         
    
       placeholder26_2_7 = st.empty()
       tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5)
