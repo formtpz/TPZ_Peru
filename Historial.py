@@ -489,8 +489,13 @@ def Historial(usuario,puesto):
     else:
       data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / data_5["edificas"]) * 100).round(2).astype(str) + "%"         
    
+      # Renombrar la columna 'edificas' por 'muestra' solo para visualización
+      data_5_r_vista= data_5.rename(columns={"edificas": "muestra"})
+
+      # Mostrar el DataFrame renombrado en Streamlit
       placeholder26_2_7 = st.empty()
-      tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5)
+      tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5_r_vista)
+      
     #-------fin del dataframe para resumen calidad-------
     
     
