@@ -63,7 +63,7 @@ def CC_Precampo(usuario,puesto):
   operador_3= placeholder13_3.selectbox("Operador objeto de CC",options=("Brayan Jose Romero Carazo","Steve Alberto Sanchez Moreira","Pamela Gonzalez Arce","Estefania Aguilar Quiros","Kevin Anchia Roman","Kevin Jesus Bonilla Bonilla","Maria Stefannie Chavarria Barquero","Tatiana Gutierrez Rojas","Ansil Andres Hernandez Smith","Cristopher Jimenez Serrano","Daniela Maria Luna Salas","Veronica Maria Orozco Fernandez","Keilor Antonio Quiros Elizondo","Jose Javier Rojas Arias","Daniel Alfredo Solis Hernandez","Zairy Vargas Naranjo","Seidy Pamela Vivas Sequeira","Adrian de Jesus Jimenez Gamboa","Djean Jafet Guerrero Gutierrez","Juan Carlos Pereira Rodriguez","Tania De Los Angeles Castro Solano","Kimberlyn Tatiana Mora Soto","Andres Mauricio Coto Molina","Maria Angelica Dinarte Arley","Roger Alonso Herrera Blanco","Veronica Marenco Fonseca","Camila Montes Carrion"), key="operador_3")
 
   placeholder14_3= st.empty()
-  tipo_3= placeholder14_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Control de Calidad Supervisión"), key="tipo_3")
+  tipo_3= placeholder14_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Inspección Horas Extras","Control de Calidad Supervisión"), key="tipo_3")
 
   placeholder15_3= st.empty()
   tipo_de_errores_3= placeholder15_3.multiselect("Tipo de Errores", options=("Exceso de Polígonos","Exceso de Puertas","Omisión de Polígonos","Omisión de Puertas","Topología","Atributos","Geometría"), key="tipo_de_errores_3")
