@@ -63,7 +63,7 @@ def Precampo(usuario,puesto):
   #zona_3= placeholder13_3.selectbox("Zona",options=("Urbano","Rural","Sin Geometría"),key="zona_3")
   
   placeholder14_3= st.empty()
-  tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Reproceso Ordinario","Corrección de Calidad"),key="tipo_3")
+  tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Reproceso Ordinario","Corrección de Calidad","Producción Horas Extras"),key="tipo_3")
   
   placeholder15_3= st.empty()
   estado_3= placeholder15_3.selectbox("Estado" , options=("Finalizado", "En conflicto"),key="estado_3")
