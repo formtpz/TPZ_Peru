@@ -66,7 +66,7 @@ def Postcampo(usuario,puesto):
   #unidades_catrastales_3= placeholder14_3.text_input("Cantidad de Unidades Catrastales",max_chars=60,key="unidades_catrastales_3")
   
   placeholder15_3= st.empty()
-  tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Reproceso Ordinario","Corrección de Calidad","Producción Horas Extras"), key="tipo_3")
+  tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Reproceso Ordinario","Corrección de Calidad","Corrección de Calidad Extraordinaria","Producción Horas Extras"), key="tipo_3")
   
   placeholder16_3= st.empty()
   estado_3= placeholder16_3.selectbox("Estado" , options=("Finalizado","En Conflicto"),key="estado_3")
