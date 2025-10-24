@@ -81,7 +81,7 @@ def Precampo(usuario,puesto):
   horas_3= placeholder19_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
   placeholder20_3= st.empty()
-  observaciones_3= placeholder20_3.text_input("Observaciones", max_chars=60, key="observaciones_3")
+  observaciones_3= placeholder20_3.text_input("Observaciones",value="N/A", max_chars=60, key="observaciones_3")
 
   placeholder21_3 = st.empty()
   reporte_3 = placeholder21_3.button("Generar Reporte",key="reporte_3")
