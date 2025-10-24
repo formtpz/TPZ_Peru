@@ -71,7 +71,7 @@ def Historial(usuario,puesto):
 
     if personal_7=="Todos" and proceso_7_s=="Todos" and tipo_7_s=="Todos":
       
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -79,7 +79,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Todos" and proceso_7_s=="Todos" and tipo_7_s!="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -87,7 +87,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Todos" and proceso_7_s !="Todos" and tipo_7_s=="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where proceso='{proceso_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where proceso='{proceso_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -95,7 +95,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Todos" and proceso_7_s !="Todos" and tipo_7_s!="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where proceso='{proceso_7_s}' and tipo='{tipo_7_s}'  and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where proceso='{proceso_7_s}' and tipo='{tipo_7_s}'  and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -103,7 +103,7 @@ def Historial(usuario,puesto):
     
     elif personal_7=="Operarios" and proceso_7_s =="Todos" and tipo_7_s=="Todos":
       
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -111,7 +111,7 @@ def Historial(usuario,puesto):
     
     elif personal_7=="Operarios" and proceso_7_s =="Todos" and tipo_7_s!="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where puesto='Operario Catastral' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where puesto='Operario Catastral' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -119,7 +119,7 @@ def Historial(usuario,puesto):
      
     elif personal_7=="Operarios" and proceso_7_s !="Todos" and tipo_7_s=="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where puesto='Operario Catastral' and proceso = '{proceso_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where puesto='Operario Catastral' and proceso = '{proceso_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -127,7 +127,7 @@ def Historial(usuario,puesto):
     
     elif personal_7=="Operarios" and proceso_7_s !="Todos" and tipo_7_s!="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where puesto='Operario Catastral' and proceso = '{proceso_7_s}' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where puesto='Operario Catastral' and proceso = '{proceso_7_s}' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -135,7 +135,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Profesional Jurídico" and proceso_7_s =="Todos" and tipo_7_s=="Todos":
       
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where puesto='Profesional Jurídico' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where puesto='Profesional Jurídico' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where puesto='Pofesional Jurídico' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -143,7 +143,7 @@ def Historial(usuario,puesto):
     
     elif personal_7=="Profesional Jurídico" and proceso_7_s =="Todos" and tipo_7_s!="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where puesto='Profesional Jurídico' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where puesto='Profesional Jurídico' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where puesto='Pofesional Jurídico' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -151,7 +151,7 @@ def Historial(usuario,puesto):
     
     elif personal_7=="Profesional Jurídico" and proceso_7_s !="Todos" and tipo_7_s=="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where puesto='Profesional Jurídico' and proceso = '{proceso_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where puesto='Profesional Jurídico' and proceso = '{proceso_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where puesto='Pofesional Jurídico' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -159,7 +159,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Profesional Jurídico" and proceso_7_s !="Todos" and tipo_7_s!="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where puesto='Profesional Jurídico' and proceso = '{proceso_7_s}' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where puesto='Profesional Jurídico' and proceso = '{proceso_7_s}' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where puesto='Pofesional Jurídico' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -167,7 +167,7 @@ def Historial(usuario,puesto):
                              
     elif personal_7=="Propio" and proceso_7_s=="Todos" and tipo_7_s=="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -175,7 +175,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Propio" and proceso_7_s=="Todos" and tipo_7_s!="Todos":
                              
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where usuario='{usuario}' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where usuario='{usuario}' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -183,7 +183,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Propio" and proceso_7_s !="Todos" and tipo_7_s=="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where usuario='{usuario}' and proceso = '{proceso_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where usuario='{usuario}' and proceso = '{proceso_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -191,7 +191,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Propio" and proceso_7_s !="Todos" and tipo_7_s!="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where usuario='{usuario}' and proceso = '{proceso_7_s}' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where usuario='{usuario}' and proceso = '{proceso_7_s}' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -199,7 +199,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Personal Asignado" and proceso_7_s =="Todos" and tipo_7_s=="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where supervisor='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where supervisor='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
                              
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where supervisor='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -207,7 +207,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Personal Asignado" and proceso_7_s =="Todos" and tipo_7_s!="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where supervisor='{nombre_7}' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where supervisor='{nombre_7}' and tipo='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where supervisor='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -215,7 +215,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Personal Asignado" and proceso_7_s !="Todos" and tipo_7_s=="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where supervisor='{nombre_7}' and proceso='{proceso_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where supervisor='{nombre_7}' and proceso='{proceso_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
                              
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where supervisor='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -223,7 +223,7 @@ def Historial(usuario,puesto):
 
     elif personal_7=="Personal Asignado" and proceso_7_s !="Todos" and tipo_7_s!="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where supervisor='{nombre_7}' and proceso='{proceso_7_s}' and  proceso='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where supervisor='{nombre_7}' and proceso='{proceso_7_s}' and  proceso='{tipo_7_s}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where supervisor='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -412,10 +412,10 @@ def Historial(usuario,puesto):
 
     if proceso_7_o =="Todos" and tipo_7_o=="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
-      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -423,10 +423,10 @@ def Historial(usuario,puesto):
 
     elif proceso_7_o =="Todos" and tipo_7_o!="Todos":
       
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where usuario='{usuario}' and tipo='{tipo_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where usuario='{usuario}' and tipo='{tipo_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
-      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -434,10 +434,10 @@ def Historial(usuario,puesto):
    
     elif proceso_7_o !="Todos" and tipo_7_o=="Todos":
       
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where usuario='{usuario}' and proceso='{proceso_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where usuario='{usuario}' and proceso='{proceso_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
-      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
@@ -445,10 +445,10 @@ def Historial(usuario,puesto):
 
     elif proceso_7_o !="Todos" and tipo_7_o!="Todos":
       
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float)from registro where usuario='{usuario}' and proceso='{proceso_7_o}' and tipo='{tipo_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where usuario='{usuario}' and proceso='{proceso_7_o}' and tipo='{tipo_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
-      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where operador_cc='{nombre_7}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
