@@ -58,27 +58,30 @@ def CC_Postcampo(usuario,puesto):
 
   placeholder12_3= st.empty()
   sector_3= placeholder12_3.selectbox("Sector", options=("01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120"),key="sector_3")
-  
-  placeholder13_3= st.empty()
-  operador_3= placeholder13_3.selectbox("Operador objeto de CC",options=("Brayan Jose Romero Carazo","Steve Alberto Sanchez Moreira","Pamela Gonzalez Arce","Estefania Aguilar Quiros","Kevin Anchia Roman","Kevin Jesus Bonilla Bonilla","Maria Stefannie Chavarria Barquero","Tatiana Gutierrez Rojas","Ansil Andres Hernandez Smith","Cristopher Jimenez Serrano","Daniela Maria Luna Salas","Veronica Maria Orozco Fernandez","Keilor Antonio Quiros Elizondo","Jose Javier Rojas Arias","Daniel Alfredo Solis Hernandez","Zairy Vargas Naranjo","Seidy Pamela Vivas Sequeira","Adrian de Jesus Jimenez Gamboa","Djean Jafet Guerrero Gutierrez","Juan Carlos Pereira Rodriguez","Tania De Los Angeles Castro Solano","Kimberlyn Tatiana Mora Soto","Andres Mauricio Coto Molina","Maria Angelica Dinarte Arley","Roger Alonso Herrera Blanco","Veronica Marenco Fonseca","Camila Montes Carrion"), key="operador_3")
 
+  placeholder13_3= st.empty()
+  numero_lote_3= placeholder13_3.selectbox("Número de Lote", options=("001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013", "014", "015", "016", "017", "018", "019", "020", "021", "022", "023", "024", "025", "026", "027", "028", "029", "030", "031", "032", "033", "034", "035", "036", "037", "038", "039", "040", "041", "042", "043", "044", "045", "046", "047", "048", "049", "050", "051", "052", "053", "054", "055", "056", "057", "058", "059", "060", "061", "062", "063", "064", "065", "066", "067", "068", "069", "070", "071", "072", "073", "074", "075", "076", "077", "078", "079", "080", "081", "082", "083", "084", "085", "086", "087", "088", "089", "090", "091", "092", "093", "094", "095", "096", "097", "098", "099", "100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "140", "141", "142", "143", "144", "145", "146", "147", "148", "149", "150", "151", "152", "153", "154", "155", "156", "157", "158", "159", "160", "161", "162", "163", "164", "165", "166", "167", "168", "169", "170", "171", "172", "173", "174", "175", "176", "177", "178", "179", "180", "181", "182", "183", "184", "185", "186", "187", "188", "189", "190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217", "218", "219", "220", "221", "222", "223", "224", "225", "226", "227", "228", "229", "230", "231", "232", "233", "234", "235", "236", "237", "238", "239", "240", "241", "242", "243", "244", "245", "246", "247", "248"),key="numero_lote_3")
+  
   placeholder14_3= st.empty()
-  tipo_3= placeholder14_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Inspección Horas Extras","Control de Calidad Supervisión"), key="tipo_3")
+  operador_3= placeholder14_3.selectbox("Operador objeto de CC",options=("Brayan Jose Romero Carazo","Steve Alberto Sanchez Moreira","Pamela Gonzalez Arce","Estefania Aguilar Quiros","Kevin Anchia Roman","Kevin Jesus Bonilla Bonilla","Maria Stefannie Chavarria Barquero","Tatiana Gutierrez Rojas","Ansil Andres Hernandez Smith","Cristopher Jimenez Serrano","Daniela Maria Luna Salas","Veronica Maria Orozco Fernandez","Keilor Antonio Quiros Elizondo","Jose Javier Rojas Arias","Daniel Alfredo Solis Hernandez","Zairy Vargas Naranjo","Seidy Pamela Vivas Sequeira","Adrian de Jesus Jimenez Gamboa","Djean Jafet Guerrero Gutierrez","Juan Carlos Pereira Rodriguez","Tania De Los Angeles Castro Solano","Kimberlyn Tatiana Mora Soto","Andres Mauricio Coto Molina","Maria Angelica Dinarte Arley","Roger Alonso Herrera Blanco","Veronica Marenco Fonseca","Camila Montes Carrion"), key="operador_3")
 
   placeholder15_3= st.empty()
-  tipo_de_errores_3= placeholder15_3.multiselect("Tipo Errores", options=("Numeración errónea o incompleta","Errores geométricos y/o de forma","Polígonos y/o puntos duplicados","Omisión/Comisión de polígonos","Polígonos no se ajustan a ortofoto","Omisión/Comisión de puertas"), key="tipo_de_errores_3")
-    
-  placeholder16_3= st.empty()
-  aprobados_3= placeholder16_3.number_input("Cantidad de Unidades Catrastales Aprobados",min_value=0,step=1,key="aprobados_3")
+  tipo_3= placeholder15_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Inspección Horas Extras","Control de Calidad Supervisión"), key="tipo_3")
 
+  placeholder16_3= st.empty()
+  tipo_de_errores_3= placeholder16_3.multiselect("Tipo Errores", options=("Numeración errónea o incompleta","Errores geométricos y/o de forma","Polígonos y/o puntos duplicados","Omisión/Comisión de polígonos","Polígonos no se ajustan a ortofoto","Omisión/Comisión de puertas"), key="tipo_de_errores_3")
+    
   placeholder17_3= st.empty()
-  rechazados_3= placeholder17_3.number_input("Cantidad de Unidades Catrastales Rechazados",min_value=0,step=1,key="rechazados_3")
-  
+  aprobados_3= placeholder17_3.number_input("Cantidad de Unidades Catrastales Aprobados",min_value=0,step=1,key="aprobados_3")
+
   placeholder18_3= st.empty()
-  horas_3= placeholder18_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  rechazados_3= placeholder18_3.number_input("Cantidad de Unidades Catrastales Rechazados",min_value=0,step=1,key="rechazados_3")
   
-  placeholder19_3 = st.empty()
-  reporte_3 = placeholder19_3.button("Generar Reporte",key="reporte_3")
+  placeholder19_3= st.empty()
+  horas_3= placeholder19_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  
+  placeholder20_3 = st.empty()
+  reporte_3 = placeholder20_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -102,6 +105,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()#
     placeholder19_3.empty()
+    placeholder20_3.empty()
     st.session_state.Procesos=False
     st.session_state.CC_Postcampo=False
 
@@ -142,6 +146,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()#
     placeholder19_3.empty()
+    placeholder20_3.empty()
     st.session_state.CC_Postcampo=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -168,6 +173,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()#
     placeholder19_3.empty()
+    placeholder20_3.empty()
     st.session_state.CC_Postcampo=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -194,6 +200,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()#
     placeholder19_3.empty()
+    placeholder20_3.empty()
     st.session_state.CC_Postcampo=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -220,6 +227,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()#
     placeholder19_3.empty()
+    placeholder20_3.empty()
     st.session_state.CC_Postcampo=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -246,6 +254,7 @@ def CC_Postcampo(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()#
     placeholder19_3.empty()
+    placeholder20_3.empty()
     st.session_state.Ingreso = False
     st.session_state.CC_Postcampo=False
     st.session_state.Salir=True
@@ -289,6 +298,6 @@ def CC_Postcampo(usuario,puesto):
       #lote_3 = '1'#
       # ----- Fin del script ---- #
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito,tipo,lotes,aprobados,rechazados,horas,manzana,sector,numero_lote,estado,area,unidades_catastrales,edificas,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Postcampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','0','{aprobados_3}','{rechazados_3}','{horas_3}','{manzana_3}','{sector_3}','0','N/A','0.0','{unidades_catastrales_3}','0','N/A','0','0','N/A','N/A','N/A','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito,tipo,lotes,aprobados,rechazados,horas,manzana,sector,numero_lote,estado,area,unidades_catastrales,edificas,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Postcampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','0','{aprobados_3}','{rechazados_3}','{horas_3}','{manzana_3}','{sector_3}','{numero_lote_3}','N/A','0.0','{unidades_catastrales_3}','0','N/A','0','0','N/A','N/A','N/A','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
