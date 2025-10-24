@@ -86,6 +86,7 @@ def Postcampo(usuario,puesto):
   placeholder21_3= st.empty()
   horas_3= placeholder21_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
+  observaciones_3= 'N/A'
   placeholder22_3= st.empty()
   observaciones_3= placeholder22_3.text_input("Observaciones", max_chars=60, key="observaciones_3")
  
