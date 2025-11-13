@@ -349,7 +349,7 @@ def Procesos1(usuario,puesto):
             #placeholder17_2.empty()
             placeholder18_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Revision_Campo=True
+            st.session_state.Entregas=True
             Revision_Campo.Revision_Campo(usuario,puesto)
 
         # ----- Postcampo ---- #
