@@ -350,7 +350,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Entregas=True
-            Entregas.Entregas2(usuario,puesto)
+            Entregas.Entregas(usuario,puesto)
 
         # ----- Postcampo ---- #
 
@@ -748,7 +748,7 @@ def Procesos2(usuario,puesto):
             #st.session_state.Preparacion_Insumos=True
             #Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
 
-         # ----- Revisión de Campo ---- #
+         # ----- Entregas ---- #
 
         elif entregas_2:
 
@@ -766,8 +766,8 @@ def Procesos2(usuario,puesto):
             placeholder12_2.empty()
             placeholder13_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Revision_Campo=True
-            Revision_Campo.Revision_Campo(usuario,puesto)
+            st.session_state.Entregas=True
+            Entregas.Entregas(usuario,puesto)
 
         # ----- Postcampo ---- #
 
