@@ -515,7 +515,7 @@ def Procesos1(usuario,puesto):
             Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
             
         elif st.session_state.Entregas==True:
-            Revision_Campo.Revision_Campo(usuario,puesto)
+            Entregas.Entregas(usuario,puesto)
 
         elif st.session_state.Postcampo==True:
             Postcampo.Postcampo(usuario,puesto)
@@ -571,7 +571,7 @@ def Procesos2(usuario,puesto):
         #preparacion_insumos_2 = placeholder10_2.button("Preparación de Insumos",key="preparacion_insumos_2")
 
         placeholder11_2 = st.empty()
-        revision_campo_2 = placeholder11_2.button("Revisión de Campo",key="revision_campo_2")
+        entregas_2 = placeholder11_2.button("Entregas",key="entregas_2")
 
         placeholder12_2 = st.empty()
         postcampo_2 = placeholder12_2.button("Postcampo",key="postcampo_2")
@@ -835,7 +835,7 @@ def Procesos2(usuario,puesto):
             Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
         
         elif st.session_state.Entregas==True:
-            Revision_Campo.Revision_Campo(usuario,puesto)
+            Entregas.Entregas(usuario,puesto)
 
         elif st.session_state.Postcampo==True:
             Postcampo.Postcampo(usuario,puesto)
