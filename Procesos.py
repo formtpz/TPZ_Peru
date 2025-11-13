@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, Consulta_Campo,Restitucion_Tierras,Revision_Segregados,Estado_UIT_Hito,Precampo, CC_Precampo, Preparacion_Insumos, Revision_Campo, Postcampo, CC_Postcampo
+import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, Consulta_Campo,Restitucion_Tierras,Revision_Segregados,Estado_UIT_Hito,Precampo, CC_Precampo, Preparacion_Insumos, Entregas, Postcampo, CC_Postcampo
 
 def Procesos1(usuario,puesto):
 
@@ -46,7 +46,7 @@ def Procesos1(usuario,puesto):
         preparacion_insumos_2 = placeholder12_2.button(":gray[Preparación de Insumos]",key="preparacion_insumos_2") 
         
         placeholder13_2 = st.empty()
-        revision_campo_2 = placeholder13_2.button(":gray[Revisión de Campo]",key="revision_campo_2")
+        entregas_2 = placeholder13_2.button(":gray[Entregas]",key="entregas_2")
 
         placeholder14_2 = st.empty()
         postcampo_2 = placeholder14_2.button(":blue[Postcampo]",key="postcampo_2")
