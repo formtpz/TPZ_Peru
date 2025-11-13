@@ -91,7 +91,7 @@ def Entregas(usuario,puesto):
     placeholder12_3.empty()
     #placeholder13_3.empty()
     #placeholder14_3.empty()
-    placeholder15_3.empty()
+    #placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
     st.session_state.Procesos=False
@@ -129,7 +129,7 @@ def Entregas(usuario,puesto):
     placeholder12_3.empty()
     #placeholder13_3.empty()
     #placeholder14_3.empty()
-    placeholder15_3.empty()
+    #placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
     st.session_state.Entregas=False
@@ -153,7 +153,7 @@ def Entregas(usuario,puesto):
     placeholder12_3.empty()
     #placeholder13_3.empty()
     #placeholder14_3.empty()
-    placeholder15_3.empty()
+    #placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
     st.session_state.Entregas=False
@@ -177,7 +177,7 @@ def Entregas(usuario,puesto):
     placeholder12_3.empty()
     #placeholder13_3.empty()
     #placeholder14_3.empty()
-    placeholder15_3.empty()
+    #placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
     st.session_state.Entregas=False
@@ -201,7 +201,7 @@ def Entregas(usuario,puesto):
     placeholder12_3.empty()
     #placeholder13_3.empty()
     #placeholder14_3.empty()
-    placeholder15_3.empty()
+    #placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
     st.session_state.Entregas=False
@@ -225,7 +225,7 @@ def Entregas(usuario,puesto):
     placeholder12_3.empty()
     #placeholder13_3.empty()
     #placeholder14_3.empty()
-    placeholder15_3.empty()
+    #placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
     st.session_state.Ingreso = False
