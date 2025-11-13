@@ -245,7 +245,7 @@ def Entregas(usuario,puesto):
     supervisor_3= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_3 = supervisor_3.loc[0,'supervisor']
 
-    produccion_3 = aprobados_3 + rechazados_3
+    #produccion_3 = aprobados_3 + rechazados_3
 
     semana_3 = fecha_3.isocalendar()[1]
 
