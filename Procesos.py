@@ -604,9 +604,6 @@ def Procesos1(usuario,puesto):
             
         elif st.session_state.Entregas==True:
             Entregas.Entregas(usuario,puesto)
-            
-        if "Entregas" not in st.session_state:
-        st.session_state["Entregas"] = False # O su valor inicial
 
         elif st.session_state.Postcampo==True:
             Postcampo.Postcampo(usuario,puesto)
