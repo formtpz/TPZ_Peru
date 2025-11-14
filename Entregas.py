@@ -250,10 +250,10 @@ def Entregas(usuario,puesto):
     semana_3 = fecha_3.isocalendar()[1]
 
     año_3 = fecha_3.isocalendar()[0]
+    conteo_3 = len(tipo_de_errores_3)
 
     horas_bi = float(horas_3)
-    
-    conteo_3 = len(tipo_de_errores_3)
+         
     tipo_de_errores_3 = ',' .join(tipo_de_errores_3)
 
  
