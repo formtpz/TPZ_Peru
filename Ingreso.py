@@ -145,6 +145,7 @@ if iniciar_sesion_1:
                 st.session_state.CC_Precampo=False
                 st.session_state.Vinculacion_Precampo=False 
                 st.session_state.Preparacion_Insumos=False
+                st.session_state.Entregas=False
                 st.session_state.Revision_Campo=False
                 st.session_state.Postcampo=False
                 st.session_state.CC_Postcampo=False
