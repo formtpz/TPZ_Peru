@@ -42,9 +42,9 @@ def Procesos1(usuario,puesto):
         placeholder11_2 = st.empty()
         cc_precampo_2 = placeholder11_2.button(":green[Control de Calidad Precampo]",key="cc_precampo_2")
 
-        placeholder12_2 = st.empty()
-        cc_vinculacion_precampo_2 = placeholder12_2.button(":green[Control de Calidad Vinculación Precampo]",key="cc_vinculacion_precampo_2")
-        
+        placeholder17_2 = st.empty()
+        vinculacion_precampo_2 = placeholder17_2.button(":blue[Vinculación Precampo]",key="vinculacion_precampo_2")
+                      
         placeholder13_2 = st.empty()
         preparacion_insumos_2 = placeholder13_2.button(":gray[Preparación de Insumos]",key="preparacion_insumos_2") 
         
@@ -57,8 +57,8 @@ def Procesos1(usuario,puesto):
         placeholder16_2 = st.empty()
         cc_postcampo_2 = placeholder16_2.button(":blue[Control de Calidad Postcampo]",key="cc_postcampo_2")
 
-        placeholder17_2 = st.empty()
-        vinculacion_precampo_2 = placeholder17_2.button(":blue[Vinculación Precampo]",key="vinculacion_precampo_2")
+        placeholder12_2 = st.empty()
+        cc_vinculacion_precampo_2 = placeholder12_2.button(":green[Control de Calidad Vinculación Precampo]",key="cc_vinculacion_precampo_2")
 
         #placeholder18_2 = st.empty()
         #restitucion_tierras_2 = placeholder18_2.button("Restitución de Tierras",key="restitucion_tierras_2")
