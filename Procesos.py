@@ -432,34 +432,7 @@ def Procesos1(usuario,puesto):
             st.session_state.CC_Postcampo=True
             CC_Postcampo.CC_Postcampo(usuario,puesto)
 
-         # ----- CC Validacion Precampo---- #
-
-        elif cc_validacion_precampo_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            #placeholder8_2.empty()#
-            #placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
-            placeholder20_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.cc_validacion_precampo=True
-            cc_validacion_precampo.cc_validacion_precampo(usuario,puesto)
-
+         
         # -----Validacion Precampo---- #
 
         elif validacion_precampo_2:
@@ -487,6 +460,35 @@ def Procesos1(usuario,puesto):
             st.session_state.Procesos=True
             st.session_state.validacion_precampo=True
             validacion_precampo.validacion_precampo(usuario,puesto)
+
+        # ----- CC Validacion Precampo---- #
+
+        elif CC_Validacion_Precampo_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            #placeholder8_2.empty()#
+            #placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            placeholder13_2.empty()
+            placeholder14_2.empty()
+            placeholder15_2.empty()
+            #placeholder16_2.empty()
+            #placeholder17_2.empty()
+            placeholder18_2.empty()
+            placeholder19_2.empty()
+            placeholder20_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.cc_validacion_precampo=True
+            cc_validacion_precampo.cc_validacion_precampo(usuario,puesto)
+
 
         # ----- Restitución de Tierras ---- #
 
@@ -954,7 +956,7 @@ def Procesos2(usuario,puesto):
 
     # ----- CC_Postcampo ---- #
 
-        elif cc_validacion_precampo_2:
+        elif CC_Validacion_Precampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
