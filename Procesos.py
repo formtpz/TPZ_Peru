@@ -320,8 +320,7 @@ def Procesos1(usuario,puesto):
             st.session_state.CC_Precampo=True
             CC_Precampo.CC_Precampo(usuario,puesto)
 
-
-                # -----vinculacion_precampo_---- #
+     # -----vinculacion_precampo_---- #
 
         elif vinculacion_precampo_2:
 
