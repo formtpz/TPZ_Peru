@@ -461,7 +461,6 @@ def Procesos1(usuario,puesto):
             st.session_state.CC_Postcampo=True
             CC_Postcampo.CC_Postcampo(usuario,puesto)
          
-
         # ----- CC Validacion Precampo---- #
 
         elif cc_vinculacion_precampo_2:
@@ -489,7 +488,6 @@ def Procesos1(usuario,puesto):
             st.session_state.Procesos=True
             st.session_state.CC_Vinculacion_Precampo=True
             CC_Vinculacion_Precampo.CC_Vinculacion_Precampo(usuario,puesto)
-
 
         # ----- Restitución de Tierras ---- #
 
