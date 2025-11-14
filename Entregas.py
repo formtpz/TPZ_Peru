@@ -252,11 +252,11 @@ def Entregas(usuario,puesto):
     año_3 = fecha_3.isocalendar()[0]
 
     horas_bi = float(horas_3)
-
+    
+    conteo_3 = len(tipo_de_errores_3)
     tipo_de_errores_3 = ',' .join(tipo_de_errores_3)
 
-    conteo_3 = len(tipo_de_errores_3)
-
+ 
     # ----- Almacenar Lote_3 según municipio seleccionado ---- #
     
     #lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}
