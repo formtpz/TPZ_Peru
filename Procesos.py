@@ -908,7 +908,7 @@ def Procesos2(usuario,puesto):
 
         # ----- Validación Precampo ---- #
 
-        elif Vinculacion_Precampo_2:
+        elif vinculacion_precampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -954,7 +954,7 @@ def Procesos2(usuario,puesto):
 
     # ----- CC_Postcampo ---- #
 
-        elif CC_Vinculacion_Precampo_2:
+        elif cc_vinculacion_precampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
