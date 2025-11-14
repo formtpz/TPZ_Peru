@@ -444,7 +444,7 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
+            #placeholder8_2.empty()
             #placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
@@ -974,8 +974,8 @@ def Procesos2(usuario,puesto):
             placeholder14_2.empty()
             placeholder15_2.empty()
             st.session_state.Procesos=True
-            st.session_state.cc_Vinculacion_Precampo=True
-            cc_Vinculacion_Precampo.cc_Vinculacion_Precampo(usuario,puesto)
+            st.session_state.CC_Vinculacion_Precampo=True
+            CC_Vinculacion_Precampo.CC_Vinculacion_Precampo(usuario,puesto)
             
     elif st.session_state.Procesos==True:
 
@@ -1006,8 +1006,8 @@ def Procesos2(usuario,puesto):
         elif st.session_state.Postcampo==True:
             Postcampo.Postcampo(usuario,puesto)
 
-        elif st.session_state.vinculacion_Precampo==True:
-            vinculacion_Precampo.vinculacion_Precampo(usuario,puesto)
+        elif st.session_state.Vinculacion_Precampo==True:
+            Vinculacion_Precampo.Vinculacion_Precampo(usuario,puesto)
 
         elif st.session_state.CC_Postcampo==True:
             CC_Postcampo.CC_Postcampo(usuario,puesto)
