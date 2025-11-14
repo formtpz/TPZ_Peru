@@ -88,10 +88,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
@@ -116,10 +116,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
@@ -144,10 +144,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
@@ -172,10 +172,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos_Extras=True
@@ -200,10 +200,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Ingreso= False
             st.session_state.Procesos=True
@@ -283,10 +283,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Precampo=True
@@ -311,10 +311,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Precampo=True
@@ -339,10 +339,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Preparacion_Insumos=True
@@ -367,10 +367,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Entregas=True
@@ -395,10 +395,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Postcampo=True
@@ -423,10 +423,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Postcampo=True
@@ -452,10 +452,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Vinculacion_Precampo=True
@@ -480,10 +480,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Vinculacion_Precampo=True
@@ -561,10 +561,10 @@ def Procesos1(usuario,puesto):
             placeholder13_2.empty()
             placeholder14_2.empty()
             placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            placeholder18_2.empty()
-            placeholder19_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            #placeholder18_2.empty()
+            #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Estado_UIT_Hito=True
