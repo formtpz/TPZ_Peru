@@ -459,7 +459,7 @@ def Procesos1(usuario,puesto):
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Vinculacion_Precampo=True
-            Vinculacion_Precampoo.Vinculacionn_Precampo(usuario,puesto)
+            Vinculacion_Precampoo.Vinculacion_Precampo(usuario,puesto)
 
         # ----- CC Validacion Precampo---- #
 
@@ -974,8 +974,8 @@ def Procesos2(usuario,puesto):
             placeholder14_2.empty()
             placeholder15_2.empty()
             st.session_state.Procesos=True
-            st.session_state.cc_Vinculacion_precampo=True
-            cc_vinculacion_precampo.cc_vinculacion_precampo(usuario,puesto)
+            st.session_state.cc_Vinculacion_Precampo=True
+            cc_Vinculacion_Precampo.cc_Vinculacion_Precampo(usuario,puesto)
             
     elif st.session_state.Procesos==True:
 
