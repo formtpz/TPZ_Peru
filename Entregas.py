@@ -253,6 +253,10 @@ def Entregas(usuario,puesto):
 
     horas_bi = float(horas_3)
 
+    tipos_de_errores_3 = ',' .join(tipo_de_errores_3)
+
+    conteo_3 = len(tipo_de_errores_3)
+
     # ----- Almacenar Lote_3 según municipio seleccionado ---- #
     
     #lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}
