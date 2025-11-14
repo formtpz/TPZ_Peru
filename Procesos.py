@@ -458,8 +458,8 @@ def Procesos1(usuario,puesto):
             placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
-            st.session_state.validacion_precampo=True
-            validacion_precampo.validacion_precampo(usuario,puesto)
+            st.session_state.Validacion_Precampo=True
+            Validacion_Precampoo.Validacion_Precampo(usuario,puesto)
 
         # ----- CC Validacion Precampo---- #
 
@@ -486,7 +486,7 @@ def Procesos1(usuario,puesto):
             placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
-            st.session_state.cc_validacion_precampo=True
+            st.session_state.CC_Validacion_Precampo=True
             cc_validacion_precampo.cc_validacion_precampo(usuario,puesto)
 
 
