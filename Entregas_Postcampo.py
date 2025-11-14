@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
-def Entregas(usuario,puesto):
+def Entregas_Postcampo(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -271,6 +271,6 @@ def Entregas(usuario,puesto):
       # ----- Fin del script ---- #
     #unidad_3=municipio_3
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito,tipo,lotes,aprobados,rechazados,horas,manzana,sector,numero_lote,estado,area,unidades_catastrales,edificas,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores) VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Entregas','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','N/A','0','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','0.0','0','0','N/A','0','0','N/A','N/A','N/A','{horas_bi}','0.0','N/A','0','0','{tipo_de_errores_3}','{conteo_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito,tipo,lotes,aprobados,rechazados,horas,manzana,sector,numero_lote,estado,area,unidades_catastrales,edificas,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores) VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Entregas Postcampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','N/A','0','0','0','{horas_3}','{manzana_3}','{sector_3}','0','{estado_3}','0.0','0','0','N/A','0','0','N/A','N/A','N/A','{horas_bi}','0.0','N/A','0','0','{tipo_de_errores_3}','{conteo_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
