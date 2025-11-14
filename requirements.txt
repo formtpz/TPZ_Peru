@@ -68,4 +68,5 @@ virtualenv==20.17.1
 watchdog==2.2.1
 yarg==0.1.9
 zipp==3.11.0
-python_version<=3.9
+python_version<=3.11
+
