@@ -141,12 +141,14 @@ if iniciar_sesion_1:
                 st.session_state.Restitucion_Tierras=False
                 st.session_state.Revision_Segregados=False
                 st.session_state.Calidad_externa_XTF=False
-                st.session_state.Precampo=False 
+                st.session_state.Precampo=False                               
                 st.session_state.CC_Precampo=False
+                st.session_state.Vinculacion_Precampo=False 
                 st.session_state.Preparacion_Insumos=False
                 st.session_state.Revision_Campo=False
                 st.session_state.Postcampo=False
                 st.session_state.CC_Postcampo=False
+                st.session_state.CC_Vinculacion_precampo=False
                 st.session_state.Estado_UIT_Hito=False
                                     
                 puesto=pd.read_sql(f"select puesto from usuarios where usuario ='{usuario}'",uri)
