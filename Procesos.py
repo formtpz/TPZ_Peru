@@ -459,7 +459,7 @@ def Procesos1(usuario,puesto):
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Vinculacion_Precampo=True
-            Vinculacionn_Precampoo.Vinculacionn_Precampo(usuario,puesto)
+            Vinculacion_Precampoo.Vinculacionn_Precampo(usuario,puesto)
 
         # ----- CC Validacion Precampo---- #
 
@@ -956,7 +956,7 @@ def Procesos2(usuario,puesto):
 
     # ----- CC_Postcampo ---- #
 
-        elif CC_Validacion_Precampo_2:
+        elif CC_Vinculacion_Precampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -1006,14 +1006,14 @@ def Procesos2(usuario,puesto):
         elif st.session_state.Postcampo==True:
             Postcampo.Postcampo(usuario,puesto)
 
-        elif st.session_state.vinculacion_Postcampo==True:
-            vinculacion_Postcampo.vinculacion_Postcampo(usuario,puesto)
+        elif st.session_state.vinculacion_Precampo==True:
+            vinculacion_Precampo.vinculacion_Precampo(usuario,puesto)
 
         elif st.session_state.CC_Postcampo==True:
             CC_Postcampo.CC_Postcampo(usuario,puesto)
 
-        elif st.session_state.CC_Vinculacion_Postcampo==True:
-            CC_Vinculacion_Postcampo.CC_Vinculacion_Postcampo(usuario,puesto)
+        elif st.session_state.CC_Vinculacion_Precampo==True:
+            CC_Vinculacion_Precampo.CC_Vinculacion_Precampo(usuario,puesto)
 
 # ----- Procesos 3 (Jurídicos) ---- #
 
