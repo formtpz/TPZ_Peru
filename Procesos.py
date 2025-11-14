@@ -435,7 +435,7 @@ def Procesos1(usuario,puesto):
          
         # -----Validacion Precampo---- #
 
-        elif validacion_precampo_2:
+        elif Validacion_Precampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
