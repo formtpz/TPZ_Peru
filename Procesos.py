@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, Consulta_Campo,Restitucion_Tierras,Revision_Segregados,Estado_UIT_Hito,Precampo, CC_Precampo, Preparacion_Insumos, Entregas, Postcampo, CC_Postcampo, CC_Vinculacion_Precampo, Vinculacion_Precampo
+import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, Consulta_Campo,Restitucion_Tierras,Revision_Segregados,Estado_UIT_Hito,Precampo, CC_Precampo, Preparacion_Insumos, Entregas_Postcampo, Postcampo, CC_Postcampo, CC_Vinculacion_Precampo, Vinculacion_Precampo
 
 def Procesos1(usuario,puesto):
 
@@ -49,7 +49,7 @@ def Procesos1(usuario,puesto):
         preparacion_insumos_2 = placeholder13_2.button(":gray[Preparación de Insumos]",key="preparacion_insumos_2") 
         
         placeholder14_2 = st.empty()
-        entregas_2 = placeholder14_2.button(":gray[Entregas]",key="entregas_2")
+        entregas_2 = placeholder14_2.button(":gray[Entregas Postcampo]",key="entregas_2")
 
         placeholder15_2 = st.empty()
         postcampo_2 = placeholder15_2.button(":blue[Postcampo]",key="postcampo_2")
@@ -401,8 +401,8 @@ def Procesos1(usuario,puesto):
             #placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Entregas=True
-            Entregas.Entregas(usuario,puesto)
+            st.session_state.Entregas_Postcampo=True
+            Entregas_Postcampo.Entregas_Postcampo(usuario,puesto)
 
         # ----- Postcampo ---- #
 
@@ -603,8 +603,8 @@ def Procesos1(usuario,puesto):
         elif st.session_state.Preparacion_Insumos==True:
             Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
             
-        elif st.session_state.Entregas==True:
-            Entregas.Entregas(usuario,puesto)
+        elif st.session_state.Entregas_Postcampo==True:
+            Entregas_Postcampo.Entregas_Postcampo(usuario,puesto)
 
         elif st.session_state.Postcampo==True:
             Postcampo.Postcampo(usuario,puesto)
@@ -663,7 +663,7 @@ def Procesos2(usuario,puesto):
         #preparacion_insumos_2 = placeholder10_2.button("Preparación de Insumos",key="preparacion_insumos_2")
 
         placeholder11_2 = st.empty()
-        entregas_2 = placeholder11_2.button("Entregas",key="entregas_2")
+        entregas_2 = placeholder11_2.button("Entregas Postcampo",key="entregas_2")
 
         placeholder12_2 = st.empty()
         postcampo_2 = placeholder12_2.button("Postcampo",key="postcampo_2")
@@ -880,8 +880,8 @@ def Procesos2(usuario,puesto):
             placeholder14_2.empty()
             placeholder15_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Entregas=True
-            Entregas.Entregas(usuario,puesto)
+            st.session_state.Entregas_Postcampo=True
+            Entregas_Postcampo.Entregas_Postcampo(usuario,puesto)
 
         # ----- Postcampo ---- #
 
@@ -998,8 +998,8 @@ def Procesos2(usuario,puesto):
         elif st.session_state.Preparacion_Insumos==True:
             Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
         
-        elif st.session_state.Entregas==True:
-            Entregas.Entregas(usuario,puesto)
+        elif st.session_state.Entregas_Postcampo==True:
+            Entregas_Postcampo.Entregas_Postcampos(usuario,puesto)
 
         elif st.session_state.Postcampo==True:
             Postcampo.Postcampo(usuario,puesto)
