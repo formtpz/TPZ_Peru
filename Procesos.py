@@ -435,7 +435,7 @@ def Procesos1(usuario,puesto):
          
         # -----Validacion Precampo---- #
 
-        elif Validacion_Precampo_2:
+        elif Vinculacion_Precampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -458,12 +458,12 @@ def Procesos1(usuario,puesto):
             placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Validacion_Precampo=True
-            Validacion_Precampoo.Validacion_Precampo(usuario,puesto)
+            st.session_state.Vinculacion_Precampo=True
+            Vinculacionn_Precampoo.Vinculacionn_Precampo(usuario,puesto)
 
         # ----- CC Validacion Precampo---- #
 
-        elif CC_Validacion_Precampo_2:
+        elif CC_Vinculacion_Precampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -486,8 +486,8 @@ def Procesos1(usuario,puesto):
             placeholder19_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
-            st.session_state.CC_Validacion_Precampo=True
-            cc_validacion_precampo.cc_validacion_precampo(usuario,puesto)
+            st.session_state.CC_Vinculacion_Precampo=True
+            CC_Vinculacion_Precampo.CC_Vinculacion_Precampo(usuario,puesto)
 
 
         # ----- Restitución de Tierras ---- #
@@ -611,11 +611,11 @@ def Procesos1(usuario,puesto):
         elif st.session_state.CC_Postcampo==True:
             CC_Postcampo.CC_Postcampo(usuario,puesto)
 
-        elif st.session_state.CC_Validacion_Precampo==True:
-            CC_Validacion_Precampo.CC_Validacion_Precampo(usuario,puesto)
+        elif st.session_state.CC_Vinculacion_Precampo==True:
+            CC_Vinculacion_Precampo.CC_Vinculacion_Precampo(usuario,puesto)
 
-        elif st.session_state.Validacion_Precampo==True:
-            Validacion_Precampo.Validacion_Precampo(usuario,puesto)
+        elif st.session_state.Vinculacion_Precampo==True:
+            Vinculacion_Precampo.Vinculacion_Precampo(usuario,puesto)
 
         #elif st.session_state.Restitucion_Tierras==True:
             #Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
@@ -671,13 +671,13 @@ def Procesos2(usuario,puesto):
         postcampo_2 = placeholder12_2.button("Postcampo",key="postcampo_2")
 
         placeholder13_2 = st.empty()
-        validacion_precampo_2 = placeholder13_2.button("Validación Precampo",key="validacion_precampo_2")
+        vinculacion_precampo_2 = placeholder13_2.button("Vinculacion Precampo",key="vinculacion_precampo_2")
 
         placeholder14_2 = st.empty()
         cc_postcampo_2 = placeholder14_2.button("Control de Calidad Postcampo",key="cc_postcampo_2")
 
         placeholder15_2 = st.empty()
-        cc_validacion_precampo_2 = placeholder15_2.button("Control de Calidad Validación Precampo",key="cc_validacion_precampo_2")
+        cc_vinculacion_precampo_2 = placeholder15_2.button("Control de Calidad Vinculacion Precampo",key="cc_vinculacion_precampo_2")
        
         # ----- Historial ---- #
 
@@ -910,7 +910,7 @@ def Procesos2(usuario,puesto):
 
         # ----- Validación Precampo ---- #
 
-        elif Validacion_Precampo_2:
+        elif Vinculacion_Precampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -928,8 +928,8 @@ def Procesos2(usuario,puesto):
             placeholder14_2.empty()
             placeholder15_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Validacion_Precampo=True
-            Validacion_Precampo.Validacion_Precampo(usuario,puesto)
+            st.session_state.Vinculacion_Precampo=True
+            Vinculacion_Precampo.Vinculacion_Precampo(usuario,puesto)
             
         # ----- CC_Postcampo ---- #
 
@@ -974,8 +974,8 @@ def Procesos2(usuario,puesto):
             placeholder14_2.empty()
             placeholder15_2.empty()
             st.session_state.Procesos=True
-            st.session_state.cc_validacion_precampo=True
-            cc_validacion_precampo.cc_validacion_precampo(usuario,puesto)
+            st.session_state.cc_Vinculacion_precampo=True
+            cc_vinculacion_precampo.cc_vinculacion_precampo(usuario,puesto)
             
     elif st.session_state.Procesos==True:
 
@@ -1006,14 +1006,14 @@ def Procesos2(usuario,puesto):
         elif st.session_state.Postcampo==True:
             Postcampo.Postcampo(usuario,puesto)
 
-        elif st.session_state.Validacion_Postcampo==True:
-            Validacion_Postcampo.Validacion_Postcampo(usuario,puesto)
+        elif st.session_state.vinculacion_Postcampo==True:
+            vinculacion_Postcampo.vinculacion_Postcampo(usuario,puesto)
 
         elif st.session_state.CC_Postcampo==True:
             CC_Postcampo.CC_Postcampo(usuario,puesto)
 
-        elif st.session_state.CC_Validacion_Postcampo==True:
-            CC_Validacion_Postcampo.CC_Validacion_Postcampo(usuario,puesto)
+        elif st.session_state.CC_Vinculacion_Postcampo==True:
+            CC_Vinculacion_Postcampo.CC_Vinculacion_Postcampo(usuario,puesto)
 
 # ----- Procesos 3 (Jurídicos) ---- #
 
