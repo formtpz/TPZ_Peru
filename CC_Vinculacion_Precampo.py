@@ -43,7 +43,7 @@ def CC_Vinculacion_Precampo(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  control_calidad_vinculación_precampo_3 = placeholder8_3.title(":blue[Control de Calidad Vinculación Precampo]")
+  control_calidad_vinculacion_precampo_3 = placeholder8_3.title(":blue[Control de Calidad Vinculación Precampo]")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
