@@ -599,6 +599,9 @@ def Procesos1(usuario,puesto):
         elif st.session_state.CC_Precampo==True:
             CC_Precampo.CC_Precampo(usuario,puesto)
 
+        elif st.session_state.CC_Vinculacion_Precampo==True:
+            CC_Vinculacion_Precampo.CC_Vinculacion_Precampo(usuario,puesto)
+
         elif st.session_state.Preparacion_Insumos==True:
             Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
             
@@ -610,9 +613,6 @@ def Procesos1(usuario,puesto):
 
         elif st.session_state.CC_Postcampo==True:
             CC_Postcampo.CC_Postcampo(usuario,puesto)
-
-        elif st.session_state.CC_Vinculacion_Precampo==True:
-            CC_Vinculacion_Precampo.CC_Vinculacion_Precampo(usuario,puesto)
 
         elif st.session_state.Vinculacion_Precampo==True:
             Vinculacion_Precampo.Vinculacion_Precampo(usuario,puesto)
