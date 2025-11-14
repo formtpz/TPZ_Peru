@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
-def CC_Vinculacion_Postcampo(usuario,puesto):
+def CC_Vinculacion_Precampo(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
