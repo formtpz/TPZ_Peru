@@ -435,7 +435,7 @@ def Procesos1(usuario,puesto):
          
         # -----Validacion Precampo---- #
 
-        elif Vinculacion_Precampo_2:
+        elif vinculacion_precampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -459,11 +459,11 @@ def Procesos1(usuario,puesto):
             placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.Vinculacion_Precampo=True
-            Vinculacion_Precampoo.Vinculacion_Precampo(usuario,puesto)
+            Vinculacion_Precampo.Vinculacion_Precampo(usuario,puesto)
 
         # ----- CC Validacion Precampo---- #
 
-        elif CC_Vinculacion_Precampo_2:
+        elif cc_vinculacion_precampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
