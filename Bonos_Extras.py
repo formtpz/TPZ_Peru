@@ -895,7 +895,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
+    if nombre_9=="Brayan Rojas Pastrana" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -1082,7 +1082,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
+    if nombre_9=="Brayan Rojas Pastrana" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -1255,7 +1255,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
+    if nombre_9=="Brayan Rojas Pastrana" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -1428,7 +1428,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
+    if nombre_9=="Brayan Rojas Pastrana" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -1601,7 +1601,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
+    if nombre_9=="Brayan Rojas Pastrana" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
