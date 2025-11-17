@@ -48,7 +48,7 @@ def Bonos_Extras(usuario,puesto):
   perfil_9= pd.read_sql(f"select perfil from usuarios where usuario='{usuario}'",uri)
   perfil_9 = perfil_9.loc[0,'perfil']
   
-  if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
+  if nombre_9=="Brayan Rojas Pastrana" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
     
     placeholder8_9 = st.empty()
     archivos = placeholder8_9.subheader("Archivos")
