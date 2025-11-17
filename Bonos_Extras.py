@@ -984,7 +984,7 @@ def Bonos_Extras(usuario,puesto):
 
           placeholder112_9.empty()
 
-    elif perfil_9== "2": 
+    elif perfil_9== "2" or perfil_9== "1": 
       
       placeholder30_9.empty()
       #placeholder31_9.empty()
