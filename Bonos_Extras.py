@@ -175,7 +175,7 @@ def Bonos_Extras(usuario,puesto):
       placeholder18_9 = st.empty()
       titulo_extras_9 = placeholder18_9.subheader("Horas Extra")
       
-      extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra' or tipo_reporte='Horas Extra' or tipo_reporte='Horas Extra Apoyo Otros Proyectos' and fecha_bono='{periodo_9}'", con)
+      extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where (tipo_reporte='Extra' or tipo_reporte='Horas Extra' or tipo_reporte='Horas Extra Apoyo Otros Proyectos') and fecha_bono='{periodo_9}'", con)
       extras_9=  pd.DataFrame(data=extras_9)
 
       pivot2= len(extras_9.iloc[:,0])
@@ -383,7 +383,7 @@ def Bonos_Extras(usuario,puesto):
       placeholder26_9 = st.empty()
       titulo_extras_9 = placeholder26_9.subheader("Horas Extra")
       
-      extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where nombre='{personal_9}' and tipo_reporte='Extra' or tipo_reporte='Horas Extra' or tipo_reporte='Horas Extra Apoyo Otros Proyectos' and fecha_bono='{periodo_9}'", con)
+      extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where nombre='{personal_9}' and (tipo_reporte='Extra' or tipo_reporte='Horas Extra' or tipo_reporte='Horas Extra Apoyo Otros Proyectos') and fecha_bono='{periodo_9}'", con)
       extras_9= pd.DataFrame(data=extras_9)
 
       pivot4= len(extras_9.iloc[:,0])
@@ -404,7 +404,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder28_9 = st.empty()
         total = placeholder28_9.metric("Total de Horas Extra",total_extras_9)
         
-        data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra' or tipo_reporte='Horas Extra' or tipo_reporte='Horas Extra Apoyo Otros Proyectos' and fecha_bono='{periodo_9}' and nombre='{personal_9}'",con)
+        data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where (tipo_reporte='Extra' or tipo_reporte='Horas Extra' or tipo_reporte='Horas Extra Apoyo Otros Proyectos') and fecha_bono='{periodo_9}' and nombre='{personal_9}'",con)
 
         placeholder29_9 = st.empty()
         historial_9_extras=placeholder29_9.dataframe(data=data_extras)
@@ -752,7 +752,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder40_9 = st.empty()
     titulo_extras_9 = placeholder40_9.subheader("Horas Extras")
 
-    extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra' or tipo_reporte='Horas Extra' or tipo_reporte='Horas Extra Apoyo Otros Proyectos' and nombre='{nombre_9}' and fecha_bono='{periodo_9}'", con)
+    extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where (tipo_reporte='Extra' or tipo_reporte='Horas Extra' or tipo_reporte='Horas Extra Apoyo Otros Proyectos') and nombre='{nombre_9}' and fecha_bono='{periodo_9}'", con)
     extras_9= pd.DataFrame(data=extras_9)
 
     pivot7= len(extras_9.iloc[:,0])
@@ -773,7 +773,7 @@ def Bonos_Extras(usuario,puesto):
       placeholder42_9 = st.empty()
       total = placeholder42_9.metric("Total de Horas Extra",total_extras_9)
         
-      data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra' or tipo_reporte='Horas Extra' or tipo_reporte='Horas Extra Apoyo Otros Proyectos' and fecha_bono='{periodo_9}' and nombre='{nombre_9}'",con)
+      data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where (tipo_reporte='Extra' or tipo_reporte='Horas Extra' or tipo_reporte='Horas Extra Apoyo Otros Proyectos') and fecha_bono='{periodo_9}' and nombre='{nombre_9}'",con)
 
       placeholder43_9 = st.empty()
       historial_9_extras=placeholder43_9.dataframe(data=data_extras)
