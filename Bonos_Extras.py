@@ -990,7 +990,7 @@ def Bonos_Extras(usuario,puesto):
       #placeholder31_9.empty()
       placeholder40_9.empty()
       #placeholder36_9.empty()
-      placeholder37_9.empty()
+      #placeholder37_9.empty()
 
       if pivot5==0:
 
@@ -1004,11 +1004,11 @@ def Bonos_Extras(usuario,puesto):
 
       if pivot6==0:
 
-        placeholder38_9.empty()
+        #placeholder38_9.empty()
 
       else:
 
-        placeholder39_9.empty()
+        #placeholder39_9.empty()
 
       if pivot7==0:
 
@@ -1177,7 +1177,7 @@ def Bonos_Extras(usuario,puesto):
       #placeholder31_9.empty()
       placeholder40_9.empty()
       #placeholder36_9.empty()
-      placeholder37_9.empty()
+      #placeholder37_9.empty()
 
       if pivot5==0:
 
@@ -1191,11 +1191,11 @@ def Bonos_Extras(usuario,puesto):
 
       if pivot6==0:
 
-        placeholder38_9.empty()
+        #placeholder38_9.empty()
 
       else:
 
-        placeholder39_9.empty()
+        #placeholder39_9.empty()
 
       if pivot7==0:
 
@@ -1350,7 +1350,7 @@ def Bonos_Extras(usuario,puesto):
       #placeholder31_9.empty()
       placeholder40_9.empty()
       #placeholder36_9.empty()
-      placeholder37_9.empty()
+      #placeholder37_9.empty()
 
       if pivot5==0:
 
@@ -1364,11 +1364,11 @@ def Bonos_Extras(usuario,puesto):
 
       if pivot6==0:
 
-        placeholder38_9.empty()
+        #placeholder38_9.empty()
 
       else:
 
-        placeholder39_9.empty()
+        #placeholder39_9.empty()
 
       if pivot7==0:
 
@@ -1523,7 +1523,7 @@ def Bonos_Extras(usuario,puesto):
       #placeholder31_9.empty()
       placeholder40_9.empty()
       #placeholder36_9.empty()
-      placeholder37_9.empty()
+      #placeholder37_9.empty()
 
       if pivot5==0:
 
@@ -1537,7 +1537,7 @@ def Bonos_Extras(usuario,puesto):
 
       if pivot6==0:
 
-        placeholder38_9.empty()
+        #placeholder38_9.empty()
 
       else:
 
@@ -1696,7 +1696,7 @@ def Bonos_Extras(usuario,puesto):
       #placeholder31_9.empty()
       placeholder40_9.empty()
       #placeholder36_9.empty()
-      placeholder37_9.empty()
+      #placeholder37_9.empty()
 
       if pivot5==0:
 
@@ -1710,7 +1710,7 @@ def Bonos_Extras(usuario,puesto):
 
       if pivot6==0:
 
-        placeholder38_9.empty()
+        #placeholder38_9.empty()
 
       else:
 
