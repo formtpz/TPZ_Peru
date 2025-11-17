@@ -75,46 +75,36 @@ def Bonos_Extras(usuario,puesto):
     if cargar_archivos_9:
       if bloques_nuevos_9 is not None:
         df_bloques = pd.read_excel(bloques_nuevos_9) if bloques_nuevos_9.name.endswith('.xlsx') else pd.read_csv(bloques_nuevos_9)
-        con.cursor().execute('DELETE FROM bloques;')
-        con.commit()
         engine = create_engine(uri)
-        df_bloques.to_sql(name='bloques', con=engine, if_exists='append', index_label='id')
+        df_bloques.to_sql(name='bloques', con=engine, if_exists='append', index=False)
         st.success('Archivo "bloques" cargado correctamente')
 
 
       if bonos_nuevos_9 is not None:
         df_bonos = pd.read_excel(bonos_nuevos_9) if bonos_nuevos_9.name.endswith('.xlsx') else pd.read_csv(bonos_nuevos_9)
-        con.cursor().execute('DELETE FROM bonos;')
-        con.commit()
         engine = create_engine(uri)
-        df_bonos.to_sql(name='bonos', con=engine, if_exists='append', index_label='id')
+        df_bonos.to_sql(name='bonos', con=engine, if_exists='append', index=False)
         st.success('Archivo "bonos" cargado correctamente')
 
  
       if extras_nuevas_9 is not None:
         df_extras = pd.read_excel(extras_nuevas_9) if extras_nuevas_9.name.endswith('.xlsx') else pd.read_csv(extras_nuevas_9)
-        con.cursor().execute('DELETE FROM extras;')
-        con.commit()
         engine = create_engine(uri)
-        df_extras.to_sql(name='extras', con=engine, if_exists='append', index_label='id')
+        df_extras.to_sql(name='extras', con=engine, if_exists='append', index=False)
         st.success('Archivo "extras" cargado correctamente')
 
    
       if unidades_nuevas_9 is not None:
         df_unidades = pd.read_excel(unidades_nuevas_9) if unidades_nuevas_9.name.endswith('.xlsx') else pd.read_csv(unidades_nuevas_9)
-        con.cursor().execute('DELETE FROM unidades;')
-        con.commit()
         engine = create_engine(uri)
-        df_unidades.to_sql(name='unidades', con=engine, if_exists='append', index_label='id')
+        df_unidades.to_sql(name='unidades', con=engine, if_exists='append', index=False)
         st.success('Archivo "unidades" cargado correctamente')
 
    
       if bonos_nuevos_juridico_9 is not None:
         df_bonos_juridico = pd.read_excel(bonos_nuevos_juridico_9) if bonos_nuevos_juridico_9.name.endswith('.xlsx') else pd.read_csv(bonos_nuevos_juridico_9)
-        con.cursor().execute('DELETE FROM bonos_juridico;')
-        con.commit()
         engine = create_engine(uri)
-        df_bonos_juridico.to_sql(name='bonos_juridico', con=engine, if_exists='append', index_label='id')
+        df_bonos_juridico.to_sql(name='bonos_juridico', con=engine, if_exists='append', index=False)
         st.success('Archivo "bonos_juridico" cargado correctamente')
 
       if all(file is None for file in [bloques_nuevos_9, bonos_nuevos_9, extras_nuevas_9, unidades_nuevas_9, bonos_nuevos_juridico_9]):
