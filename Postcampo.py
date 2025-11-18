@@ -14,7 +14,7 @@ def Postcampo(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
- uri=st.secrets.db_credentials.URI
+  uri=st.secrets.db_credentials.URI
 
   placeholder1_3= st.sidebar.empty()
   titulo= placeholder1_3.title("Menú")
