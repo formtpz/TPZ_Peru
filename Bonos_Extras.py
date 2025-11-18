@@ -577,6 +577,17 @@ def Bonos_Extras(usuario,puesto):
       col6.metric("Bono Fijo", bonos_fijos_9)
       col7.metric("Bono Total", bono_total_9)
 
+      st.markdown(""" <style> 
+      div[data-testid="metric-container"] > label{ font-size: 12px !important; }
+      div[data-testid="metric-container"] 
+      div{ font-size: 16px !important; } 
+      </style> """, unsafe_allow_html=True)
+
+
+
+
+
+    
       # Procesos #
       
       #variables_1_9=["Ratio Promedio por Bloque (Predio/Día)","Duración (Día)","Producción (Según Reportes)","Producción Limpia","Producción (Según Ratio)","Producción (Estándar)","Bono Variable","Bono Fijo","Cantidad de Personal"]								
