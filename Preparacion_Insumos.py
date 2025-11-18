@@ -12,6 +12,7 @@ from Autenticacion import hostname, database, username, pwd, port_id, con, uri
 def Preparacion_Insumos(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
+  uri=st.secrets.db_credentials.URI
 
 
 
