@@ -8,7 +8,7 @@ from datetime import date
 import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
-from Autenticacion import hostname, database, username, pwd, port_id
+from Autenticacion import hostname, database, username, pwd, port_id, con
 
 def Postcampo_FMI(usuario,puesto):
 
