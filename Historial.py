@@ -10,13 +10,14 @@ import plotly.express as px
 from urllib.parse import urlparse
 uri=st.secrets.db_credentials.URI
 import Procesos,Capacitacion,Otros_Registros,Bonos_Extras,Salir
-from Autenticacion import hostname, database, username, pwd, port_id, con, uri
+from Autenticacion import hostname, database, username, pwd, port_id, con
 
 def Historial(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
- 
+
+  uri=st.secrets.db_credentials.URI
 
   placeholder1_7= st.sidebar.empty()
   titulo= placeholder1_7.title("Menú")
