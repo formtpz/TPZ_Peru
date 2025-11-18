@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 import pytz
 
 import Procesos,Historial,Capacitacion,Bonos_Extras,Salir
-from Autenticacion import hostname, database, username, pwd, port_id, con
+from Autenticacion import hostname, database, username, pwd, port_id, con, uri
 
 def Otros_Registros(usuario,puesto):
 
