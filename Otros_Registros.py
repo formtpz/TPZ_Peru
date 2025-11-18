@@ -8,20 +8,13 @@ from urllib.parse import urlparse
 import pytz
 
 import Procesos,Historial,Capacitacion,Bonos_Extras,Salir
+from Autenticacion import hostname, database, username, pwd, port_id
 
 def Otros_Registros(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
-  uri=st.secrets.db_credentials.URI
-  result = urlparse(uri)
-  hostname = result.hostname
-  database = result.path[1:]
-  username = result.username
-  pwd = result.password
-  port_id = result.port
-   
-  from Autenticacion import con
+
 
   placeholder1_13= st.sidebar.empty()
   titulo= placeholder1_13.title("Menú")
