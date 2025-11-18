@@ -1,3 +1,7 @@
+#---INDEX----
+#---Perfil 2 Operador- 1 Supervisor Linea 539
+#---Perfil 
+
 # ----- Librerías ---- #
 
 import streamlit as st
@@ -146,8 +150,8 @@ def Bonos_Extras(usuario,puesto):
         bono_productividad_9=0
         bono_calidad_9=0
         bono_supervision_9=0
-        bono_calidad_externa_igac_9=0
-        bonos_variables_9=0
+        bono_calidad_externa_9=0
+        bonos_entregas_9=0
         bonos_fijos_9=0
         bono_total_9=0
         
@@ -155,8 +159,8 @@ def Bonos_Extras(usuario,puesto):
           bono_productividad_9 = bono_productividad_9 + sum([float(bonos_9.iloc[a,8])])
           bono_calidad_9 = bono_calidad_9 + sum([float(bonos_9.iloc[a,15])])
           bono_supervision_9 = bono_supervision_9 + sum([float(bonos_9.iloc[a,17])])
-          bono_calidad_externa_igac_9 = bono_calidad_externa_igac_9 + sum([float(bonos_9.iloc[a,18])])
-          bonos_variables_9 = bonos_variables_9 + sum([float(bonos_9.iloc[a,21])])
+          bono_calidad_externa_9 = bono_calidad_externa_9 + sum([float(bonos_9.iloc[a,18])])
+          bonos_entregas_9 = bonos_entregas_9 + sum([float(bonos_9.iloc[a,21])])
           bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,16])])
           #bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,75]),float(bonos_9.iloc[a,76]),float(bonos_9.iloc[a,77]),float(bonos_9.iloc[a,78]),float(bonos_9.iloc[a,79]),float(bonos_9.iloc[a,80]),float(bonos_9.iloc[a,81]),float(bonos_9.iloc[a,82]),float(bonos_9.iloc[a,83])])
           bono_total_9= bono_total_9 + sum([float(bonos_9.iloc[a,22])])
@@ -167,8 +171,8 @@ def Bonos_Extras(usuario,puesto):
         col1.metric("Bono Productividad", bono_productividad_9)
         col2.metric("Bono Calidad", bono_calidad_9)
         col3.metric("Bono Supervisión", bono_supervision_9)
-        col4.metric("Bono Calidad Externa IGAC", bono_calidad_externa_igac_9)
-        col5.metric("Bono Variable", bonos_variables_9)
+        col4.metric("Bono Calidad Externa IGAC", bono_calidad_externa_9)
+        col5.metric("Bono Variable", bonos_entregas_9)
         col6.metric("Bono Fijo", bonos_fijos_9)
         col7.metric("Bono Total", bono_total_9)
 
@@ -218,8 +222,8 @@ def Bonos_Extras(usuario,puesto):
         bono_productividad_9=sum([float(bonos_9.iloc[0,8])])
         bono_calidad_9=sum([float(bonos_9.iloc[0,15])])
         bono_supervision_9=sum([float(bonos_9.iloc[0,17])])
-        bono_calidad_externa_igac_9=sum([float(bonos_9.iloc[0,18])])
-        bonos_variables_9=sum([float(bonos_9.iloc[0,21])])
+        bono_calidad_externa_9=sum([float(bonos_9.iloc[0,18])])
+        bonos_entregas_9=sum([float(bonos_9.iloc[0,21])])
         bonos_fijos_9=sum([float(bonos_9.iloc[0,16])])
         bono_total_9=sum([float(bonos_9.iloc[0,22])])
         
@@ -228,8 +232,8 @@ def Bonos_Extras(usuario,puesto):
         col1.metric("Bono Productividad", bono_productividad_9)
         col2.metric("Bono Calidad", bono_calidad_9)
         col3.metric("Bono Supervisión", bono_supervision_9)
-        col4.metric("Bono Calidad Externa IGAC", bono_calidad_externa_igac_9)
-        col5.metric("Bono Variable", bonos_variables_9)
+        col4.metric("Bono Calidad Externa IGAC", bono_calidad_externa_9)
+        col5.metric("Bono Variable", bonos_entregas_9)
         col6.metric("Bono Fijo", bonos_fijos_9)
         col7.metric("Bono Total", bono_total_9)
 
@@ -367,7 +371,7 @@ def Bonos_Extras(usuario,puesto):
 
         #otros_bonos_9= pd.DataFrame(data={"Variables":variables_9,"Valor":valor_9})
           
-        #otros_bonos_9.iloc[0,1] = bonos_variables_9
+        #otros_bonos_9.iloc[0,1] = bonos_entregas_9
         #otros_bonos_9.iloc[1,1] = bonos_fijos_9
         #otros_bonos_9.iloc[2,1] = bonos_9.iloc[0,95]
         #otros_bonos_9.iloc[3,1] = bonos_9.iloc[0,96]
@@ -533,7 +537,8 @@ def Bonos_Extras(usuario,puesto):
         placeholder112_9 = st.empty()
         dataframe_bloques_9=placeholder112_9.dataframe(data=bloques_9)
         
-#------PERFIL OPERADOR----#
+  #------PERFIL OPERADOR y SUPERVISOR-------------------------------------------------------------------------------------------------------------------------------#
+
   elif perfil_9 == "2" or perfil_9 == "1":
     
     placeholder30_9 = st.empty()
@@ -541,8 +546,8 @@ def Bonos_Extras(usuario,puesto):
 
     #placeholder31_9 = st.empty()
     #titulo_bonos_9 = placeholder31_9.subheader("Bonos")
-    #a8-bono productividad a15-bono calidad a16-bono fijo a17-bono por supervision a18-bono calidad externa igac a21 bono variable a22 bono total
-    bonos_9 = pd.read_sql(f"select a8, a15, a16, a17, a18, a21, a22, a23 FROM bonos WHERE a0='{usuario}' AND a23='{periodo_9}'", con)
+    #a5-Bono Productividad a6-Bono Calidad a7-Bono Supervision a8-Bono Entregas a9-Bono Calidad Externa a10-Bono Fijo  a22-Bono Total
+    bonos_9 = pd.read_sql(f"select a0, a5, a6, a7, a8, a9, a10, a22, a23 FROM bonos WHERE a0='{usuario}' AND a23='{periodo_9}'", con)
     bonos_9= pd.DataFrame(data=bonos_9)
     
     pivot5= len(bonos_9.iloc[:,0])
@@ -554,21 +559,21 @@ def Bonos_Extras(usuario,puesto):
     else:
       # Reemplaza nulos por 0 y suma solo las columnas necesarias
 
-      bono_productividad_9= float(bonos_9.iloc[0, 0]) 
-      bono_calidad_9= float(bonos_9.iloc[0, 1]) 
-      bono_supervision_9= float(bonos_9.iloc[0, 3])
-      bono_calidad_externa_igac_9= float(bonos_9.iloc[0, 4]) 
-      bonos_variables_9 = float(bonos_9.iloc[0, 5]) 
-      bonos_fijos_9 = float(bonos_9.iloc[0, 2]) 
-      bono_total_9 = float(bonos_9.iloc[0, 6])
+      bono_productividad_9= float(bonos_9.iloc[0, 4]) 
+      bono_calidad_9= float(bonos_9.iloc[0, 3]) 
+      bono_supervision_9= float(bonos_9.iloc[0, 4])
+      bono_calidad_externa_9= float(bonos_9.iloc[0, 6]) 
+      bonos_entregas_9 = float(bonos_9.iloc[0, 5]) 
+      bonos_fijos_9 = float(bonos_9.iloc[0, 7]) 
+      bono_total_9 = float(bonos_9.iloc[0, 8])
       
       placeholder33_9 = st.empty()
       col1, col2, col3, col4, col5, col6, col7 = placeholder33_9.columns(7)
       col1.metric("Bono Productividad", bono_productividad_9)
       col2.metric("Bono Calidad", bono_calidad_9)
       col3.metric("Bono Supervisión", bono_supervision_9)
-      col4.metric("Bono Calidad Externa IGAC", bono_calidad_externa_igac_9)
-      col5.metric("Bono Variable", bonos_variables_9)
+      col4.metric("Bono Calidad Externa", bono_calidad_externa_9)
+      col5.metric("Bono Entregas", bonos_entregas_9)
       col6.metric("Bono Fijo", bonos_fijos_9)
       col7.metric("Bono Total", bono_total_9)
 
@@ -706,7 +711,7 @@ def Bonos_Extras(usuario,puesto):
 
       #otros_bonos_9= pd.DataFrame(data={"Variables":variables_2_9,"Valor":valor_9})
       
-      #otros_bonos_9.iloc[0,1] = bonos_variables_9
+      #otros_bonos_9.iloc[0,1] = bonos_entregas_9
       #otros_bonos_9.iloc[1,1] = bonos_fijos_9
       #otros_bonos_9.iloc[2,1] = bonos_9.iloc[0,95]
       #otros_bonos_9.iloc[3,1] = bonos_9.iloc[0,96]
