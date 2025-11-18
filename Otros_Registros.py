@@ -8,11 +8,12 @@ from urllib.parse import urlparse
 import pytz
 
 import Procesos,Historial,Capacitacion,Bonos_Extras,Salir
-from Autenticacion import hostname, database, username, pwd, port_id, con, uri
+from Autenticacion import hostname, database, username, pwd, port_id, con
 
 def Otros_Registros(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
+  uri=st.secrets.db_credentials.URI
 
 
 
