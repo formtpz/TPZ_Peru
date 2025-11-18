@@ -10,7 +10,7 @@ import plotly.express as px
 from urllib.parse import urlparse
 uri=st.secrets.db_credentials.URI
 import Procesos,Capacitacion,Otros_Registros,Bonos_Extras,Salir
-from Autenticacion import hostname, database, username, pwd, port_id, con
+from Autenticacion import hostname, database, username, pwd, port_id, con, uri
 
 def Historial(usuario,puesto):
 
