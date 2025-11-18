@@ -566,6 +566,12 @@ def Bonos_Extras(usuario,puesto):
       bonos_entregas_9 = float(bonos_9.iloc[0, 4]) 
       bonos_fijos_9 = float(bonos_9.iloc[0, 6]) 
       bono_total_9 = float(bonos_9.iloc[0, 7])
+
+      st.markdown(""" <style> 
+      div[data-testid="metric-container"] > label{ font-size: 8px !important; }
+      div[data-testid="metric-container"] 
+      div{ font-size: 8px !important; } 
+      </style> """, unsafe_allow_html=True)
       
       placeholder33_9 = st.empty()
       col1, col2, col3, col4, col5, col6, col7 = placeholder33_9.columns(7)
@@ -577,15 +583,7 @@ def Bonos_Extras(usuario,puesto):
       col6.metric("Bono Fijo", bonos_fijos_9)
       col7.metric("Bono Total", bono_total_9)
 
-      st.markdown(""" <style> 
-      div[data-testid="metric-container"] > label{ font-size: 8px !important; }
-      div[data-testid="metric-container"] 
-      div{ font-size: 8px !important; } 
-      </style> """, unsafe_allow_html=True)
-
-
-
-
+     
 
     
       # Procesos #
