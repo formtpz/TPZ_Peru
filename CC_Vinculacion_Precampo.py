@@ -7,7 +7,7 @@ from datetime import datetime
 import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
-from Autenticacion import hostname, database, username, pwd, port_id
+from Autenticacion import hostname, database, username, pwd, port_id, con
 
 def CC_Vinculacion_Precampo(usuario,puesto):
 
