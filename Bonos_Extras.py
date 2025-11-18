@@ -11,11 +11,12 @@ import psycopg2
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Salir
 from sqlalchemy import create_engine
-from Autenticacion import hostname, database, username, pwd, port_id, con, uri
+from Autenticacion import hostname, database, username, pwd, port_id, con
 
 def Bonos_Extras(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
+  uri=st.secrets.db_credentials.URI
 
     
 
