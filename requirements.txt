@@ -52,7 +52,7 @@ rich==13.1.0
 semver==2.13.0
 six==1.16.0
 smmap==5.0.0
-SQLAlchemy>=1.4,<2.0
+SQLAlchemy<2.0
 streamlit==1.42.0
 tabula-py==2.7.0
 tenacity==8.1.0
@@ -68,4 +68,5 @@ virtualenv==20.17.1
 watchdog==2.2.1
 yarg==0.1.9
 zipp==3.11.0
+
 
