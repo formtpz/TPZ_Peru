@@ -559,13 +559,13 @@ def Bonos_Extras(usuario,puesto):
     else:
       # Reemplaza nulos por 0 y suma solo las columnas necesarias
 
-      bono_productividad_9= float(bonos_9.iloc[0, 4]) 
-      bono_calidad_9= float(bonos_9.iloc[0, 3]) 
-      bono_supervision_9= float(bonos_9.iloc[0, 4])
-      bono_calidad_externa_9= float(bonos_9.iloc[0, 6]) 
-      bonos_entregas_9 = float(bonos_9.iloc[0, 5]) 
-      bonos_fijos_9 = float(bonos_9.iloc[0, 7]) 
-      bono_total_9 = float(bonos_9.iloc[0, 8])
+      bono_productividad_9= float(bonos_9.iloc[0, 1]) 
+      bono_calidad_9= float(bonos_9.iloc[0, 2]) 
+      bono_supervision_9= float(bonos_9.iloc[0, 3])
+      bono_calidad_externa_9= float(bonos_9.iloc[0, 5]) 
+      bonos_entregas_9 = float(bonos_9.iloc[0, 4]) 
+      bonos_fijos_9 = float(bonos_9.iloc[0, 6]) 
+      bono_total_9 = float(bonos_9.iloc[0, 7])
       
       placeholder33_9 = st.empty()
       col1, col2, col3, col4, col5, col6, col7 = placeholder33_9.columns(7)
