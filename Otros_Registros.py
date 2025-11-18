@@ -21,10 +21,7 @@ def Otros_Registros(usuario,puesto):
   pwd = result.password
   port_id = result.port
    
-  @st.cache_resource
-  def get_connection():
-    return psycopg2.connect(host=hostname,dbname= database,user= username,password=pwd,port= port_id)
-  con = get_connection()
+  from Autenticacion import con
 
   placeholder1_13= st.sidebar.empty()
   titulo= placeholder1_13.title("Menú")
