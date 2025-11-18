@@ -10,11 +10,6 @@ def contraseña(usuario):
     return contraseña
 @st.cache_resource
 def init_connection():
-    return psycopg2.connect(
-        host="...",
-        user="...",
-        password="...",
-        database="..."
-    )
+    return psycopg2.connect(host=hostname,dbname= database,user= username,password=pwd,port= port_id)
 
 con = init_connection()
