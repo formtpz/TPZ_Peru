@@ -22,7 +22,11 @@ def Historial(usuario,puesto):
   username = result.username
   pwd = result.password
   port_id = result.port
-  con = psycopg2.connect(host=hostname,dbname= database,user= username,password=pwd,port= port_id)
+   
+  @st.cache_resource
+  def get_connection():
+    return psycopg2.connect(host=hostname,dbname= database,user= username,password=pwd,port= port_id)
+  con = get_connection()
 
   placeholder1_7= st.sidebar.empty()
   titulo= placeholder1_7.title("Menú")
