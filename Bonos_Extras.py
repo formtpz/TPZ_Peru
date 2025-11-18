@@ -578,9 +578,9 @@ def Bonos_Extras(usuario,puesto):
       col7.metric("Bono Total", bono_total_9)
 
       st.markdown(""" <style> 
-      div[data-testid="metric-container"] > label{ font-size: 12px !important; }
+      div[data-testid="metric-container"] > label{ font-size: 8px !important; }
       div[data-testid="metric-container"] 
-      div{ font-size: 16px !important; } 
+      div{ font-size: 8px !important; } 
       </style> """, unsafe_allow_html=True)
 
 
