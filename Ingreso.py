@@ -1,5 +1,6 @@
 # ----- Librerías ---- #
 import streamlit as st
+st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 import pandas as pd
 from PIL import Image
 import Autenticacion, Procesos
@@ -11,7 +12,7 @@ importlib.reload(Procesos)
 
 img=Image.open('logoicon.png')
 
-st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
+
 
 # ----- Quita Encabezado de Streamlit ---- #
 
