@@ -1,5 +1,6 @@
 # ----- Librerías ---- #
 import streamlit as st
+img=Image.open('logoicon.png')
 st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 import pandas as pd
 from PIL import Image
@@ -10,7 +11,6 @@ importlib.reload(Procesos)
 
 # ----- Formato General ---- #
 
-img=Image.open('logoicon.png')
 
 
 
