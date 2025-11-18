@@ -570,23 +570,11 @@ def Bonos_Extras(usuario,puesto):
      
       
       placeholder33_9 = st.empty()
+      df_bonos = pd.DataFrame({ "Concepto": ["Bono Productividad","Bono Calidad","Bono Supervisión","Bono Calidad Externa","Bono Entregas","Bono Fijo","TOTAL"], 
+                               "Monto": [bono_productividad_9,bono_calidad_9,bono_supervision_9,bono_calidad_externa_9,bonos_entregas_9,bonos_fijos_9,bono_total_9]})
+      placeholder33_9.dataframe(df_bonos, hide_index=True)
       
-      with placeholder33_9.container():
-          col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
-      with col1:
-          st.markdown(mini_metric_html("Bono Productividad", bono_productividad_9), unsafe_allow_html=True)
-      with col2:
-          st.markdown(mini_metric_html("Bono Calidad", bono_calidad_9), unsafe_allow_html=True)
-      with col3:
-          st.markdown(mini_metric_html("Bono Supervisión", bono_supervision_9), unsafe_allow_html=True)
-      with col4:
-          st.markdown(mini_metric_html("Bono Calidad Externa", bono_calidad_externa_9), unsafe_allow_html=True)
-      with col5:
-          st.markdown(mini_metric_html("Bono Entregas", bonos_entregas_9), unsafe_allow_html=True)
-      with col6:
-          st.markdown(mini_metric_html("Bono Fijo", bonos_fijos_9), unsafe_allow_html=True)
-      with col7:
-          st.markdown(mini_metric_html("Bono Total", bono_total_9), unsafe_allow_html=True)
+   
       #col1, col2, col3, col4, col5, col6, col7 = placeholder33_9.columns(7)
       #col1.metric("Bono Productividad", bono_productividad_9)
       #col2.metric("Bono Calidad", bono_calidad_9)
