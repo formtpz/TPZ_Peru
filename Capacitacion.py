@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 import pytz
 import Procesos,Historial,Otros_Registros,Bonos_Extras,Salir
 import numpy as np
-from Autenticacion import hostname, database, username, pwd, port_id, con
+from Autenticacion import hostname, database, username, pwd, port_id, con, uri
 
 def Capacitacion(usuario,puesto):
 
