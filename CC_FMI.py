@@ -7,7 +7,7 @@ from datetime import datetime
 import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
-from Autenticacion import hostname, database, username, pwd, port_id, con
+from Autenticacion import hostname, database, username, pwd, port_id, con, uri
 def CC_FMI(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
