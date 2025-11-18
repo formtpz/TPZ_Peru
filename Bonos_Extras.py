@@ -16,14 +16,7 @@ def Bonos_Extras(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
-  uri=st.secrets.db_credentials.URI
-  result = urlparse(uri)
-  hostname = result.hostname
-  database = result.path[1:]
-  username = result.username
-  pwd = result.password
-  port_id = result.port
-  from Autenticacion import con
+  from Autenticacion import *
     
 
   placeholder1_9= st.sidebar.empty()
