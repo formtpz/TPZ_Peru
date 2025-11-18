@@ -568,9 +568,9 @@ def Bonos_Extras(usuario,puesto):
       bono_total_9 = float(bonos_9.iloc[0, 7])
 
       st.markdown(""" <style> /* Contenedor principal del metric */ div[data-testid="metric-container"] {     padding: 0 !important;     margin: 0 !important; }
-      /* Título del metric */ div[data-testid="metric-container"] label[data-testid="stMetricLabel"] {     font-size: 12px !important;     color: #666 !important; }
-      /* Valor del metric */ div[data-testid="metric-container"] div[data-testid="stMetricValue"] {     font-size: 16px !important; } 
-      /* Delta (si existiera) */ div[data-testid="metric-container"] div[data-testid="stMetricDelta"] {    font-size: 12px !important;} </style>""", unsafe_allow_html=True)
+      /* Título del metric */ div[data-testid="metric-container"] label[data-testid="stMetricLabel"] {     font-size: 8px !important;     color: #666 !important; }
+      /* Valor del metric */ div[data-testid="metric-container"] div[data-testid="stMetricValue"] {     font-size: 8px !important; } 
+      /* Delta (si existiera) */ div[data-testid="metric-container"] div[data-testid="stMetricDelta"] {    font-size: 8px !important;} </style>""", unsafe_allow_html=True)
       
       placeholder33_9 = st.empty()
       col1, col2, col3, col4, col5, col6, col7 = placeholder33_9.columns(7)
