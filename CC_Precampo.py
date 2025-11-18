@@ -19,7 +19,7 @@ def CC_Precampo(usuario,puesto):
   username = result.username
   pwd = result.password
   port_id = result.port
-  con = psycopg2.connect(host=hostname,dbname= database,user= username,password=pwd,port= port_id)
+  from Autenticacion import con
 
   placeholder1_3= st.sidebar.empty()
   titulo= placeholder1_3.title("Menú")
