@@ -566,7 +566,7 @@ def Bonos_Extras(usuario,puesto):
       
       placeholder33_9 = st.empty()
       df_bonos = pd.DataFrame({ "Concepto": ["Bono Productividad","Bono Calidad","Bono Supervisión","Bono Calidad Externa","Bono Entregas","Bono Fijo","TOTAL"], 
-                               "Monto": [bono_productividad_9,bono_calidad_9,bono_supervision_9,bono_calidad_externa_9,bonos_entregas_9,bonos_fijos_9,bono_total_9]})
+                               "Monto de bonificación": [bono_productividad_9,bono_calidad_9,bono_supervision_9,bono_calidad_externa_9,bonos_entregas_9,bonos_fijos_9,bono_total_9]})
       placeholder33_9.dataframe(df_bonos, hide_index=True)
       
    
