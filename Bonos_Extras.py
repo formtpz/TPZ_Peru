@@ -1551,7 +1551,7 @@ def Bonos_Extras(usuario,puesto):
 
       #else:
 
-        placeholder39_9.empty()
+        #placeholder39_9.empty()
 
       if pivot7==0:
 
@@ -1724,7 +1724,7 @@ def Bonos_Extras(usuario,puesto):
 
       #else:
 
-        placeholder39_9.empty()
+        #placeholder39_9.empty()
 
       if pivot7==0:
 
