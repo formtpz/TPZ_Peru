@@ -8,9 +8,10 @@ import time
 if "start_time" not in st.session_state:
     st.session_state.start_time = time.time()
 
-if time.time() - st.session_state.start_time >  29 * 60:
+if time.time() - st.session_state.start_time >  5:
     st.session_state.clear()
     st.rerun()
+countdown = st.autorefresh(interval=6000, key="ref")
     #-------------------------------------------------------
 def Procesos1(usuario,puesto):
 
