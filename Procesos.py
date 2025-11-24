@@ -13,7 +13,7 @@ if time.time() - st.session_state.start_time >  5:
     st.rerun()
 
 # Esta función auto-refresca la página cada N segundos
-def auto_refresh(seconds=5):
+def auto_refresh(seconds=6):
     st.markdown(
         f"""
         <meta http-equiv="refresh" content="{seconds}">
