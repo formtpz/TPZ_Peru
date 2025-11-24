@@ -2,26 +2,39 @@ import pandas as pd
 import streamlit as st
 import psycopg2
 from urllib.parse import urlparse
-from sqlalchemy import create_engine
 
+# --- Cargar URI desde secrets ---
 uri = st.secrets.db_credentials.URI
 
-# --- Crear engine con pool (cacheado) ---
-@st.cache_resource
-def get_engine():
-    return create_engine(uri, pool_pre_ping=True, pool_recycle=1800)
+# --- Parsear URI ---
+result = urlparse(uri)
+hostname = result.hostname
+database = result.path[1:]
+username = result.username
+pwd = result.password
+port_id = result.port
 
-engine = get_engine()
-
-# --- Consulta de contraseña usando engine pool ---
+# --- Función para recuperar contraseña ---
 def contraseña(usuario):
-    query = f"""SELECT contraseña 
-                FROM usuarios 
-                WHERE usuario = '{usuario}' 
-                  AND estado='Activo'"""
-    return pd.read_sql(query, engine)
-def init_connection():
-    return psycopg2.connect(host=hostname,dbname= database,user= username,password=pwd,port= port_id)
+    query = f"""
+        SELECT contraseña 
+        FROM usuarios 
+        WHERE usuario = '{usuario}' 
+          AND estado = 'Activo'
+    """
+    return pd.read_sql(query, con)
 
+# --- Crear una sola conexión global (cacheada) ---
+@st.cache_resource
+def init_connection():
+    return psycopg2.connect(
+        host=hostname,
+        dbname=database,
+        user=username,
+        password=pwd,
+        port=port_id
+    )
+
+# --- Abrir conexión compartida ---
 con = init_connection()
 
