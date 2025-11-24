@@ -21,9 +21,9 @@ def auto_refresh(seconds=5):
         unsafe_allow_html=True
     )
 
-auto_refresh(5)  #refresca cada 5 segundos
+auto_refresh(6)  #--refrescacada5segundos
+#-------------------------------------------------------#
 
-    #-------------------------------------------------------#
 def Procesos1(usuario,puesto):
 
     st.session_state.Ingreso=True
