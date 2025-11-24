@@ -3,6 +3,15 @@
 import streamlit as st
 import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, Consulta_Campo,Restitucion_Tierras,Revision_Segregados,Estado_UIT_Hito,Precampo, CC_Precampo, Preparacion_Insumos, Entregas_Postcampo, Postcampo, CC_Postcampo, CC_Vinculacion_Precampo, Vinculacion_Precampo
 
+import time
+#------------------------------------CONTADOR---------------
+if "start_time" not in st.session_state:
+    st.session_state.start_time = time.time()
+
+if time.time() - st.session_state.start_time >  5:
+    st.session_state.clear()
+    st.rerun()
+    #-------------------------------------------------------
 def Procesos1(usuario,puesto):
 
     st.session_state.Ingreso=True
