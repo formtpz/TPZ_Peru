@@ -11,8 +11,19 @@ if "start_time" not in st.session_state:
 if time.time() - st.session_state.start_time >  5:
     st.session_state.clear()
     st.rerun()
-countdown = st.autorefresh(interval=6000, key="ref")
-    #-------------------------------------------------------
+
+# Esta función auto-refresca la página cada N segundos
+def auto_refresh(seconds=5):
+    st.markdown(
+        f"""
+        <meta http-equiv="refresh" content="{seconds}">
+        """,
+        unsafe_allow_html=True
+    )
+
+auto_refresh(5)  #refresca cada 5 segundos
+
+    #-------------------------------------------------------#
 def Procesos1(usuario,puesto):
 
     st.session_state.Ingreso=True
