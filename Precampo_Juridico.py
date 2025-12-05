@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 from Autenticacion import hostname, database, username, pwd, port_id, con
 
-def Vinculacion_Precampo(usuario,puesto):
+def Precampo_Juridico(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
   uri=st.secrets.db_credentials.URI
@@ -38,7 +38,7 @@ def Vinculacion_Precampo(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  vinculacion_precampo_3 = placeholder8_3.title("Vinculación Precampo")
+  Precampo_Juridico_3 = placeholder8_3.title("Precampo Jurídico")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
@@ -309,6 +309,6 @@ def Vinculacion_Precampo(usuario,puesto):
     #else:#
       #lote_3 = '1'#
       # ----- Fin del script ---- #
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito,tipo,lotes,aprobados,rechazados,horas,manzana,sector,numero_lote,estado,area,unidades_catastrales,edificas,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores) VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Vinculación Precampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','0','0','0','{horas_3}','{manzana_3}','{sector_3}','{numero_lote_3}','{estado_3}','0.0','{unidades_catastrales_3}','0','N/A','0','0','{observaciones_3}','N/A','N/A','{horas_bi}','0.0','N/A','0','0','N/A','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito,tipo,lotes,aprobados,rechazados,horas,manzana,sector,numero_lote,estado,area,unidades_catastrales,edificas,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores) VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Precampo Jurídico','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','0','0','0','{horas_3}','{manzana_3}','{sector_3}','{numero_lote_3}','{estado_3}','0.0','{unidades_catastrales_3}','0','N/A','0','0','{observaciones_3}','N/A','N/A','{horas_bi}','0.0','N/A','0','0','N/A','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
