@@ -142,6 +142,7 @@ if iniciar_sesion_1:
                 st.session_state.Revision_Campo=False
                 st.session_state.Postcampo=False
                 st.session_state.CC_Postcampo=False
+                st.session_state.CC_Precampo_Juridico=False
                 st.session_state.CC_Vinculacion_precampo=False
                 st.session_state.Estado_UIT_Hito=False
                                     
