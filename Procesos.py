@@ -1167,7 +1167,7 @@ def Procesos3(usuario,puesto):
 
         elif precampo_juridico_2:
 
-           placeholder1_2.empty()
+            placeholder1_2.empty()
             placeholder2_2.empty()
             placeholder3_2.empty()
             placeholder4_2.empty()
