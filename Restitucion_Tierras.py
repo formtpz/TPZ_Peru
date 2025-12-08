@@ -199,6 +199,6 @@ def Restitucion_Tierras(usuario,puesto):
 
     año_3 = fecha_3.isocalendar()[0]
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Restitución de Tierras','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','Ordinario','{produccion_3}','0','0','0.0','UIT-0','0','0','N/A','0.0','0','0','P0','0','0','N/A')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,partida,con_fmi,sin_fmi,observaciones)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Restitución de Tierras','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','Ordinario','{produccion_3}','0','0','0.0','UIT-0','0','0','N/A','0.0','0','0','P0','0','0','N/A')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
