@@ -48,10 +48,10 @@ def Procesos1(usuario,puesto):
         procesos_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        precampo_juridico_2 = placeholder8_2.button("Precampo Jurídico", key="precampo_juridico_2")
+        precampo_juridico_2 = placeholder8_2.button(":orange[Precampo Jurídico]", key="precampo_juridico_2")
 
         placeholder9_2 = st.empty()
-        cc_precampo_juridico_2 = placeholder9_2.button("Consultas de Campo",key="cc_precampo_juridico_2")
+        cc_precampo_juridico_2 = placeholder9_2.button(":orange[Control de Calidad Precampo Jurídico]",key="cc_precampo_juridico_2")
 
         placeholder10_2 = st.empty()
         precampo_2 = placeholder10_2.button(":green[Precampo]",key="precampo_2")
