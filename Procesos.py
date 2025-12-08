@@ -279,8 +279,8 @@ def Procesos1(usuario,puesto):
             placeholder17_2.empty()
             placeholder20_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Consulta_Campo=True
-            Consulta_Campo.Consulta_Campo(usuario,puesto)
+            st.session_state.CC_Precampo_Juridico=True
+            CC_Precampo_Juridico.CC_Precampo_Juridico(usuario,puesto)
 
         # ----- Precampo ---- #
 
