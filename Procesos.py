@@ -1,11 +1,11 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, Consulta_Campo,Restitucion_Tierras,Revision_Segregados,Estado_UIT_Hito,Precampo, CC_Precampo, Preparacion_Insumos, Entregas_Postcampo, Postcampo, CC_Postcampo, CC_Vinculacion_Precampo, Vinculacion_Precampo
+import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, Precampo_Juridico, Consulta_Campo,Restitucion_Tierras,Revision_Segregados,Estado_UIT_Hito,Precampo, CC_Precampo, Preparacion_Insumos, Entregas_Postcampo, Postcampo, CC_Postcampo, CC_Vinculacion_Precampo, Vinculacion_Precampo
 
 import time
 
-#------------------------------------CONTADOR---------------
+#-------------------CONTADOR PARA REFRESCAR PAGINA---------------#
 if "start_time" not in st.session_state:
     st.session_state.start_time = time.time()
 
@@ -13,13 +13,12 @@ if time.time() - st.session_state.start_time >  29*60:
     st.session_state.clear()
     st.rerun()
 
-# Esta función auto-refresca la página cada N segundos
 def auto_refresh(seconds=1741):
-    st.markdown(   f"""  <meta http-equiv="refresh" content="{seconds}">   """,  unsafe_allow_html=True)
+    st.markdown(   f"""  <meta http-equiv="refresh" content="{seconds}" >   """,  unsafe_allow_html=True )
 
-auto_refresh(1741) 
+auto_refresh(1741)
 
-#-----------------------------------------FINCONTADOR-----------------#
+#-----------------FINCONTADOR-----------------#
 
 def Procesos1(usuario,puesto):
 
@@ -48,11 +47,11 @@ def Procesos1(usuario,puesto):
         placeholder7_2 = st.empty()
         procesos_2 = placeholder7_2.title("Procesos")
 
-        #placeholder8_2 = st.empty()
-        #fmi_2 = placeholder8_2.button("Procesos Jurídico", key="fmi_2")
+        placeholder8_2 = st.empty()
+        precampo_juridico_2 = placeholder8_2.button("Precampo Jurídico", key="precampo_juridico_2")
 
-        #placeholder9_2 = st.empty()
-        #consulta_campo_2 = placeholder9_2.button("Consultas de Campo",key="consulta_campo_2")
+        placeholder9_2 = st.empty()
+        cc_precampo_juridico_2 = placeholder9_2.button("Consultas de Campo",key="cc_precampo_juridico_2")
 
         placeholder10_2 = st.empty()
         precampo_2 = placeholder10_2.button(":green[Precampo]",key="precampo_2")
@@ -98,8 +97,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -126,8 +125,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -154,8 +153,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -182,8 +181,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -210,8 +209,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -228,59 +227,60 @@ def Procesos1(usuario,puesto):
             st.session_state.Salir=True
             Salir.Salir()
             
-             # -----  FMI ---- #
+             # -----  Precampo_Juridico ---- #
 
-       # elif fmi_2:
+        elif precampo_juridico_2:
 
-            #placeholder1_2.empty()
-            #placeholder2_2.empty()
-            #placeholder3_2.empty()
-            #placeholder4_2.empty()
-            #placeholder5_2.empty()
-            #placeholder6_2.empty()
-            #placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
-            #placeholder12_2.empty()
-            #placeholder13_2.empty()
-            #placeholder14_2.empty()
-            #placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            placeholder13_2.empty()
+            placeholder14_2.empty()
+            placeholder15_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
             #placeholder18_2.empty()
-            #st.session_state.Procesos=True
-            #st.session_state.FMI=True
-            #FMI.FMI(usuario,puesto) 
+            placeholder20_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Precampo_Juridico=True
+            Precampo_Juridico.Precampo_Juridico(usuario,puesto) 
                 
                   
                
-        # ----- Consultas de Campo ---- #
+        # ----- Control Calidad Precampo Juridico ---- #
 
-        #elif consulta_campo_2:
+        elif cc_precampo_juridico_2:
 
-            #placeholder1_2.empty()
-            #placeholder2_2.empty()
-            #placeholder3_2.empty()
-            #placeholder4_2.empty()
-            #placeholder5_2.empty()
-            #placeholder6_2.empty()
-            #placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
-            #placeholder12_2.empty()
-            #placeholder13_2.empty()
-            #placeholder14_2.empty()
-            #placeholder15_2.empty()
-            #placeholder16_2.empty()
-            #placeholder17_2.empty()
-            #placeholder18_2.empty()
-            #st.session_state.Procesos=True
-            #st.session_state.Consulta_Campo=True
-            #Consulta_Campo.Consulta_Campo(usuario,puesto)
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            placeholder13_2.empty()
+            placeholder14_2.empty()
+            placeholder15_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            placeholder20_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Consulta_Campo=True
+            Consulta_Campo.Consulta_Campo(usuario,puesto)
 
         # ----- Precampo ---- #
 
@@ -293,8 +293,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -321,8 +321,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -349,8 +349,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -377,8 +377,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -405,8 +405,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -433,8 +433,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -461,8 +461,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -489,8 +489,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()#
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -569,8 +569,8 @@ def Procesos1(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
@@ -600,11 +600,11 @@ def Procesos1(usuario,puesto):
         elif st.session_state.Bonos_Extras==True:
             Bonos_Extras.Bonos_Extras(usuario,puesto)
 
-        #elif st.session_state.FMI==True:
-            #FMI.FMI(usuario,puesto)
+        elif st.session_state.Precampo_Juridico==True:
+            Precampo_Juridico.Precampo_Juridico(usuario,puesto)
            
-        #elif st.session_state.Postcampo_FMI==True:
-            #Postcampo_FMI.Postcampo_FMI(usuario,puesto)
+        elif st.session_state.CC_Precampo_Juridico==True:
+            CC_Precampo_Juridico.CC_Precampo_Juridico(usuario,puesto)
 
         #elif st.session_state.Consulta_Campo==True:
             #Consulta_Campo.Consulta_Campo(usuario,puesto)
@@ -868,7 +868,7 @@ def Procesos2(usuario,puesto):
             #placeholder5_2.empty()
             #placeholder6_2.empty()
             #placeholder7_2.empty()
-            #placeholder8_2.empty()
+            placeholder8_2.empty()
             #placeholder9_2.empty()
             #placeholder10_2.empty()
             #placeholder11_2.empty()
@@ -1060,17 +1060,17 @@ def Procesos3(usuario,puesto):
         placeholder7_2 = st.empty()
         registro_2 = placeholder7_2.title("Procesos")
 
-        #placeholder8_2 = st.empty()
-        #fmi_2 = placeholder8_2.button("Folios de Matricula Inmobiliaria",key="fmi_2")
+        placeholder8_2 = st.empty()
+        precampo_juridico_2 = placeholder8_2.button("Precampo Jurídico",key="precampo_juridico_2")
       
-        #placeholder9_2 = st.empty()
-        #consulta_campo_2 = placeholder9_2.button("Consultas de Campo",key="consulta_campo_2")
+        placeholder9_2 = st.empty()
+        cc_precampo_juridico_2 = placeholder9_2.button("Control de Calidad Precampo Jurídico",key="cc_precampo_juridico_2")
 
-        placeholder10_2 = st.empty()
-        restitucion_tierras_2 = placeholder10_2.button("Restitución de Tierras",key="restitucion_tierras_2")
+        #placeholder10_2 = st.empty()
+        #restitucion_tierras_2 = placeholder10_2.button("Restitución de Tierras",key="restitucion_tierras_2")
 
-        placeholder11_2 = st.empty()
-        revision_segregados_2 = placeholder11_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
+        #placeholder11_2 = st.empty()
+        #revision_segregados_2 = placeholder11_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
               
        # ----- Historial ---- #
 
@@ -1083,10 +1083,9 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -1102,10 +1101,9 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -1121,10 +1119,9 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -1140,10 +1137,9 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+
             st.session_state.Procesos=True
             st.session_state.Bonos_Extras=True
             Bonos_Extras.Bonos_Extras(usuario,puesto)
@@ -1159,38 +1155,54 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            #placeholder8_2.empty()
-            #placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+
             st.session_state.Ingreso = False
             st.session_state.Procesos = True
             st.session_state.Salir=True
             Salir.Salir()
 
-        # ----- FMI ---- #
+        # ----- Precampo_Juridico ---- #
 
-        #elif fmi_2:
+        elif precampo_juridico_2:
 
-           #placeholder1_2.empty()
-            #placeholder2_2.empty()
-            #placeholder3_2.empty()
-            #placeholder4_2.empty()
-            #placeholder5_2.empty()
-            #placeholder6_2.empty()
-            #placeholder7_2.empty()
-            ##placeholder8_2.empty()
-            #placeholder9_2.empty()
-            #placeholder10_2.empty()
-            #placeholder11_2.empty()
-            #st.session_state.Procesos=True
-            #st.session_state.FMI=True
-            #FMI.FMI(usuario,puesto)
+           placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+
+            st.session_state.Procesos=True
+            st.session_state.Precampo_Juridico=True
+            Precampo_Juridico.Precampo_Juridico(usuario,puesto)
 
       
-        # ----- Consulta Campo ---- #
+        # ----- Control de Calidad Precampo Jurídico ---- #
 
-        #elif consulta_campo_2:
+        elif cc_precampo_juridico_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            laceholder8_2.empty()
+            placeholder9_2.empty()
+
+            st.session_state.Procesos=True
+            st.session_state.CC_Precampo_Juridico=True
+            CC_Precampo_Juridico.CC_Precampo_Juridico(usuario,puesto)
+        
+        # ----- Restitución de Tierras ---- #
+
+        #elif restitucion_tierras_2:
 
             #placeholder1_2.empty()
             #placeholder2_2.empty()
@@ -1204,46 +1216,27 @@ def Procesos3(usuario,puesto):
             #placeholder10_2.empty()
             #placeholder11_2.empty()
             #st.session_state.Procesos=True
-            #st.session_state.Consulta_Campo=True
-            #Consulta_Campo.Consulta_Campo(usuario,puesto)
-        
-        # ----- Restitución de Tierras ---- #
-
-        elif restitucion_tierras_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Restitucion_Tierras=True
-            Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
+            #st.session_state.Restitucion_Tierras=True
+            #Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
 
         # ----- Revisión de Predios Segredados ---- #
 
-        elif revision_segregados_2:
+        #elif revision_segregados_2:
 
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Revision_Segregados=True
-            Revision_Segregados.Revision_Segregados(usuario,puesto)
+            #placeholder1_2.empty()
+            #placeholder2_2.empty()
+            #placeholder3_2.empty()
+            #placeholder4_2.empty()
+            #placeholder5_2.empty()
+            #placeholder6_2.empty()
+            #placeholder7_2.empty()
+            #placeholder8_2.empty()
+            #placeholder9_2.empty()
+            #placeholder10_2.empty()
+            #placeholder11_2.empty()
+            #st.session_state.Procesos=True
+            #st.session_state.Revision_Segregados=True
+            #Revision_Segregados.Revision_Segregados(usuario,puesto)
     
     elif st.session_state.Procesos==True:
 
@@ -1259,14 +1252,14 @@ def Procesos3(usuario,puesto):
         elif st.session_state.Bonos_Extras==True:
             Bonos_Extras.Bonos_Extras(usuario,puesto)
 
-        elif st.session_state.FMI==True:
-            FMI.FMI(usuario,puesto)
+        elif st.session_state.Precampo_Juridico==True:
+            Precampo_Juridico.Precampo_Juridico(usuario,puesto)
         
-        elif st.session_state.Consulta_Campo==True:
-            Consulta_Campo.Consulta_Campo(usuario,puesto)
+        elif st.session_state.CC_Precampo_Juridico==True:
+            CC_Precampo_Juridico.CC_Precampo_Juridico(usuario,puesto)
 
-        elif st.session_state.Restitucion_Tierras==True:
-            Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
+        #elif st.session_state.Restitucion_Tierras==True:
+            #Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
 
-        elif st.session_state.Revision_Segregados==True:
-            Revision_Segregados.Revision_Segregados(usuario,puesto)
+        #elif st.session_state.Revision_Segregados==True:
+            #Revision_Segregados.Revision_Segregados(usuario,puesto)
