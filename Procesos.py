@@ -1193,7 +1193,7 @@ def Procesos3(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            laceholder8_2.empty()
+            placeholder8_2.empty()
             placeholder9_2.empty()
 
             st.session_state.Procesos=True
