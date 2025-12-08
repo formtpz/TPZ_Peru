@@ -65,11 +65,14 @@ def CC_Precampo_Juridico(usuario,puesto):
   placeholder16_3= st.empty()
   tipo_de_errores_3= placeholder16_3.multiselect("Tipo Errores", options=("Numeración errónea o incompleta","Errores geométricos y/o de forma","Polígonos y/o puntos duplicados","Omisión/Comisión de polígonos","Polígonos no se ajustan a ortofoto","Omisión/Comisión de puertas"), key="tipo_de_errores_3")
     
+  placeholderP_3= st.empty()
+  partida_3= placeholder17_3.number_input("Cantidad de Registros Aprobados",min_value=0,step=1,key="partida_3")
+  
   placeholder17_3= st.empty()
-  aprobados_3= placeholder17_3.number_input("Cantidad de Unidades Catrastales Aprobados",min_value=0,step=1,key="aprobados_3")
+  aprobados_3= placeholder17_3.number_input("Cantidad de Registros Aprobados",min_value=0,step=1,key="aprobados_3")
 
   placeholder18_3= st.empty()
-  rechazados_3= placeholder18_3.number_input("Cantidad de Unidades Catrastales Rechazados",min_value=0,step=1,key="rechazados_3")
+  rechazados_3= placeholder18_3.number_input("Cantidad de Registros Rechazados",min_value=0,step=1,key="rechazados_3")
   
   placeholder19_3= st.empty()
   horas_3= placeholder19_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
@@ -96,8 +99,9 @@ def CC_Precampo_Juridico(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholderP_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()#
+    placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
     st.session_state.Procesos=False
@@ -137,8 +141,9 @@ def CC_Precampo_Juridico(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholderP_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()#
+    placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
     st.session_state.CC_Precampo_Juridico=False
@@ -164,8 +169,9 @@ def CC_Precampo_Juridico(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholderP_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()#
+    placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
     st.session_state.CC_Precampo_Juridico=False
@@ -191,8 +197,9 @@ def CC_Precampo_Juridico(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholderP_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()#
+    placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
     st.session_state.CC_Precampo_Juridico=False
@@ -218,8 +225,9 @@ def CC_Precampo_Juridico(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholderP_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()#
+    placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
     st.session_state.CC_Precampo_Juridico=False
@@ -245,8 +253,9 @@ def CC_Precampo_Juridico(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholderP_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()#
+    placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
     st.session_state.Ingreso = False
@@ -292,6 +301,6 @@ def CC_Precampo_Juridico(usuario,puesto):
       #lote_3 = '1'#
       # ----- Fin del script ---- #
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito,tipo,lotes,aprobados,rechazados,horas,manzana,sector,numero_lote,estado,area,unidades_catastrales,edificas,partida,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Vinculación Precampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','0','{aprobados_3}','{rechazados_3}','{horas_3}','{manzana_3}','{sector_3}','{numero_lote_3}','N/A','0.0','{unidades_catastrales_3}','0','N/A','0','0','N/A','N/A','N/A','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito,tipo,lotes,aprobados,rechazados,horas,manzana,sector,numero_lote,estado,area,unidades_catastrales,edificas,partida,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Vinculación Precampo','{fecha_3}','{semana_3}','{año_3}','{distrito_3}','{tipo_3}','0','{aprobados_3}','{rechazados_3}','{horas_3}','{manzana_3}','{sector_3}','{numero_lote_3}','N/A','0.0','{unidades_catastrales_3}','0','{partida_3}','0','0','N/A','N/A','N/A','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
