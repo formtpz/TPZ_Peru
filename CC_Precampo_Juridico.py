@@ -66,7 +66,7 @@ def CC_Precampo_Juridico(usuario,puesto):
   tipo_de_errores_3= placeholder16_3.multiselect("Tipo Errores", options=("Numeración errónea o incompleta","Errores geométricos y/o de forma","Polígonos y/o puntos duplicados","Omisión/Comisión de polígonos","Polígonos no se ajustan a ortofoto","Omisión/Comisión de puertas"), key="tipo_de_errores_3")
     
   placeholderP_3= st.empty()
-  partida_3= placeholder17_3.number_input("Cantidad de Registros Aprobados",min_value=0,step=1,key="partida_3")
+  partida_3= placeholderP_3.number_input("Cantidad de Registros Aprobados",min_value=0,step=1,key="partida_3")
   
   placeholder17_3= st.empty()
   aprobados_3= placeholder17_3.number_input("Cantidad de Registros Aprobados",min_value=0,step=1,key="aprobados_3")
