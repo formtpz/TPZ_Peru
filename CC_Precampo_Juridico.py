@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 from Autenticacion import hostname, database, username, pwd, port_id, con
 
-def CC_Vinculacion_Precampo(usuario,puesto):
+def CC_Precampo_Juridico(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
   uri=st.secrets.db_credentials.URI
@@ -37,7 +37,7 @@ def CC_Vinculacion_Precampo(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  control_calidad_vinculacion_precampo_3 = placeholder8_3.title(":blue[Control de Calidad Vinculación Precampo]")
+  cc_precampo_juridico_3 = placeholder8_3.title(":orange[Control de Calidad Precampo Jurídico]")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
@@ -101,7 +101,7 @@ def CC_Vinculacion_Precampo(usuario,puesto):
     placeholder19_3.empty()
     placeholder20_3.empty()
     st.session_state.Procesos=False
-    st.session_state.CC_Postcampo=False
+    st.session_state.CC_Precampo_Juridico=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -141,7 +141,7 @@ def CC_Vinculacion_Precampo(usuario,puesto):
     placeholder18_3.empty()#
     placeholder19_3.empty()
     placeholder20_3.empty()
-    st.session_state.CC_Postcampo=False
+    st.session_state.CC_Precampo_Juridico=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -168,7 +168,7 @@ def CC_Vinculacion_Precampo(usuario,puesto):
     placeholder18_3.empty()#
     placeholder19_3.empty()
     placeholder20_3.empty()
-    st.session_state.CC_Postcampo=False
+    st.session_state.CC_Precampo_Juridico=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -195,7 +195,7 @@ def CC_Vinculacion_Precampo(usuario,puesto):
     placeholder18_3.empty()#
     placeholder19_3.empty()
     placeholder20_3.empty()
-    st.session_state.CC_Postcampo=False
+    st.session_state.CC_Precampo_Juridico=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -222,7 +222,7 @@ def CC_Vinculacion_Precampo(usuario,puesto):
     placeholder18_3.empty()#
     placeholder19_3.empty()
     placeholder20_3.empty()
-    st.session_state.CC_Postcampo=False
+    st.session_state.CC_Precampo_Juridico=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
@@ -250,7 +250,7 @@ def CC_Vinculacion_Precampo(usuario,puesto):
     placeholder19_3.empty()
     placeholder20_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.CC_Postcampo=False
+    st.session_state.CC_Precampo_Juridico=False
     st.session_state.Salir=True
     Salir.Salir()
 
