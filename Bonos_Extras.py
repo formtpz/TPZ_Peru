@@ -542,7 +542,7 @@ def Bonos_Extras(usuario,puesto):
     #placeholder31_9 = st.empty()
     #titulo_bonos_9 = placeholder31_9.subheader("Bonos")
     #a5-Bono Productividad a6-Bono Calidad a7-Bono Supervision a8-Bono Entregas a9-Bono Calidad Externa a10-Bono Fijo  a22-Bono Total
-    bonos_9 = pd.read_sql(f"select a0, a5, a6, a7, a8, a9, a10, a22, a23 FROM bonos WHERE a0='{usuario}' AND a23='{periodo_9}'", con)
+    bonos_9 = pd.read_sql(f"select a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a18, a19, a20, a21, a22, a23 FROM bonos WHERE a0='{usuario}' AND a23='{periodo_9}'", con)
     bonos_9= pd.DataFrame(data=bonos_9)
     
     pivot5= len(bonos_9.iloc[:,0])
@@ -554,19 +554,22 @@ def Bonos_Extras(usuario,puesto):
     else:
       # Reemplaza nulos por 0 y suma solo las columnas necesarias
 
-      bono_productividad_9= float(bonos_9.iloc[0, 1]) 
-      bono_calidad_9= float(bonos_9.iloc[0, 2]) 
-      bono_supervision_9= float(bonos_9.iloc[0, 3])
-      bono_calidad_externa_9= float(bonos_9.iloc[0, 5]) 
-      bonos_entregas_9 = float(bonos_9.iloc[0, 4]) 
-      bonos_fijos_9 = float(bonos_9.iloc[0, 6]) 
-      bono_total_9 = float(bonos_9.iloc[0, 7])
+      bono_productividad_precampo_9= float(bonos_9.iloc[0, 5]) 
+      bono_calidad_precampo_9= float(bonos_9.iloc[0, 6]) 
+      bono_productividad_postcampo_9= float(bonos_9.iloc[0, 7]) 
+      bono_calidad_postcampo_9= float(bonos_9.iloc[0, 8]) 
+      bono_supervision_9= float(bonos_9.iloc[0, 17])
+      bono_calidad_externa_9= float(bonos_9.iloc[0, 19]) 
+      bonos_entregas_9 = float(bonos_9.iloc[0, 18]) 
+      bonos_fijos_9 = float(bonos_9.iloc[0, 20]) 
+      bonos_otro_proyecto_9 = float(bonos_9.iloc[0, 21]) 
+      bono_total_9 = float(bonos_9.iloc[0, 22])
 
      
       
       placeholder33_9 = st.empty()
-      df_bonos = pd.DataFrame({ "Concepto": ["Bono Productividad","Bono Calidad","Bono Supervisión","Bono Calidad Externa","Bono Entregas","Bono Fijo","TOTAL"], 
-                               "Monto de bonificación": [bono_productividad_9,bono_calidad_9,bono_supervision_9,bono_calidad_externa_9,bonos_entregas_9,bonos_fijos_9,bono_total_9]})
+      df_bonos = pd.DataFrame({ "Concepto": ["Bono Productividad (Precampo)","Bono Calidad (Precampo)","Bono Productividad (Postcampo)","Bono Calidad (Postcampo)","Bono Supervisión","Bono Calidad Externa","Bono Entregas","Bono Fijo","Bono Otro Proyecto","TOTAL"], 
+                               "Monto de bonificación": [bono_productividad_precampo_9,bono_calidad_precampo_9,bono_productividad_postcampo_9,bono_calidad_postcampo_9,bono_supervision_9,bono_calidad_externa_9,bonos_entregas_9,bonos_fijos_9,bonos_otro_proyecto_9,bono_total_9]})
       placeholder33_9.dataframe(df_bonos, hide_index=True)
       
    
