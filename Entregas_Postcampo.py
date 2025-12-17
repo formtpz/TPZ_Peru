@@ -58,7 +58,7 @@ def Entregas_Postcampo(usuario,puesto):
   estado_3= placeholder13_3.selectbox("Estado", options=("Finalizado","En conflicto"), key="estado_3")
 
   placeholder14_3= st.empty()
-  tipo_de_errores_3= placeholder14_3.multiselect("Errores Entregas Postcampo", options=("Topológicos con apertura de manzana","Topológicos sin apertura de manzana","Alfanuméricos con apertura de manzana","Alfanuméricos sin apertura de manzana","Error de SICUN"), key="tipo_de_errores_3")
+  tipo_de_errores_3= placeholder14_3.multiselect("Errores Entregas Postcampo", options=("Topológicos con apertura de manzana","Topológicos sin apertura de manzana","Alfanuméricos con apertura de manzana","Alfanuméricos sin apertura de manzana"), key="tipo_de_errores_3")
 
   #placeholder15_3= st.empty()
   #rechazados_3= placeholder15_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
