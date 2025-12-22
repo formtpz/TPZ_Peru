@@ -1017,7 +1017,7 @@ def Procesos2(usuario,puesto):
             Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
         
         elif st.session_state.Entregas_Postcampo==True:
-            Entregas_Postcampo.Entregas_Postcampos(usuario,puesto)
+            Entregas_Postcampo.Entregas_Postcampo(usuario,puesto)
 
         elif st.session_state.Postcampo==True:
             Postcampo.Postcampo(usuario,puesto)
