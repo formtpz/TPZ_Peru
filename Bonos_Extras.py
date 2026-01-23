@@ -602,7 +602,7 @@ def Bonos_Extras(usuario,puesto):
       placeholder33_9.dataframe(
         df_bonos,
         hide_index=True,
-        height=520  # ajusta si quieres más o menos alto
+        height=490  # ajusta si quieres más o menos alto
       )
       
    
