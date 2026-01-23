@@ -122,7 +122,7 @@ def Bonos_Extras(usuario,puesto):
     personal_9= placeholder13_9.selectbox("Personal",data_personal_9,key="personal_9")
 
     placeholder14_9 = st.empty()
-    periodo_9 = placeholder14_9.selectbox("Periodo de Bono", options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_9")    
+    periodo_9 = placeholder14_9.selectbox("Periodo de Bono", options=("Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025","Enero-2026","Febrero-2026","Marzo-2026","Abril-2026","Mayo-2026","Junio-2026","Julio-2026","Agosto-2026","Septiembre-2026","Octubre-2026","Noviembre-2026","Diciembre-2026"), key="periodo_9")    
 
     if personal_9 == "Todos" :
 
@@ -417,7 +417,7 @@ def Bonos_Extras(usuario,puesto):
     personal_9= placeholder101_9.selectbox("Personal",data_personal_9,key="personal_9")
 
     placeholder102_9 = st.empty()
-    periodo_9 = placeholder102_9.selectbox("Periodo de Bono", options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_9")    
+    periodo_9 = placeholder102_9.selectbox("Periodo de Bono", options=("Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025","Enero-2026","Febrero-2026","Marzo-2026","Abril-2026","Mayo-2026","Junio-2026","Julio-2026","Agosto-2026","Septiembre-2026","Octubre-2026","Noviembre-2026","Diciembre-2026"), key="periodo_9")    
 
     if personal_9 == "Todos" :
 
@@ -507,7 +507,7 @@ def Bonos_Extras(usuario,puesto):
       titulo_bloques_9 = placeholder109_9.subheader("Unidades de Asignación")
   
       placeholder110_9 = st.empty()
-      periodo_bloques_9 = placeholder110_9.selectbox("Fecha de Producción", options=("Todos","Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
+      periodo_bloques_9 = placeholder110_9.selectbox("Fecha de Producción", options=("Todos","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025","Enero-2026","Febrero-2026","Marzo-2026","Abril-2026","Mayo-2026","Junio-2026","Julio-2026","Agosto-2026","Septiembre-2026","Octubre-2026","Noviembre-2026","Diciembre-2026"), key="periodo_bloques_9")    
   
       if periodo_bloques_9=="Todos":
   
@@ -537,11 +537,8 @@ def Bonos_Extras(usuario,puesto):
   elif perfil_9 == "2" or perfil_9 == "1":
     
     placeholder30_9 = st.empty()
-    periodo_9 = placeholder30_9.selectbox("Periodo", options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
+    periodo_9 = placeholder30_9.selectbox("Periodo", options=("Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025","Enero-2026","Febrero-2026","Marzo-2026","Abril-2026","Mayo-2026","Junio-2026","Julio-2026","Agosto-2026","Septiembre-2026","Octubre-2026","Noviembre-2026","Diciembre-2026"), key="periodo_bonos_9")    
 
-    #placeholder31_9 = st.empty()
-    #titulo_bonos_9 = placeholder31_9.subheader("Bonos")
-    #a5-Bono Productividad a6-Bono Calidad a7-Bono Supervision a8-Bono Entregas a9-Bono Calidad Externa a10-Bono Fijo  a22-Bono Total
     bonos_9 = pd.read_sql(f"select a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23 FROM bonos WHERE a0='{usuario}' AND a23='{periodo_9}'", con)
     bonos_9= pd.DataFrame(data=bonos_9)
     
@@ -558,6 +555,8 @@ def Bonos_Extras(usuario,puesto):
       bono_calidad_precampo_9= float(bonos_9.iloc[0, 6]) 
       bono_productividad_postcampo_9= float(bonos_9.iloc[0, 7]) 
       bono_calidad_postcampo_9= float(bonos_9.iloc[0, 8]) 
+      bono_productividad_vinculacion_9=float(bonos_9.iloc[0, 9]) 
+      bono_calidad_vinculacion_9=float(bonos_9.iloc[0, 10])       
       bono_supervision_9= float(bonos_9.iloc[0, 17])
       bono_calidad_externa_9= float(bonos_9.iloc[0, 19]) 
       bonos_entregas_9 = float(bonos_9.iloc[0, 18]) 
@@ -568,8 +567,8 @@ def Bonos_Extras(usuario,puesto):
      
       
       placeholder33_9 = st.empty()
-      df_bonos = pd.DataFrame({ "Concepto": ["Bono Productividad (Precampo)","Bono Calidad (Precampo)","Bono Productividad (Postcampo)","Bono Calidad (Postcampo)","Bono Supervisión","Bono Calidad Externa","Bono Entregas","Bono Fijo","Bono Otro Proyecto","TOTAL"], 
-                               "Monto de bonificación": [bono_productividad_precampo_9,bono_calidad_precampo_9,bono_productividad_postcampo_9,bono_calidad_postcampo_9,bono_supervision_9,bono_calidad_externa_9,bonos_entregas_9,bonos_fijos_9,bonos_otro_proyecto_9,bono_total_9]})
+      df_bonos = pd.DataFrame({ "Concepto": ["Bono Productividad (Precampo)","Bono Calidad (Precampo)","Bono Productividad (Postcampo)","Bono Calidad (Postcampo)","Bono Productividad (Vinculación)","Bono Calidad (Vinculación)","Bono Supervisión","Bono Calidad Externa","Bono Entregas","Bono Fijo","Bono Otro Proyecto","TOTAL"], 
+                               "Monto de bonificación": [bono_productividad_precampo_9,bono_calidad_precampo_9,bono_productividad_postcampo_9,bono_calidad_postcampo_9,bono_productividad_vinculacion_9,bono_calidad_vinculacion_9,bono_supervision_9,bono_calidad_externa_9,bonos_entregas_9,bonos_fijos_9,bonos_otro_proyecto_9,bono_total_9]})
       placeholder33_9.dataframe(df_bonos, hide_index=True)
       
    
@@ -738,7 +737,7 @@ def Bonos_Extras(usuario,puesto):
     #titulo_bloques_9 = placeholder36_9.subheader("Bloques")
 
     #placeholder37_9 = st.empty()
-    #periodo_bloques_9 = placeholder37_9.selectbox("Fecha de Producción", options=("Todos","Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
+    #periodo_bloques_9 = placeholder37_9.selectbox("Fecha de Producción", options=("Todos","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025","Enero-2026","Febrero-2026","Marzo-2026","Abril-2026","Mayo-2026","Junio-2026","Julio-2026","Agosto-2026","Septiembre-2026","Octubre-2026","Noviembre-2026","Diciembre-2026"), key="periodo_bloques_9")    
 
     #if periodo_bloques_9=="Todos":
 
@@ -794,7 +793,7 @@ def Bonos_Extras(usuario,puesto):
   elif perfil_9 == "3":
     
     placeholder44_9 = st.empty()
-    periodo_9 = placeholder44_9.selectbox("Periodo",options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
+    periodo_9 = placeholder44_9.selectbox("Periodo",options=("Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025","Enero-2026","Febrero-2026","Marzo-2026","Abril-2026","Mayo-2026","Junio-2026","Julio-2026","Agosto-2026","Septiembre-2026","Octubre-2026","Noviembre-2026","Diciembre-2026"), key="periodo_bonos_9")    
 
     placeholder45_9 = st.empty()
     titulo_bonos_9 = placeholder45_9.subheader("Bonos")
@@ -861,7 +860,7 @@ def Bonos_Extras(usuario,puesto):
     titulo_bloques_9 = placeholder48_9.subheader("Unidades de Asignación")
 
     placeholder49_9 = st.empty()
-    periodo_bloques_9 = placeholder49_9.selectbox("Fecha de Producción", options=("Todos","Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
+    periodo_bloques_9 = placeholder49_9.selectbox("Fecha de Producción", options=("Todos","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025","Enero-2026","Febrero-2026","Marzo-2026","Abril-2026","Mayo-2026","Junio-2026","Julio-2026","Agosto-2026","Septiembre-2026","Octubre-2026","Noviembre-2026","Diciembre-2026"), key="periodo_bloques_9")    
 
     if periodo_bloques_9=="Todos":
 
