@@ -568,42 +568,42 @@ def Bonos_Extras(usuario,puesto):
       
       placeholder33_9 = st.empty()
 
-        df_bonos = pd.DataFrame({
-          "Concepto": [
-            "Bono Productividad (Precampo)",
-            "Bono Calidad (Precampo)",
-            "Bono Productividad (Postcampo)",
-            "Bono Calidad (Postcampo)",
-            "Bono Productividad (Vinculación)",
-            "Bono Calidad (Vinculación)",
-            "Bono Supervisión",
-            "Bono Calidad Externa",
-            "Bono Entregas",
-            "Bono Fijo",
-            "Bono Otro Proyecto",
-            "TOTAL"
-          ],
-          "Monto de bonificación": [
-            bono_productividad_precampo_9,
-            bono_calidad_precampo_9,
-            bono_productividad_postcampo_9,
-            bono_calidad_postcampo_9,
-            bono_productividad_vinculacion_9,
-            bono_calidad_vinculacion_9,
-            bono_supervision_9,
-            bono_calidad_externa_9,
-            bonos_entregas_9,
-            bonos_fijos_9,
-            bonos_otro_proyecto_9,
-            bono_total_9
-          ]
-        })
+      df_bonos = pd.DataFrame({
+        "Concepto": [
+          "Bono Productividad (Precampo)",
+          "Bono Calidad (Precampo)",
+          "Bono Productividad (Postcampo)",
+          "Bono Calidad (Postcampo)",
+          "Bono Productividad (Vinculación)",
+          "Bono Calidad (Vinculación)",
+          "Bono Supervisión",
+          "Bono Calidad Externa",
+          "Bono Entregas",
+          "Bono Fijo",
+          "Bono Otro Proyecto",
+          "TOTAL"
+        ],
+        "Monto de bonificación": [
+          bono_productividad_precampo_9,
+          bono_calidad_precampo_9,
+          bono_productividad_postcampo_9,
+          bono_calidad_postcampo_9,
+          bono_productividad_vinculacion_9,
+          bono_calidad_vinculacion_9,
+          bono_supervision_9,
+          bono_calidad_externa_9,
+          bonos_entregas_9,
+          bonos_fijos_9,
+          bonos_otro_proyecto_9,
+          bono_total_9
+        ]
+      })
 
-        placeholder33_9.dataframe(
-            df_bonos,
-            hide_index=True,
-            height=520  # ajusta si quieres más o menos alto
-        )
+      placeholder33_9.dataframe(
+        df_bonos,
+        hide_index=True,
+        height=520  # ajusta si quieres más o menos alto
+      )
       
    
       #col1, col2, col3, col4, col5, col6, col7 = placeholder33_9.columns(7)
