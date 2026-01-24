@@ -836,7 +836,7 @@ def Bonos_Extras(usuario,puesto):
    # bonos_juridico_9=  pd.DataFrame(data=bonos_juridico_9)
 
 
-    pivot8= len(bonos_juridico_9.iloc[:,0])
+    #pivot8= len(bonos_juridico_9.iloc[:,0])
 
    # if pivot8==0:
 
