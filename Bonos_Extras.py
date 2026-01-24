@@ -1022,18 +1022,13 @@ def Bonos_Extras(usuario,puesto):
       
       placeholder44_9.empty()
       #placeholder45_9.empty()
-      
-      placeholder49_9.empty()
-
+      placeholder46_9.empty()
       if pivot8==0:
-
-        placeholder46_9.empty()
-        placeholder48_9.empty()
-
-      else:
-
         placeholder47_9.empty()
-
+      else:
+        placeholder48_9.empty()
+        placeholder49_9.empty()
+              
       if pivot9==0:
 
         placeholder50_9.empty()
@@ -1210,16 +1205,12 @@ def Bonos_Extras(usuario,puesto):
       
       placeholder44_9.empty()
       #placeholder45_9.empty()
-      placeholder49_9.empty()
-
+      placeholder46_9.empty()
       if pivot8==0:
-
-        placeholder46_9.empty()
-        placeholder48_9.empty()
-
-      else:
-
         placeholder47_9.empty()
+      else:
+        placeholder48_9.empty()
+        placeholder49_9.empty()
 
       if pivot9==0:
 
@@ -1383,17 +1374,12 @@ def Bonos_Extras(usuario,puesto):
       
       placeholder44_9.empty()
       #placeholder45_9.empty()
-      
-      placeholder49_9.empty()
-
+      placeholder46_9.empty()
       if pivot8==0:
-
-        placeholder46_9.empty()
-        placeholder48_9.empty()
-
-      else:
-
         placeholder47_9.empty()
+      else:
+        placeholder48_9.empty()
+        placeholder49_9.empty()
 
       if pivot9==0:
 
@@ -1557,17 +1543,13 @@ def Bonos_Extras(usuario,puesto):
       
       placeholder44_9.empty()
       #placeholder45_9.empty()
-   
-      placeholder49_9.empty()
-
+      placeholder46_9.empty()
       if pivot8==0:
-
-        placeholder46_9.empty()
-        placeholder48_9.empty()
-
-      else:
-
         placeholder47_9.empty()
+      else:
+        placeholder48_9.empty()
+        placeholder49_9.empty()
+   
 
       if pivot9==0:
 
@@ -1731,17 +1713,12 @@ def Bonos_Extras(usuario,puesto):
       
       placeholder44_9.empty()
       #placeholder45_9.empty()
-   
-      placeholder49_9.empty()
-
+      placeholder46_9.empty()
       if pivot8==0:
-
-        placeholder46_9.empty()
-        placeholder48_9.empty()
-
-      else:
-
         placeholder47_9.empty()
+      else:
+        placeholder48_9.empty()
+        placeholder49_9.empty()
 
       if pivot9==0:
 
