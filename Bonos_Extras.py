@@ -860,7 +860,7 @@ def Bonos_Extras(usuario,puesto):
 
       total_extras_9=0
         
-      for b in range(0,pivot7):
+      for b in range(0,pivot8):
 
         total_extras_9 = total_extras_9 + float(extras_9.iloc[b,8])
 
