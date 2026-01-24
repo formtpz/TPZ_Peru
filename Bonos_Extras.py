@@ -829,11 +829,11 @@ def Bonos_Extras(usuario,puesto):
     placeholder44_9 = st.empty()
     periodo_9 = placeholder44_9.selectbox("Periodo",options=("Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025","Enero-2026","Febrero-2026","Marzo-2026","Abril-2026","Mayo-2026","Junio-2026","Julio-2026","Agosto-2026","Septiembre-2026","Octubre-2026","Noviembre-2026","Diciembre-2026"), key="periodo_bonos_9")    
 
-    placeholder45_9 = st.empty()
-    titulo_bonos_9 = placeholder45_9.subheader("Bonos")
+   # placeholder45_9 = st.empty()
+   # titulo_bonos_9 = placeholder45_9.subheader("Bonos")
     
-    bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos_juridico where a0='{usuario}' and a24='{periodo_9}'", con)
-    bonos_juridico_9=  pd.DataFrame(data=bonos_juridico_9)
+   # bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos_juridico where a0='{usuario}' and a24='{periodo_9}'", con)
+   # bonos_juridico_9=  pd.DataFrame(data=bonos_juridico_9)
 
 
     pivot8= len(bonos_juridico_9.iloc[:,0])
