@@ -1021,7 +1021,7 @@ def Bonos_Extras(usuario,puesto):
     elif perfil_9== "3": 
       
       placeholder44_9.empty()
-      placeholder45_9.empty()
+      #placeholder45_9.empty()
       placeholder48_9.empty()
       placeholder49_9.empty()
 
@@ -1208,7 +1208,7 @@ def Bonos_Extras(usuario,puesto):
     elif perfil_9== "3": 
       
       placeholder44_9.empty()
-      placeholder45_9.empty()
+      #placeholder45_9.empty()
       placeholder48_9.empty()
       placeholder49_9.empty()
 
@@ -1381,7 +1381,7 @@ def Bonos_Extras(usuario,puesto):
     elif perfil_9== "3": 
       
       placeholder44_9.empty()
-      placeholder45_9.empty()
+      #placeholder45_9.empty()
       placeholder48_9.empty()
       placeholder49_9.empty()
 
@@ -1554,7 +1554,7 @@ def Bonos_Extras(usuario,puesto):
     elif perfil_9== "3": 
       
       placeholder44_9.empty()
-      placeholder45_9.empty()
+      #placeholder45_9.empty()
       placeholder48_9.empty()
       placeholder49_9.empty()
 
@@ -1727,7 +1727,7 @@ def Bonos_Extras(usuario,puesto):
     elif perfil_9== "3": 
       
       placeholder44_9.empty()
-      placeholder45_9.empty()
+      #placeholder45_9.empty()
       placeholder48_9.empty()
       placeholder49_9.empty()
 
