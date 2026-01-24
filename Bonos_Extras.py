@@ -1029,13 +1029,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder48_9.empty()
         placeholder49_9.empty()
               
-      if pivot9==0:
 
-        placeholder50_9.empty()
-
-      else:
-
-        placeholder51_9.empty()
     
     st.session_state.Procesos=False
     st.session_state.Bonos_Extras=False
@@ -1212,13 +1206,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder48_9.empty()
         placeholder49_9.empty()
 
-      if pivot9==0:
 
-        placeholder50_9.empty()
-
-      else:
-
-        placeholder51_9.empty()
         
     st.session_state.Bonos_Extras=False
     st.session_state.Historial=True
@@ -1381,13 +1369,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder48_9.empty()
         placeholder49_9.empty()
 
-      if pivot9==0:
 
-        placeholder50_9.empty()
-
-      else:
-
-        placeholder51_9.empty()
         
     st.session_state.Bonos_Extras=False
     st.session_state.Capacitacion=True
@@ -1551,13 +1533,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder49_9.empty()
    
 
-      if pivot9==0:
 
-        placeholder50_9.empty()
-
-      else:
-
-        placeholder51_9.empty()
     
     st.session_state.Bonos_Extras=False
     st.session_state.Otros_Registros=True
@@ -1720,13 +1696,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder48_9.empty()
         placeholder49_9.empty()
 
-      if pivot9==0:
-
-        placeholder50_9.empty()
-
-      else:
-
-        placeholder51_9.empty()
+    
     
     st.session_state.Ingreso = False
     st.session_state.Bonos_Extras=False
