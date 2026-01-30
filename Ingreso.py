@@ -125,6 +125,7 @@ if iniciar_sesion_1:
                 st.session_state.Capacitacion=False
                 st.session_state.Otros_Registros=False
                 st.session_state.Bonos_Extras=False
+                st.session_state.Correcciones=False
                 st.session_state.Salir=False
                 st.session_state.FMI=False
                 st.session_state.CC_FMI=False
@@ -136,6 +137,7 @@ if iniciar_sesion_1:
                 st.session_state.Calidad_externa_XTF=False
                 st.session_state.Precampo=False
                 st.session_state.Precampo_Juridico=False
+                st.session_state.Descarga_Partidas_Juridico=False
                 st.session_state.CC_Precampo=False
                 st.session_state.Vinculacion_Precampo=False 
                 st.session_state.Preparacion_Insumos=False
