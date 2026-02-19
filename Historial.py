@@ -557,7 +557,7 @@ def Historial(usuario,puesto):
       historial_7_producción= placeholder45_7.dataframe(data=data_2_r)
 
       placeholder46_7 = st.empty()
-      descarga_7_producción = placeholder46_7.download_button("Decargar CSV",data=data_2_r.to_csv(),mime="text/csv",key="descarga_7_producción")
+      producción_7=placeholder46_7.subheader("Resumen de Producción por Proceso")
 
       data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 340 if x == 'Precampo' else 510 if x == 'Control de Calidad Precampo' else 340 if x == 'Postcampo' else 765 if x == 'Control de Calidad Postcampo' else 0 for x in data_4_r['proceso']]    
       data_4_r ["diferencia"] = data_4_r["edificas"] - data_4_r["valor esperado"]
