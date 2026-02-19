@@ -541,7 +541,7 @@ def Historial(usuario,puesto):
     placeholder43_7 = st.empty()
     producción_7=placeholder43_7.subheader(" ")  
 
-    #data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["lotes","edificas","horas"]].agg(np.sum)
+    data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["lotes","edificas","horas"]].agg(np.sum)
 
     data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["edificas","unidades_catastrales","horas"]].agg(np.sum)
 
@@ -552,10 +552,11 @@ def Historial(usuario,puesto):
 
     else:
 
-      #data_2_r ["rendimiento"] = data_2_r["edificas"]/data_2_r["horas"]
-      #data_2_r['rendimiento'] *= 8.5 
+      data_2_r ["rendimiento"] = data_2_r["edificas"]/data_2_r["horas"]
+      data_2_r['rendimiento'] *= 8.5 
        
       placeholder45_7 = st.empty()
+      producciónb_7=placeholder45_7.subheader(" ") 
       #historial_7_producción= placeholder45_7.dataframe(data=data_2_r)
 
       placeholder46_7 = st.empty()
