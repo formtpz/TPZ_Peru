@@ -288,7 +288,7 @@ def Historial(usuario,puesto):
 
     data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["lotes","edificas","horas"]].agg(np.sum)
 
-    data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["edificas"]].agg(np.sum)
+    data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["edificas", "horas"]].agg(np.sum)
 
     if pivot_r==0:  
 
@@ -310,7 +310,7 @@ def Historial(usuario,puesto):
       historial_7_diferencia= placeholder23_2_7.subheader("Resumen Semanal")  
     
       placeholder24_2_7 = st.empty()
-      descarga_7_diferencia = placeholder24_2_7.    dataframe(data=data_4_r)
+      descarga_7_diferencia= placeholder24_2_7.dataframe(data=data_4_r)
 
 
       #------Creando el dataframe de Resumen Calidad--------
