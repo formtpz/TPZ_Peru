@@ -564,7 +564,8 @@ def Historial(usuario,puesto):
         
       data_4_r ["diferencia"] = data_4_r["edificas"]+data_4_r["unidades_catastrales"] - data_4_r["valor esperado"]
 
-      data_4_r["ratio bruto"]= [data_4_r["edificas"]+data_4_r["unidades_catastrales"]]/data_4_r["horas"]
+      data_4_r["ratio bruto"]= data_4_r["edificas"]+data_4_r["unidades_catastrales"]
+      data_4_r["ratio bruto"]= data_4_r["ratio bruto"]/data_4_r["horas"]
       placeholder45_2_7 = st.empty()
       historial_7_diferencia= placeholder45_2_7.dataframe(data=data_4_r)
       
