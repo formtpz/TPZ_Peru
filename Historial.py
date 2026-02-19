@@ -561,9 +561,10 @@ def Historial(usuario,puesto):
 
       data_4_r ["valor esperado"] = [8 if x == 'Precampo' else 10 if x == 'Control de Calidad Precampo' else 7 if x == 'Postcampo' else 10 if x == 'Control de Calidad Postcampo' else 8 if x == 'Vinculación Precampo' else 10  if x == 'Control de Calidad Vinculación Precampo' else 0 for x in data_4_r['proceso']]   
       data_4_r ["valor esperado"] = data_4_r ["valor esperado"]*data_4_r["horas"]
-      
+        
       data_4_r ["diferencia"] = data_4_r["edificas"]+data_4_r["unidades_catastrales"] - data_4_r["valor esperado"]
 
+      data_4_r["ratio bruto"]= [data_4_r["edificas"]+data_4_r["unidades_catastrales"]]/data_4_r["horas"]
       placeholder45_2_7 = st.empty()
       historial_7_diferencia= placeholder45_2_7.dataframe(data=data_4_r)
       
