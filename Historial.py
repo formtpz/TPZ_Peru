@@ -473,7 +473,7 @@ def Historial(usuario,puesto):
     # Filtramos los datos antes del groupby
     data_filtrada_1 = data_5_r[(data_5_r["tipo"] == "Inspección")]
     # Agrupamos los datos filtrados
-    data_5=(data_filtrada_1.groupby(["operador_cc", "semana"], as_index=False)[["edificas", "aprobados", "rechazados"]].agg(np.sum))
+    data_5=(data_filtrada_1.groupby(["operador_cc", "semana"], as_index=False)[["edificas", "aprobados", "rechazados", "unidades_catastrales"]].agg(np.sum))
        
     pivot_calidad=len(data_5.iloc[:,0])
     
@@ -482,10 +482,11 @@ def Historial(usuario,puesto):
       error_reportes= placeholder55_7.error('No existen reportes para mostrar')
       
     else:
-      data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / data_5["edificas"]) * 100).round(2).astype(str) + "%"         
+      data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / (data_5["edificas"]+data_5["unidades_catastrales"])) * 100).round(2).astype(str) + "%"         
    
       # Renombrar la columna 'edificas' por 'muestra' solo para visualización
-      data_5_r_vista= data_5.rename(columns={"edificas": "muestra"})
+      data_5_r_vista= data_5.rename(columns={"edificas": "muestra edificas"})
+      data_5_r_vista= data_5.rename(columns={"unidades_catastrales": "muestra unidades catastrales"})
 
       # Mostrar el DataFrame renombrado en Streamlit
       placeholder26_2_7 = st.empty()
