@@ -473,7 +473,7 @@ def Historial(usuario,puesto):
     # Filtramos los datos antes del groupby
     data_filtrada_1 = data_5_r[(data_5_r["tipo"] == "Inspección")]
     # Agrupamos los datos filtrados
-    data_5=(data_filtrada_1.groupby(["operador_cc", "semana"], as_index=False)[["edificas", "aprobados", "rechazados", "unidades_catastrales"]].agg(np.sum))
+    data_5=(data_filtrada_1.groupby(["operador_cc", "semana"], as_index=False)[["edificas","unidades_catastrales", "aprobados", "rechazados"]].agg(np.sum))
        
     pivot_calidad=len(data_5.iloc[:,0])
     
@@ -486,8 +486,8 @@ def Historial(usuario,puesto):
    
       # Renombrar la columna 'edificas' por 'muestra' solo para visualización
       
-      data_5_r_vista= data_5.rename(columns={"unidades_catastrales": "muestra unidades catastrales"})
-      data_5_r_vista= data_5.rename(columns={"edificas": "muestra edificas"})
+      data_5_r_vista= data_5.rename(columns={"unidades_catastrales": "muestra unidades catastrales","edificas": "muestra edificas"})
+
 
       # Mostrar el DataFrame renombrado en Streamlit
       placeholder26_2_7 = st.empty()
