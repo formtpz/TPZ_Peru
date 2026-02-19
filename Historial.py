@@ -559,7 +559,15 @@ def Historial(usuario,puesto):
       placeholder46_7 = st.empty()
       producción_7=placeholder46_7.subheader("Resumen de Producción por Proceso")
 
-      data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 340 if x == 'Precampo' else 510 if x == 'Control de Calidad Precampo' else 340 if x == 'Postcampo' else 765 if x == 'Control de Calidad Postcampo' else 0 for x in data_4_r['proceso']]    
+      data_4_r ["valor esperado"] = [8 if x == 'Precampo' 
+                                     else 10 if x == 'Control de Calidad Precampo' 
+                                     else 7 if x == 'Postcampo' 
+                                     else 10 if x == 'Control de Calidad Postcampo' 
+                                     else 8 if x == 'Vinculación Precampo' 
+                                     else 10  if  == 'Control de Calidad Vinculación Precampo' 
+                                     else 0 for x in data_4_r['proceso']]   
+      data_4_r ["valor esperado"] = data_4_r ["valor esperado"]*data_4_r["horas"]
+      
       data_4_r ["diferencia"] = data_4_r["edificas"] - data_4_r["valor esperado"]
 
       placeholder45_2_7 = st.empty()
