@@ -562,7 +562,7 @@ def Historial(usuario,puesto):
       datos_horas = pd.merge(datos_horas,data_14_o, on=['nombre','fecha'], how="left")
       
          
-      datos_horas["Total"]= datos_horas["horas_produccion"]+ datos_horas["horas_capacitacion"]+ datos_horas["horas_otros_registros"]
+      #datos_horas["Total"]= datos_horas["horas_produccion"] + datos_horas["horas_capacitacion"] + datos_horas["horas_otros_registros"]
       datos_horas= datos_horas.fillna(0)
       placeholder41_7 = st.empty()
       historial_7_horas= placeholder41_7.dataframe(data=datos_horas)
