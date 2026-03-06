@@ -561,6 +561,18 @@ def Historial(usuario,puesto):
       datos_horas = pd.merge(datos_horas,data_13_o, on=['nombre','fecha'], how="left") 
       datos_horas = pd.merge(datos_horas,data_14_o, on=['nombre','fecha'], how="left")
       datos_horas= datos_horas.fillna(0)
+      columnas = [
+        "horas_produccion",
+        "horas_extra_produccion",
+        "horas_capacitacion",
+        "horas_otros_registros"
+      ]
+      for col in columnas:
+        if col not in datos_horas.columns:
+          datos_horas[col] = 0
+      for col in columnas:
+        datos_horas[col] = pd.to_numeric(datos_horas[col], errors="coerce")
+        
       datos_horas["horas_produccion"] = pd.to_numeric(datos_horas["horas_produccion"], errors="coerce")
       datos_horas["horas_capacitacion"] = pd.to_numeric(datos_horas["horas_capacitacion"], errors="coerce")
       datos_horas["horas_otros_registros"] = pd.to_numeric(datos_horas["horas_otros_registros"], errors="coerce")
