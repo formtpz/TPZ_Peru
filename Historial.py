@@ -535,7 +535,7 @@ def Historial(usuario,puesto):
     data_7_o = data_1_o.groupby(["nombre", "fecha"], as_index=False)["horas"].agg(np.sum)
     data_7_o.rename(columns={"horas":"reposicion"}, inplace=True)
   
-    pivot_r=len(data_2_r.iloc[:,0])
+    pivot_r=len(data_8_r.iloc[:,0])
     pivot_c=len(data_2_c.iloc[:,0])
     pivot_o=len(data_2_o.iloc[:,0])
     
@@ -546,7 +546,7 @@ def Historial(usuario,puesto):
 
     else:
       
-      datos_horas= pd.concat([data_2_r,data_2_c,data_2_o], axis=0)
+      datos_horas= pd.concat([data_8_r,data_2_c,data_2_o], axis=0)
     
       datos_horas = pd.DataFrame(data=datos_horas).groupby(["nombre","fecha"],as_index=False).size()
 
