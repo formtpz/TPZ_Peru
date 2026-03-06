@@ -509,8 +509,8 @@ def Historial(usuario,puesto):
     data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["horas"]].agg(np.sum)
     data_2_r.rename(columns={"horas":"horas_produccion"}, inplace=True)
 
-    data_2_r = data_6_r.groupby(["nombre", "fecha"], as_index=False)[["horas"]].agg(np.sum)
-    data_2_r.rename(columns={"horas":"horas_extra_produccion"}, inplace=True)
+    data_6_r = data_6_r.groupby(["nombre", "fecha"], as_index=False)[["horas"]].agg(np.sum)
+    data_6_r.rename(columns={"horas":"horas_extra_produccion"}, inplace=True)
     
     data_2_c = data_1_c.groupby(["nombre", "fecha"], as_index=False)["horas"].agg(np.sum)
     data_2_c.rename(columns={"horas":"horas_capacitacion"}, inplace=True)
@@ -529,11 +529,12 @@ def Historial(usuario,puesto):
 
     else:
       
-      datos_horas= pd.concat([data_2_r,data_2_c,data_2_o], axis=0)
+      datos_horas= pd.concat([data_2_r,data_6_r,data_2_c,data_2_o], axis=0)
     
       datos_horas = pd.DataFrame(data=datos_horas).groupby(["nombre","fecha"],as_index=False).size()
 
       datos_horas = pd.merge(datos_horas,data_2_r, on=['nombre','fecha'], how="left") 
+      datos_horas = pd.merge(datos_horas,data_6_r, on=['nombre','fecha'], how="left") 
       datos_horas = pd.merge(datos_horas,data_2_c, on=['nombre','fecha'], how="left") 
       datos_horas = pd.merge(datos_horas,data_2_o, on=['nombre','fecha'], how="left") 
 
