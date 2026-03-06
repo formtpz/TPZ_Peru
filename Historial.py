@@ -517,8 +517,8 @@ def Historial(usuario,puesto):
     placeholder39_7 = st.empty()
     horas_7=placeholder39_7.subheader("Resumen de Horas")  
 
-    data_2_r = data_8_r.groupby(["nombre", "fecha"], as_index=False)[["horas"]].agg(np.sum)
-    data_2_r.rename(columns={"horas":"horas_produccion"}, inplace=True)
+    data_8_r = data_8_r.groupby(["nombre", "fecha"], as_index=False)[["horas"]].agg(np.sum)
+    data_8_r.rename(columns={"horas":"horas_produccion"}, inplace=True)
 
     data_6_r = data_6_r.groupby(["nombre", "fecha"], as_index=False)[["horas"]].agg(np.sum)
     data_6_r.rename(columns={"horas":"horas_extra_produccion"}, inplace=True)
