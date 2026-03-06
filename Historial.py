@@ -533,8 +533,8 @@ def Historial(usuario,puesto):
     
       datos_horas = pd.DataFrame(data=datos_horas).groupby(["nombre","fecha"],as_index=False).size()
 
-      datos_horas = pd.merge(datos_horas,data_2_r, on=['nombre','fecha'], how="left") 
-      datos_horas1 = pd.merge(datos_horas,data_6_r, on=['nombre','fecha'], how="left") 
+      datos_horas1 = pd.merge(datos_horas,data_2_r, on=['nombre','fecha'], how="left") 
+      datos_horas = pd.merge(datos_horas,data_6_r, on=['nombre','fecha'], how="left") 
       datos_horas["horas_produccion_netas"] = datos_horas1["horas_produccion"] - datos_horas["horas_extra_produccion"]
       datos_horas = pd.merge(datos_horas,data_2_c, on=['nombre','fecha'], how="left") 
       datos_horas = pd.merge(datos_horas,data_2_o, on=['nombre','fecha'], how="left") 
