@@ -553,8 +553,8 @@ def Historial(usuario,puesto):
       datos_horas = pd.merge(datos_horas,data_2_c, on=['nombre','fecha'], how="left") 
       datos_horas1 = pd.merge(datos_horas,data_2_o, on=['nombre','fecha'], how="left") 
       datos_horas = pd.merge(datos_horas,data_6_o, on=['nombre','fecha'], how="left") 
-      datos_horas2 = pd.merge(datos_horas,data_7_o, on=['nombre','fecha'], how="left")
-      datos_horas["horas_otros_registros"] = datos_horas1["horas_otros_registros"] - datos_horas["horas_extra_otros_registros"]-datos_horas2["reposicion"]
+      datos_horas = pd.merge(datos_horas,data_7_o, on=['nombre','fecha'], how="left")
+      datos_horas["horas_otros_registros"] = datos_horas1["horas_otros_registros"] - datos_horas["horas_extra_otros_registros"]-datos_horas["reposicion"]
       
 
 
