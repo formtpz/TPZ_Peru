@@ -562,8 +562,8 @@ def Historial(usuario,puesto):
       datos_horas = pd.merge(datos_horas,data_14_o, on=['nombre','fecha'], how="left")
       datos_horas= datos_horas.fillna(0)
       datos_horas["horas_produccion"] = pd.to_numeric(datos_horas["horas_produccion"], errors="coerce")
-      datos_horas["horas_capacitacion"] = pd.to_numeric(datos_horas["horas_produccion"], errors="coerce")
-      datos_horas["horas_otros_registros"] = pd.to_numeric(datos_horas["horas_extra_produccion"], errors="coerce")
+      datos_horas["horas_capacitacion"] = pd.to_numeric(datos_horas["horas_capacitacion"], errors="coerce")
+      datos_horas["horas_otros_registros"] = pd.to_numeric(datos_horas["horas_otros_registros"], errors="coerce")
          
       datos_horas["Total"]= datos_horas["horas_produccion"] + datos_horas["horas_capacitacion"] + datos_horas["horas_otros_registros"]
 
