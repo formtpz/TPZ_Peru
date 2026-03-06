@@ -408,6 +408,7 @@ def Historial(usuario,puesto):
     if proceso_7_o =="Todos" and tipo_7_o=="Todos":
         
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_8_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and tipo not in ('Producción Horas Extras', 'Inspección Horas Extras')", con)
       data_6_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and tipo in ('Producción Horas Extras', 'Inspección Horas Extras')", con)
 
 
@@ -423,6 +424,7 @@ def Historial(usuario,puesto):
     elif proceso_7_o =="Todos" and tipo_7_o!="Todos":
       
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where usuario='{usuario}' and tipo='{tipo_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_8_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and tipo not in ('Producción Horas Extras', 'Inspección Horas Extras')", con)
       data_6_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and tipo in ('Producción Horas Extras', 'Inspección Horas Extras')", con)
 
       #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
@@ -437,6 +439,7 @@ def Historial(usuario,puesto):
     elif proceso_7_o !="Todos" and tipo_7_o=="Todos":
       
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where usuario='{usuario}' and proceso='{proceso_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_8_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and tipo not in ('Producción Horas Extras', 'Inspección Horas Extras')", con)
       data_6_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and tipo in ('Producción Horas Extras', 'Inspección Horas Extras')", con)
 
       #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
@@ -451,7 +454,7 @@ def Historial(usuario,puesto):
     elif proceso_7_o !="Todos" and tipo_7_o!="Todos":
       
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where usuario='{usuario}' and proceso='{proceso_7_o}' and tipo='{tipo_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
-      data_7_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and motivo = 'Reposición de tiempo' ", con)
+      data_8_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and tipo not in ('Producción Horas Extras', 'Inspección Horas Extras')", con)
       data_6_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and tipo in ('Producción Horas Extras', 'Inspección Horas Extras')", con)
 
       #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
@@ -514,7 +517,7 @@ def Historial(usuario,puesto):
     placeholder39_7 = st.empty()
     horas_7=placeholder39_7.subheader("Resumen de Horas")  
 
-    data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["horas"]].agg(np.sum)
+    data_2_r = data_8_r.groupby(["nombre", "fecha"], as_index=False)[["horas"]].agg(np.sum)
     data_2_r.rename(columns={"horas":"horas_produccion"}, inplace=True)
 
     data_6_r = data_6_r.groupby(["nombre", "fecha"], as_index=False)[["horas"]].agg(np.sum)
@@ -547,9 +550,8 @@ def Historial(usuario,puesto):
     
       datos_horas = pd.DataFrame(data=datos_horas).groupby(["nombre","fecha"],as_index=False).size()
 
-      datos_horas1 = pd.merge(datos_horas,data_2_r, on=['nombre','fecha'], how="left") 
+      datos_horas = pd.merge(datos_horas,data_8_r, on=['nombre','fecha'], how="left") 
       datos_horas = pd.merge(datos_horas,data_6_r, on=['nombre','fecha'], how="left") 
-      datos_horas["horas_produccion_netas"] = datos_horas1["horas_produccion"] - datos_horas["horas_extra_produccion"]
       datos_horas = pd.merge(datos_horas,data_2_c, on=['nombre','fecha'], how="left") 
       datos_horas1 = pd.merge(datos_horas,data_2_o, on=['nombre','fecha'], how="left") 
       datos_horas = pd.merge(datos_horas,data_6_o, on=['nombre','fecha'], how="left") 
