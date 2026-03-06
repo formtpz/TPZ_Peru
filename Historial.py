@@ -417,6 +417,7 @@ def Historial(usuario,puesto):
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_6_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and motivo in ('Reposición de tiempo','Horas Extra','Horas Extra Apoyo Otros Proyectos','Horas Extras')", con)
+      data_7_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and motivo = 'Reposición de tiempo' ", con)
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
     elif proceso_7_o =="Todos" and tipo_7_o!="Todos":
@@ -430,6 +431,7 @@ def Historial(usuario,puesto):
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_7_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and motivo = 'Reposición de tiempo' ", con)
       data_6_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and motivo in ('Reposición de tiempo','Horas Extra','Horas Extra Apoyo Otros Proyectos','Horas Extras')", con)
       
     elif proceso_7_o !="Todos" and tipo_7_o=="Todos":
@@ -442,12 +444,14 @@ def Historial(usuario,puesto):
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
+      data_7_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and motivo = 'Reposición de tiempo' ", con)
       data_6_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and motivo in ('Reposición de tiempo','Horas Extra','Horas Extra Apoyo Otros Proyectos','Horas Extras')", con)
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
     elif proceso_7_o !="Todos" and tipo_7_o!="Todos":
       
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float)from registro where usuario='{usuario}' and proceso='{proceso_7_o}' and tipo='{tipo_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_7_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and motivo = 'Reposición de tiempo' ", con)
       data_6_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,distrito, manzana, sector, cast(edificas as float), cast(unidades_catastrales as float), tipo,cast(lotes as float),cast(aprobados as float),cast(rechazados as float),operador_cc,tipo_de_errores,conteo_de_errores,numero_lote,observaciones,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and tipo in ('Producción Horas Extras', 'Inspección Horas Extras')", con)
 
       #-----Para Resumen Calidad: importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
@@ -455,9 +459,9 @@ def Historial(usuario,puesto):
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
-      data_6_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and motivo in ('Reposición de tiempo','Horas Extra','Horas Extra Apoyo Otros Proyectos','Horas Extras')", con)
+      data_6_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and motivo in ('Horas Extra','Horas Extra Apoyo Otros Proyectos','Horas Extras')", con)
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
-
+      data_7_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}' and motivo = 'Reposición de tiempo' ", con)
     # ----- Reportes ---- #
 
     placeholder35_7 = st.empty()
@@ -524,6 +528,9 @@ def Historial(usuario,puesto):
 
     data_6_o = data_1_o.groupby(["nombre", "fecha"], as_index=False)["horas"].agg(np.sum)
     data_6_o.rename(columns={"horas":"horas_extra_otros_registros"}, inplace=True)
+
+    data_7_o = data_1_o.groupby(["nombre", "fecha"], as_index=False)["horas"].agg(np.sum)
+    data_7_o.rename(columns={"horas":"reposicion"}, inplace=True)
   
     pivot_r=len(data_2_r.iloc[:,0])
     pivot_c=len(data_2_c.iloc[:,0])
@@ -546,7 +553,9 @@ def Historial(usuario,puesto):
       datos_horas = pd.merge(datos_horas,data_2_c, on=['nombre','fecha'], how="left") 
       datos_horas1 = pd.merge(datos_horas,data_2_o, on=['nombre','fecha'], how="left") 
       datos_horas = pd.merge(datos_horas,data_6_o, on=['nombre','fecha'], how="left") 
-      datos_horas["horas_otros_registros"] = datos_horas1["horas_otros_registros"] - datos_horas["horas_extra_otros_registros"]
+      datos_horas2 = pd.merge(datos_horas,data_7_o, on=['nombre','fecha'], how="left")
+      datos_horas["horas_otros_registros"] = datos_horas1["horas_otros_registros"] - datos_horas["horas_extra_otros_registros"]-datos_horas2["reposicion"]
+      
 
 
       datos_horas= datos_horas.fillna(0)
