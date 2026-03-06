@@ -566,7 +566,7 @@ def Historial(usuario,puesto):
 
       datos_horas= datos_horas.fillna(0)
 
-      datos_horas["Total"]= datos_horas.iloc[:,3:6].sum(axis=1)
+      datos_horas["Total"]= datos_horas["horas_produccion"]+ datos_horas["horas_capacitacion"]+ datos_horas["horas_otros_registros"]
 
       placeholder41_7 = st.empty()
       historial_7_horas= placeholder41_7.dataframe(data=datos_horas)
