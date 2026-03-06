@@ -543,7 +543,7 @@ def Historial(usuario,puesto):
 
     else:
       
-      datos_horas= pd.concat([data_2_r,data_6_r,data_2_c,data_2_o], axis=0)
+      datos_horas= pd.concat([data_2_r,data_2_c,data_2_o], axis=0)
     
       datos_horas = pd.DataFrame(data=datos_horas).groupby(["nombre","fecha"],as_index=False).size()
 
