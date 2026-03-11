@@ -540,10 +540,11 @@ def Historial(usuario,puesto):
     data_14_o.rename(columns={"horas":"reposicion"}, inplace=True)
   
     pivot_r=len(data_10_r.iloc[:,0])
+    pivot_re=len(data_12_r.iloc[:,0])
     pivot_c=len(data_2_c.iloc[:,0])
     pivot_o=len(data_11_o.iloc[:,0])
     
-    if pivot_r==0 and pivot_c==0 and pivot_o==0:
+    if pivot_r==0 and pivot_c==0 and pivot_o==0 and pivot_re==0:
        
       placeholder40_7 = st.empty()
       error_horas= placeholder40_7.error('No existen horas para mostrar')
