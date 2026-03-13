@@ -200,7 +200,7 @@ def Historial(usuario,puesto):
     
     
     # --------------------------------------------------
-    # RESUMEN DE HORAS (MISMO CALCULO QUE OPERADOR)
+    # RESUMEN DE HORAS (VERSION SEGURA)
     # --------------------------------------------------
     
     placeholder17_7 = st.empty()
@@ -209,103 +209,147 @@ def Historial(usuario,puesto):
     
     # PRODUCCION NORMAL
     
-    data_10_r = data_8_r.groupby(
-        ["nombre","fecha"],
-        as_index=False
-    )[["horas"]].agg(np.sum)
+    if len(data_8_r) > 0:
     
-    data_10_r.rename(
-        columns={"horas":"horas_produccion"},
-        inplace=True
-    )
+        data_10_r = data_8_r.groupby(
+            ["nombre","fecha"],
+            as_index=False
+        )[["horas"]].agg(np.sum)
+    
+        data_10_r.rename(
+            columns={"horas":"horas_produccion"},
+            inplace=True
+        )
+    
+    else:
+    
+        data_10_r = pd.DataFrame(
+            columns=["nombre","fecha","horas_produccion"]
+        )
     
     
     # HORAS EXTRA PRODUCCION
     
-    data_12_r = data_6_r.groupby(
-        ["nombre","fecha"],
-        as_index=False
-    )[["horas"]].agg(np.sum)
+    if len(data_6_r) > 0:
     
-    data_12_r.rename(
-        columns={"horas":"horas_extra_produccion"},
-        inplace=True
-    )
+        data_12_r = data_6_r.groupby(
+            ["nombre","fecha"],
+            as_index=False
+        )[["horas"]].agg(np.sum)
+    
+        data_12_r.rename(
+            columns={"horas":"horas_extra_produccion"},
+            inplace=True
+        )
+    
+    else:
+    
+        data_12_r = pd.DataFrame(
+            columns=["nombre","fecha","horas_extra_produccion"]
+        )
     
     
     # CAPACITACIONES
     
-    data_2_c = data_1_c.groupby(
-        ["nombre","fecha"],
-        as_index=False
-    )["horas"].agg(np.sum)
+    if len(data_1_c) > 0:
     
-    data_2_c.rename(
-        columns={"horas":"horas_capacitacion"},
-        inplace=True
-    )
+        data_2_c = data_1_c.groupby(
+            ["nombre","fecha"],
+            as_index=False
+        )[["horas"]].agg(np.sum)
+    
+        data_2_c.rename(
+            columns={"horas":"horas_capacitacion"},
+            inplace=True
+        )
+    
+    else:
+    
+        data_2_c = pd.DataFrame(
+            columns=["nombre","fecha","horas_capacitacion"]
+        )
     
     
     # OTROS REGISTROS
     
-    data_11_o = data_9_o.groupby(
-        ["nombre","fecha"],
-        as_index=False
-    )["horas"].agg(np.sum)
+    if len(data_9_o) > 0:
     
-    data_11_o.rename(
-        columns={"horas":"horas_otros_registros"},
-        inplace=True
-    )
+        data_11_o = data_9_o.groupby(
+            ["nombre","fecha"],
+            as_index=False
+        )[["horas"]].agg(np.sum)
+    
+        data_11_o.rename(
+            columns={"horas":"horas_otros_registros"},
+            inplace=True
+        )
+    
+    else:
+    
+        data_11_o = pd.DataFrame(
+            columns=["nombre","fecha","horas_otros_registros"]
+        )
     
     
     # HORAS EXTRA OTROS
     
-    data_13_o = data_6_o.groupby(
-        ["nombre","fecha"],
-        as_index=False
-    )["horas"].agg(np.sum)
+    if len(data_6_o) > 0:
     
-    data_13_o.rename(
-        columns={"horas":"horas_extra_otros_registros"},
-        inplace=True
-    )
+        data_13_o = data_6_o.groupby(
+            ["nombre","fecha"],
+            as_index=False
+        )[["horas"]].agg(np.sum)
+    
+        data_13_o.rename(
+            columns={"horas":"horas_extra_otros_registros"},
+            inplace=True
+        )
+    
+    else:
+    
+        data_13_o = pd.DataFrame(
+            columns=["nombre","fecha","horas_extra_otros_registros"]
+        )
     
     
     # REPOSICION
     
-    data_14_o = data_7_o.groupby(
-        ["nombre","fecha"],
-        as_index=False
-    )["horas"].agg(np.sum)
+    if len(data_7_o) > 0:
     
-    data_14_o.rename(
-        columns={"horas":"reposicion"},
-        inplace=True)
+        data_14_o = data_7_o.groupby(
+            ["nombre","fecha"],
+            as_index=False
+        )[["horas"]].agg(np.sum)
+    
+        data_14_o.rename(
+            columns={"horas":"reposicion"},
+            inplace=True
+        )
+    
+    else:
+    
+        data_14_o = pd.DataFrame(
+            columns=["nombre","fecha","reposicion"]
+        )
     
     
-    pivot_r = len(data_10_r.iloc[:,0])
-    pivot_re = len(data_12_r.iloc[:,0])
-    pivot_c = len(data_2_c.iloc[:,0])
-    pivot_o = len(data_11_o.iloc[:,0])
+    # --------------------------------------------------
+    # COMBINAR RESULTADOS
+    # --------------------------------------------------
     
+    datos_horas = pd.concat(
+        [data_10_r,data_12_r,data_2_c,data_11_o],
+        axis=0
+    )
     
-    if pivot_r==0 and pivot_c==0 and pivot_o==0 and pivot_re==0:
+    if len(datos_horas) == 0:
     
         placeholder18_7 = st.empty()
         placeholder18_7.error("No existen horas para mostrar")
     
     else:
     
-        datos_horas = pd.concat(
-            [data_10_r,data_12_r,data_2_c,data_11_o],
-            axis=0
-        )
-    
-    
-        datos_horas = pd.DataFrame(
-            data=datos_horas
-        ).groupby(
+        datos_horas = pd.DataFrame(datos_horas).groupby(
             ["nombre","fecha"],
             as_index=False
         ).size()
