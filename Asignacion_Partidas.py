@@ -38,7 +38,7 @@ def Asignacion_Partidas(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  precampo_3 = placeholder8_3.title("Precampo")
+  precampo_3 = placeholder8_3.title("Asignación de Partidas")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
