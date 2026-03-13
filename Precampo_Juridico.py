@@ -30,7 +30,7 @@ def Precampo_Juridico(usuario,puesto):
   otros_registros_3 = placeholder5_3.button("Otros Registros",key="otros_registros_3")
 
   placeholder6_3 = st.sidebar.empty()
-  bonos_extras_3 = placeholder6_3.button("Bonos y Hoas Extras",key="bonos_extras_3")
+  bonos_extras_3 = placeholder6_3.button("Bonos y Horas Extras",key="bonos_extras_3")
 
   placeholder7_3 = st.sidebar.empty()
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
