@@ -202,7 +202,9 @@ def Historial(usuario,puesto):
     # --------------------------------------------------
     # RESUMEN DE HORAS (VERSION SEGURA)
     # --------------------------------------------------
-    
+    pivot_r=len(base_r.iloc[:,0])
+    pivot_c=len(base_c.iloc[:,0])
+    pivot_o=len(base_o.iloc[:,0])
     placeholder17_7 = st.empty()
     placeholder17_7.subheader("Resumen de Horas")
     
