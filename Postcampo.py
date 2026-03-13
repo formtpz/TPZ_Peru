@@ -76,9 +76,9 @@ def Postcampo(usuario,puesto):
   # =========================
   lotes = ["Todos"] + [f"{i:03d}" for i in range(1,249)]
   
-  placeholder13_3 = st.empty()
+  placeholder18_3 = st.empty()
   
-  numero_lote_3 = placeholder13_3.multiselect(
+  numero_lote_3 = placeholder18_3.multiselect(
       "Número de Lote",
       options=lotes,
       key="numero_lote_3"
