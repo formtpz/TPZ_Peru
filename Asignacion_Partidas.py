@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 from Autenticacion import hostname, database, username, pwd, port_id, con
 
-def Precampo(usuario,puesto):
+def Asignacion_Partidas(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
   uri=st.secrets.db_credentials.URI
