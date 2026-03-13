@@ -13,13 +13,13 @@ if time.time() - st.session_state.start_time >  29*60:
     st.session_state.clear()
     st.rerun()
 
-def auto_refresh(seconds=1741):
+def auto_refresh(seconds=30600):
         st.markdown(
             f'<meta http-equiv="refresh" content="{seconds}">',
             unsafe_allow_html=True
         )
 
-auto_refresh(1741)
+auto_refresh(30600)
 
 #-----------------FINCONTADOR-----------------#
 
