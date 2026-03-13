@@ -138,6 +138,7 @@ if iniciar_sesion_1:
                 st.session_state.Precampo=False
                 st.session_state.Precampo_Juridico=False
                 st.session_state.Descarga_Partidas_Juridico=False
+                st.session_state.Asignacion_Partidas=False
                 st.session_state.CC_Precampo=False
                 st.session_state.Vinculacion_Precampo=False 
                 st.session_state.Preparacion_Insumos=False
