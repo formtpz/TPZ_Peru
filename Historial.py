@@ -156,7 +156,6 @@ def Historial(usuario,puesto):
     
     data_6_o = base_o[
         base_o["motivo"].isin([
-            "Reposición de tiempo",
             "Horas Extra",
             "Horas Extra Apoyo Otros Proyectos",
             "Horas Extras"
