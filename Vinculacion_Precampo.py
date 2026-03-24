@@ -100,7 +100,8 @@ def Vinculacion_Precampo(usuario, puesto):
             "Reproceso Ordinario",
             "Corrección de Calidad",
             "Corrección de Calidad Extraordinaria",
-            "Producción Horas Extras"
+            "Producción Horas Extras",
+            "Reproceso Horas Extras"
         ),
         key="tipo_3"
     )
