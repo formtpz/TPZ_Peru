@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 import numpy as np
 import streamlit as st
-import pandas as pdf
+import pandas as pd
 import psycopg2
 from datetime import datetime
 import pytz
