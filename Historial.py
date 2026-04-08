@@ -95,9 +95,9 @@ def Historial(usuario,puesto):
     
     elif personal_7 == "Propio":
     
-        base_r = base_r[base_r["usuario"] == usuario]
-        base_c = base_c[base_c["usuario"] == usuario]
-        base_o = base_o[base_o["usuario"] == usuario]
+        base_r = base_r[base_r["usuario"] == nombre_7]
+        base_c = base_c[base_c["usuario"] == nombre_7]
+        base_o = base_o[base_o["usuario"] == nombre_7]
     
     
     elif personal_7 == "Personal Asignado":
@@ -389,7 +389,7 @@ def Historial(usuario,puesto):
 
     data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["edificas","unidades_catastrales","horas"]].agg(np.sum)
 
-    if pivot_r==0 or pivot_o==0:  
+    if pivot_r==0:  
 
       placeholder22_7 = st.empty()
       error_producción= placeholder22_7.error('No existe producción para mostrar')
