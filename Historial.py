@@ -95,9 +95,9 @@ def Historial(usuario,puesto):
     
     elif personal_7 == "Propio":
     
-        base_r = base_r[base_r["usuario"] == nombre_7]
-        base_c = base_c[base_c["usuario"] == nombre_7]
-        base_o = base_o[base_o["usuario"] == nombre_7]
+        base_r = base_r[base_r["nombre"] == nombre_7]
+        base_c = base_c[base_c["nombre"] == nombre_7]
+        base_o = base_o[base_o["nombre"] == nombre_7]
     
     
     elif personal_7 == "Personal Asignado":
