@@ -342,7 +342,7 @@ def Historial(usuario,puesto):
     # --------------------------------------------------
     
     datos_horas = pd.concat(
-        [data_10_r,data_12_r,data_2_c,data_11_o],
+        [data_10_r,data_12_r,data_2_c,data_11_o,data_13_o],
         axis=0
     )
     
