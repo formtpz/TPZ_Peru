@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 import numpy as np
 import streamlit as st
-import pandas as pd
+import pandas as pdf
 import psycopg2
 from datetime import datetime
 import pytz
@@ -389,7 +389,7 @@ def Historial(usuario,puesto):
 
     data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["edificas","unidades_catastrales","horas"]].agg(np.sum)
 
-    if pivot_r==0:  
+    if pivot_r==0 or pivot_o==0:  
 
       placeholder22_7 = st.empty()
       error_producción= placeholder22_7.error('No existe producción para mostrar')
