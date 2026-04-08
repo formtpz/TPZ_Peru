@@ -139,18 +139,18 @@ def Historial(usuario,puesto):
     # ----------------------------
     
     data_8_r = base_r[
-        ~base_r["tipo"].isin([
+        base_r["tipo"].isin([
             "Producción Horas Extras",
-            "Inspección Horas Extras"
+            "Inspección Horas Extras",
+            "Reproceso Horas Extras"
         ])
     ].copy()
     
     
     data_6_r = base_r[
-        base_r["tipo"].isin([
+        ~base_r["tipo"].isin([
             "Producción Horas Extras",
-            "Inspección Horas Extras",
-            "Reproceso Horas Extras"
+            "Inspección Horas Extras"
         ])
     ].copy()
     
