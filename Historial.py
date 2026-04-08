@@ -141,7 +141,8 @@ def Historial(usuario,puesto):
     data_8_r = base_r[
         ~base_r["tipo"].isin([
             "Producción Horas Extras",
-            "Inspección Horas Extras"
+            "Inspección Horas Extras",
+            "Reproceso Horas Extras"
         ])
     ].copy()
     
@@ -187,8 +188,9 @@ def Historial(usuario,puesto):
     reportes_7 = placeholder13_7.subheader("Reportes")
     
     pivot_reportes = len(data_1_r.iloc[:,0])
+    pivot_reportes_o = len(data_1_o.iloc[:,0])
     
-    if pivot_reportes == 0:
+    if pivot_reportes == 0 or pivot_reportes_o == 0:
     
         placeholder14_7 = st.empty()
         placeholder14_7.error("No existen reportes para mostrar")
