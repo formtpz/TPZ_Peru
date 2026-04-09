@@ -190,7 +190,7 @@ def Historial(usuario,puesto):
     pivot_reportes = len(data_1_r.iloc[:,0])
     pivot_reportes_o = len(data_1_o.iloc[:,0])
     
-    if pivot_reportes == 0 or pivot_reportes_o == 0:
+    if pivot_reportes == 0 and pivot_reportes_o == 0:
     
         placeholder14_7 = st.empty()
         placeholder14_7.error("No existen reportes para mostrar")
