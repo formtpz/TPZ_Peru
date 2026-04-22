@@ -130,6 +130,29 @@ def Correcciones(usuario, puesto):
                     ("Eliminar reporte", "Modificar valor")
                 )
 
+                # Si es modificación, mostrar lista de columnas disponibles para esa tabla
+                columna_seleccionada = None
+                if tipo_solicitud == "Modificar valor":
+                    # Obtener columnas reales de la tabla seleccionada (excluyendo id y algunas de sistema)
+                    cursor.execute("""
+                        SELECT column_name
+                        FROM information_schema.columns
+                        WHERE table_name = %s
+                        ORDER BY ordinal_position
+                    """, (tabla,))
+                    columnas_tabla = [row[0] for row in cursor.fetchall()]
+                    # Excluir columnas que normalmente no se modifican
+                    excluir = {'id', 'marca', 'usuario', 'nombre', 'puesto', 'supervisor',
+                               'proceso', 'fecha', 'semana', 'año'}
+                    columnas_disponibles = [c for c in columnas_tabla if c not in excluir]
+                    if columnas_disponibles:
+                        columna_seleccionada = st.selectbox(
+                            "Columna a modificar",
+                            columnas_disponibles
+                        )
+                    else:
+                        st.warning("No hay columnas editables en esta tabla.")
+
                 enviar = st.form_submit_button("Registrar solicitud")
 
                 if enviar:
@@ -149,30 +172,35 @@ def Correcciones(usuario, puesto):
                             if cursor.fetchone() is not None:
                                 st.error("Ya existe una solicitud de corrección para este ID en esta tabla.")
                             else:
-                                marca = datetime.now(pytz.timezone("America/Guatemala")).strftime("%Y-%m-%d %H:%M:%S")
-                                solucion = "Eliminar" if tipo_solicitud == "Eliminar reporte" else "Modificar"
+                                # Validar que si es modificación se haya seleccionado una columna
+                                if tipo_solicitud == "Modificar valor" and not columna_seleccionada:
+                                    st.error("Debe seleccionar una columna para modificar.")
+                                else:
+                                    marca = datetime.now(pytz.timezone("America/Guatemala")).strftime("%Y-%m-%d %H:%M:%S")
+                                    solucion = "Eliminar" if tipo_solicitud == "Eliminar reporte" else "Modificar"
+                                    columna_valor = columna_seleccionada if tipo_solicitud == "Modificar valor" else ""
 
-                                cursor.execute("""
-                                    INSERT INTO correcciones (
-                                        usuario, nombre, tipo_error, id_asociado,
-                                        fecha, solucion, tabla, columna, nuevo_valor, estado
-                                    )
-                                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
-                                """, (
-                                    usuario,
-                                    nombre,
-                                    "Pendiente de detalle",  # tipo_error inicial
-                                    id_reporte,
-                                    marca,
-                                    solucion,
-                                    tabla,
-                                    "",                   # columna se llenará después
-                                    "",                   # nuevo_valor se llenará después
-                                    "Pendiente"
-                                ))
-                                con.commit()
-                                st.success("Solicitud registrada. Ahora puedes editar los detalles en la tabla de abajo.")
-                                st.rerun()
+                                    cursor.execute("""
+                                        INSERT INTO correcciones (
+                                            usuario, nombre, tipo_error, id_asociado,
+                                            fecha, solucion, tabla, columna, nuevo_valor, estado
+                                        )
+                                        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                                    """, (
+                                        usuario,
+                                        nombre,
+                                        "Pendiente de detalle",  # tipo_error inicial
+                                        id_reporte,
+                                        marca,
+                                        solucion,
+                                        tabla,
+                                        columna_valor,           # columna ya definida
+                                        "",                      # nuevo_valor se llenará después
+                                        "Pendiente"
+                                    ))
+                                    con.commit()
+                                    st.success("Solicitud registrada. Ahora puedes editar el nuevo valor en la tabla de abajo.")
+                                    st.rerun()
 
             # =================================================
             # TABLA EDITABLE DE SOLICITUDES PENDIENTES (Paso 2)
@@ -193,9 +221,10 @@ def Correcciones(usuario, puesto):
             if df_pendientes.empty:
                 st.info("No tienes solicitudes pendientes para editar.")
             else:
-                st.caption("Puedes modificar 'solución', 'columna' y 'nuevo valor' directamente en la tabla.")
-                st.caption("Recuerda que 'columna' debe coincidir con el nombre exacto en la tabla seleccionada.")
+                st.caption("Puedes modificar 'solución' y 'nuevo valor' directamente en la tabla.")
+                st.caption("La columna a modificar fue seleccionada al crear la solicitud y no puede cambiarse aquí.")
 
+                # Configuración de columnas para el editor
                 column_config = {
                     "id": st.column_config.Column(disabled=True),
                     "fecha": st.column_config.Column(disabled=True),
@@ -207,7 +236,7 @@ def Correcciones(usuario, puesto):
                         options=["Eliminar", "Modificar"],
                         required=True
                     ),
-                    "columna": st.column_config.TextColumn("Columna a modificar"),
+                    "columna": st.column_config.Column(disabled=True, label="Columna a modificar"),
                     "nuevo_valor": st.column_config.TextColumn("Nuevo valor"),
                 }
 
@@ -229,7 +258,7 @@ def Correcciones(usuario, puesto):
                             fila_original = df_pendientes.loc[idx]
 
                             columnas_cambiadas = [
-                                col for col in ["solucion", "columna", "nuevo_valor"]
+                                col for col in ["solucion", "nuevo_valor"]
                                 if fila_nueva[col] != fila_original[col]
                             ]
                             if not columnas_cambiadas:
@@ -354,11 +383,15 @@ def Correcciones(usuario, puesto):
         st.session_state.Procesos = False
         st.session_state.Correcciones = False
 
-        # Obtener perfil usando la conexión activa
+        # Obtener perfil ANTES de cerrar la conexión
         perfil = pd.read_sql(
             f"SELECT perfil FROM usuarios WHERE usuario = '{usuario}'",
             con
         ).loc[0, "perfil"]
+
+        # Ahora podemos cerrar la conexión, porque ya no la usaremos en esta función
+        cursor.close()
+        con.close()
 
         if perfil == "1":
             Procesos.Procesos1(usuario, puesto)
@@ -366,6 +399,7 @@ def Correcciones(usuario, puesto):
             Procesos.Procesos2(usuario, puesto)
         elif perfil == "3":
             Procesos.Procesos3(usuario, puesto)
-
-    # Cerrar cursor (opcional, pero la conexión se mantiene abierta)
-    cursor.close()
+    else:
+        # Si no se presionó "Regresar", cerramos la conexión normalmente al salir
+        cursor.close()
+        con.close()
