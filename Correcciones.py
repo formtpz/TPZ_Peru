@@ -193,17 +193,9 @@ def Correcciones(usuario, puesto):
             if df_pendientes.empty:
                 st.info("No tienes solicitudes pendientes para editar.")
             else:
-                # Definir opciones de columna según la tabla (esto se usará en el editor)
-                # Streamlit permite usar column_config con SelectboxColumn para edición.
-                # Como las opciones dependen de la fila, se puede usar un enfoque con
-                # st.data_editor y column_config, pero la columna 'columna' será texto libre
-                # y se puede sugerir una lista. Para simplificar, dejaremos que el usuario
-                # escriba el nombre de la columna manualmente, pero podemos agregar
-                # una ayuda contextual.
                 st.caption("Puedes modificar 'solución', 'columna' y 'nuevo valor' directamente en la tabla.")
                 st.caption("Recuerda que 'columna' debe coincidir con el nombre exacto en la tabla seleccionada.")
 
-                # Configuración de columnas para el editor
                 column_config = {
                     "id": st.column_config.Column(disabled=True),
                     "fecha": st.column_config.Column(disabled=True),
@@ -293,11 +285,9 @@ def Correcciones(usuario, puesto):
 
             df_corr_original = pd.read_sql(query_corr, con)
 
-            # Convertir IDs a string para evitar problemas en el editor
             if "id" in df_corr_original.columns:
                 df_corr_original["id"] = df_corr_original["id"].astype(str)
 
-            # Configuración para evitar edición de campos sensibles
             column_config_coord = {
                 "id": st.column_config.Column(disabled=True),
                 "usuario": st.column_config.Column(disabled=True),
@@ -328,7 +318,6 @@ def Correcciones(usuario, puesto):
                             col for col in df_corr_original.columns
                             if fila_nueva[col] != fila_original[col]
                         ]
-                        # Excluir columnas que no deberían editarse (aunque ya están deshabilitadas)
                         columnas_permitidas = [c for c in columnas_cambiadas if c not in ("id", "usuario", "nombre", "fecha", "tabla", "id_asociado")]
                         if not columnas_permitidas:
                             continue
@@ -350,12 +339,6 @@ def Correcciones(usuario, puesto):
         # Fin del bloque Coordinador
 
     # =========================================================
-    # Cerrar cursor y conexión
-    # =========================================================
-    cursor.close()
-    con.close()
-
-    # =========================================================
     # Regresar a Procesos
     # =========================================================
     if procesos_3:
@@ -371,7 +354,7 @@ def Correcciones(usuario, puesto):
         st.session_state.Procesos = False
         st.session_state.Correcciones = False
 
-        # Corregido: usar 'con' en lugar de 'uri'
+        # Obtener perfil usando la conexión activa
         perfil = pd.read_sql(
             f"SELECT perfil FROM usuarios WHERE usuario = '{usuario}'",
             con
@@ -383,3 +366,6 @@ def Correcciones(usuario, puesto):
             Procesos.Procesos2(usuario, puesto)
         elif perfil == "3":
             Procesos.Procesos3(usuario, puesto)
+
+    # Cerrar cursor (opcional, pero la conexión se mantiene abierta)
+    cursor.close()
