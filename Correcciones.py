@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import psycopg2
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 from urllib.parse import urlparse
 import Procesos
@@ -49,44 +49,30 @@ def Correcciones(usuario, puesto):
         with page.container():
 
             st.title("Corrección de Reportes")
+            st.write("Aquí puedes visualizar tus reportes recientes y solicitar correcciones o eliminaciones.")
 
-            st.write(
-                "Aquí puedes visualizar tus reportes y solicitar correcciones "
-                "o eliminaciones en caso de errores."
-            )
-
-            # -----------------------------
-            # Filtro de fechas
-            # -----------------------------
-            st.subheader("Filtrar por fecha")
-
-            col1, col2 = st.columns(2)
-            with col1:
-                fecha_inicio = st.date_input("Fecha inicio")
-            with col2:
-                fecha_fin = st.date_input("Fecha fin")
-
-            if fecha_inicio > fecha_fin:
-                st.error("La fecha de inicio no puede ser mayor que la fecha final.")
-                st.stop()
-
-            # -----------------------------
+            # -------------------------------------------------
             # Obtener nombre del usuario
-            # -----------------------------
+            # -------------------------------------------------
             df_nombre = pd.read_sql(
                 f"SELECT nombre FROM usuarios WHERE usuario = '{usuario}'",
                 con
             )
             nombre = df_nombre.loc[0, "nombre"]
 
-            # -----------------------------
-            # Consultar reportes
-            # -----------------------------
+            # -------------------------------------------------
+            # Filtro fijo: últimos 3 días (incluye hoy)
+            # -------------------------------------------------
+            fecha_limite = datetime.now().date() - timedelta(days=3)
+
+            # -------------------------------------------------
+            # Consultar reportes de los últimos 3 días
+            # -------------------------------------------------
             query_registro = f"""
                 SELECT *
                 FROM registro
                 WHERE usuario = '{usuario}'
-                  AND fecha BETWEEN '{fecha_inicio}' AND '{fecha_fin}'
+                  AND fecha >= '{fecha_limite}'
                 ORDER BY fecha DESC
             """
 
@@ -94,7 +80,7 @@ def Correcciones(usuario, puesto):
                 SELECT *
                 FROM otros_registros
                 WHERE usuario = '{usuario}'
-                  AND fecha BETWEEN '{fecha_inicio}' AND '{fecha_fin}'
+                  AND fecha >= '{fecha_limite}'
                 ORDER BY fecha DESC
             """
 
@@ -102,7 +88,7 @@ def Correcciones(usuario, puesto):
                 SELECT *
                 FROM capacitaciones
                 WHERE usuario = '{usuario}'
-                  AND fecha BETWEEN '{fecha_inicio}' AND '{fecha_fin}'
+                  AND fecha >= '{fecha_limite}'
                 ORDER BY fecha DESC
             """
 
@@ -110,171 +96,187 @@ def Correcciones(usuario, puesto):
             dfo = pd.read_sql(query_otros, con)
             dfc = pd.read_sql(query_capacitacion, con)
 
-            # ----- IDs como texto -----
-            if "id" in df.columns:
-                df["id"] = df["id"].astype(str)
-            if "id" in dfo.columns:
-                dfo["id"] = dfo["id"].astype(str)
-            if "id" in dfc.columns:
-                dfc["id"] = dfc["id"].astype(str)
+            # Convertir IDs a string para mejor visualización
+            for dataframe in (df, dfo, dfc):
+                if "id" in dataframe.columns:
+                    dataframe["id"] = dataframe["id"].astype(str)
 
-            st.subheader("Registro")
+            st.subheader("📋 Registro (últimos 3 días)")
             st.dataframe(df, use_container_width=True)
 
-            st.subheader("Otros Registros")
+            st.subheader("📌 Otros Registros (últimos 3 días)")
             st.dataframe(dfo, use_container_width=True)
 
-            st.subheader("Capacitaciones")
+            st.subheader("📚 Capacitaciones (últimos 3 días)")
             st.dataframe(dfc, use_container_width=True)
 
-            # =====================================================
-            # NUEVO: Mis solicitudes de corrección + filtro
-            # =====================================================
-            st.subheader("Mis solicitudes de corrección")
+            # =================================================
+            # NUEVA SOLICITUD DE CORRECCIÓN (Paso 1)
+            # =================================================
+            st.subheader("➕ Nueva solicitud de corrección / eliminación")
 
-            filtro_corr = st.selectbox(
-                "Mostrar solicitudes",
-                ("Todos", "Pendiente"),
-                key="filtro_mis_correcciones"
-            )
+            with st.form(key="nueva_correccion_form", clear_on_submit=True):
+                col1, col2 = st.columns(2)
+                with col1:
+                    tabla = st.selectbox(
+                        "Tabla donde se encuentra el reporte",
+                        ("registro", "otros_registros", "capacitaciones")
+                    )
+                with col2:
+                    id_reporte = st.text_input("ID del reporte")
 
-            query_mis_corr = f"""
-                SELECT
-                    id,
-                    fecha,
-                    tabla,
-                    id_asociado,
-                    tipo_error,
-                    columna,
-                    nuevo_valor,
-                    solucion,
-                    estado
+                tipo_solicitud = st.radio(
+                    "Tipo de solicitud",
+                    ("Eliminar reporte", "Modificar valor")
+                )
+
+                enviar = st.form_submit_button("Registrar solicitud")
+
+                if enviar:
+                    if not id_reporte:
+                        st.error("Debe indicar el ID del reporte.")
+                    else:
+                        # Verificar que el ID exista en la tabla seleccionada
+                        cursor.execute(f"SELECT 1 FROM {tabla} WHERE id = %s", (id_reporte,))
+                        if cursor.fetchone() is None:
+                            st.error(f"No existe el ID {id_reporte} en la tabla {tabla}.")
+                        else:
+                            # Verificar que no exista ya una corrección para ese ID en esa tabla
+                            cursor.execute("""
+                                SELECT 1 FROM correcciones
+                                WHERE tabla = %s AND id_asociado = %s
+                            """, (tabla, id_reporte))
+                            if cursor.fetchone() is not None:
+                                st.error("Ya existe una solicitud de corrección para este ID en esta tabla.")
+                            else:
+                                marca = datetime.now(pytz.timezone("America/Guatemala")).strftime("%Y-%m-%d %H:%M:%S")
+                                solucion = "Eliminar" if tipo_solicitud == "Eliminar reporte" else "Modificar"
+
+                                cursor.execute("""
+                                    INSERT INTO correcciones (
+                                        usuario, nombre, tipo_error, id_asociado,
+                                        fecha, solucion, tabla, columna, nuevo_valor, estado
+                                    )
+                                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                                """, (
+                                    usuario,
+                                    nombre,
+                                    "Pendiente de detalle",  # tipo_error inicial
+                                    id_reporte,
+                                    marca,
+                                    solucion,
+                                    tabla,
+                                    "",                   # columna se llenará después
+                                    "",                   # nuevo_valor se llenará después
+                                    "Pendiente"
+                                ))
+                                con.commit()
+                                st.success("Solicitud registrada. Ahora puedes editar los detalles en la tabla de abajo.")
+                                st.rerun()
+
+            # =================================================
+            # TABLA EDITABLE DE SOLICITUDES PENDIENTES (Paso 2)
+            # =================================================
+            st.subheader("✏️ Editar detalles de mis solicitudes pendientes")
+
+            # Cargar solicitudes pendientes del usuario
+            query_pendientes = f"""
+                SELECT id, fecha, tabla, id_asociado, solucion, columna, nuevo_valor, estado
                 FROM correcciones
-                WHERE usuario = '{usuario}'
+                WHERE usuario = '{usuario}' AND estado = 'Pendiente'
+                ORDER BY fecha DESC
             """
+            df_pendientes = pd.read_sql(query_pendientes, con)
+            if "id" in df_pendientes.columns:
+                df_pendientes["id"] = df_pendientes["id"].astype(str)
 
-            if filtro_corr == "Pendiente":
-                query_mis_corr += " AND estado = 'Pendiente'"
-
-            query_mis_corr += " ORDER BY fecha DESC"
-
-            df_mis_corr = pd.read_sql(query_mis_corr, con)
-
-            if "id" in df_mis_corr.columns:
-                df_mis_corr["id"] = df_mis_corr["id"].astype(str)
-
-            if df_mis_corr.empty:
-                st.info("No hay solicitudes para mostrar.")
+            if df_pendientes.empty:
+                st.info("No tienes solicitudes pendientes para editar.")
             else:
-                st.dataframe(df_mis_corr, use_container_width=True)
+                # Definir opciones de columna según la tabla (esto se usará en el editor)
+                # Streamlit permite usar column_config con SelectboxColumn para edición.
+                # Como las opciones dependen de la fila, se puede usar un enfoque con
+                # st.data_editor y column_config, pero la columna 'columna' será texto libre
+                # y se puede sugerir una lista. Para simplificar, dejaremos que el usuario
+                # escriba el nombre de la columna manualmente, pero podemos agregar
+                # una ayuda contextual.
+                st.caption("Puedes modificar 'solución', 'columna' y 'nuevo valor' directamente en la tabla.")
+                st.caption("Recuerda que 'columna' debe coincidir con el nombre exacto en la tabla seleccionada.")
 
-            # -----------------------------
-            # Solicitud de corrección
-            # -----------------------------
-            st.subheader("Solicitar corrección o eliminación")
+                # Configuración de columnas para el editor
+                column_config = {
+                    "id": st.column_config.Column(disabled=True),
+                    "fecha": st.column_config.Column(disabled=True),
+                    "tabla": st.column_config.Column(disabled=True),
+                    "id_asociado": st.column_config.Column(disabled=True),
+                    "estado": st.column_config.Column(disabled=True),
+                    "solucion": st.column_config.SelectboxColumn(
+                        "Solución",
+                        options=["Eliminar", "Modificar"],
+                        required=True
+                    ),
+                    "columna": st.column_config.TextColumn("Columna a modificar"),
+                    "nuevo_valor": st.column_config.TextColumn("Nuevo valor"),
+                }
 
-            id_reporte = st.text_input("ID del reporte")
-
-            tipo_correccion = st.radio(
-                "Tipo de solicitud",
-                ("Modificar valor", "Eliminar reporte")
-            )
-
-            tabla = st.radio(
-                "Tabla",
-                ("registro", "otros_registros", "capacitaciones")
-            )
-
-            if tipo_correccion == "Modificar valor":
-
-                descripcion1 = st.radio(
-                    "Motivo",
-                    (
-                        "Estado Incorrecto",
-                        "Fecha Incorrecta",
-                        "Distrito Incorrecto",
-                        "Tipo Incorrecto",
-                        "Horas Incorrectas",
-                        "Manzana Incorrecta",
-                        "Sector Incorrecto",
-                        "Lote Incorrecto",
-                        "Aprobados-Rechazados Incorrectos",
-                        "Área Incorrecta",
-                        "Edificas Incorrectos",
-                        "Unidades Catastrales Incorrectas",
-                        "Partida Incorrecta",
-                        "Zona Incorrecta",
-                        "Otro"
-                    )
+                df_editado = st.data_editor(
+                    df_pendientes,
+                    use_container_width=True,
+                    num_rows="fixed",
+                    column_config=column_config,
+                    key="editor_pendientes"
                 )
 
-                columna = st.text_input(
-                    "Columna a corregir (según se visualiza en las tablas anteriores)"
-                )
+                if st.button("💾 Guardar cambios en solicitudes"):
+                    cambios = df_editado.compare(df_pendientes)
+                    if cambios.empty:
+                        st.info("No se detectaron cambios.")
+                    else:
+                        for idx in cambios.index.get_level_values(0).unique():
+                            fila_nueva = df_editado.loc[idx]
+                            fila_original = df_pendientes.loc[idx]
 
-                nuevo_valor = st.text_input(
-                    "Nuevo valor (Ej: Aprobados-Rechazados = 3-2)"
-                )
+                            columnas_cambiadas = [
+                                col for col in ["solucion", "columna", "nuevo_valor"]
+                                if fila_nueva[col] != fila_original[col]
+                            ]
+                            if not columnas_cambiadas:
+                                continue
 
-            else:
-                descripcion1 = st.radio(
-                    "Motivo",
-                    (
-                        "Reporte Duplicado",
-                        "Reporte Incorrecto",
-                        "Reporte de Prueba",
-                        "Proceso Incorrecto"
-                    )
-                )
-                columna = "N/A"
-                nuevo_valor = "0"
+                            set_clause = ", ".join(f"{col} = %s" for col in columnas_cambiadas)
+                            valores = [to_python(fila_nueva[col]) for col in columnas_cambiadas]
+                            id_python = to_python(fila_nueva["id"])
 
-            # -----------------------------
-            # Enviar solicitud
-            # -----------------------------
-            if st.button("Enviar solicitud"):
+                            sql = f"""
+                                UPDATE correcciones
+                                SET {set_clause}
+                                WHERE id = %s
+                            """
+                            cursor.execute(sql, valores + [id_python])
 
-                if not id_reporte:
-                    st.error("Debe indicar el ID del reporte.")
-                    st.stop()
+                        con.commit()
+                        st.success("Cambios guardados correctamente.")
+                        st.rerun()
 
-                if tipo_correccion == "Modificar valor":
-                    if not columna.strip() or not nuevo_valor.strip():
-                        st.error("Debe indicar columna y nuevo valor.")
-                        st.stop()
+            # =================================================
+            # VISUALIZACIÓN DE TODAS MIS SOLICITUDES (opcional)
+            # =================================================
+            with st.expander("📋 Ver todas mis solicitudes"):
+                query_todas = f"""
+                    SELECT id, fecha, tabla, id_asociado, solucion, columna, nuevo_valor, estado
+                    FROM correcciones
+                    WHERE usuario = '{usuario}'
+                    ORDER BY fecha DESC
+                """
+                df_todas = pd.read_sql(query_todas, con)
+                if "id" in df_todas.columns:
+                    df_todas["id"] = df_todas["id"].astype(str)
+                st.dataframe(df_todas, use_container_width=True)
 
-                marca = datetime.now(
-                    pytz.timezone("America/Guatemala")
-                ).strftime("%Y-%m-%d %H:%M:%S")
-
-                solicitud = "Modificar" if tipo_correccion == "Modificar valor" else "Eliminar"
-
-                cursor.execute("""
-                    INSERT INTO correcciones (
-                        usuario, nombre, tipo_error, id_asociado,
-                        fecha, solucion, tabla, columna, nuevo_valor, estado
-                    )
-                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
-                """, (
-                    usuario,
-                    nombre,
-                    descripcion1,
-                    id_reporte,
-                    marca,
-                    solicitud,
-                    tabla,
-                    columna,
-                    nuevo_valor,
-                    "Pendiente"
-                ))
-
-                con.commit()
-                st.success("Solicitud registrada correctamente")
-
-        pass  # fin usuario
+        # Fin del bloque usuario normal
 
     # =========================================================
-    # COORDINADOR
+    # COORDINADOR (sin cambios en la lógica actual)
     # =========================================================
     else:
 
@@ -291,46 +293,67 @@ def Correcciones(usuario, puesto):
 
             df_corr_original = pd.read_sql(query_corr, con)
 
+            # Convertir IDs a string para evitar problemas en el editor
+            if "id" in df_corr_original.columns:
+                df_corr_original["id"] = df_corr_original["id"].astype(str)
+
+            # Configuración para evitar edición de campos sensibles
+            column_config_coord = {
+                "id": st.column_config.Column(disabled=True),
+                "usuario": st.column_config.Column(disabled=True),
+                "nombre": st.column_config.Column(disabled=True),
+                "fecha": st.column_config.Column(disabled=True),
+                "tabla": st.column_config.Column(disabled=True),
+                "id_asociado": st.column_config.Column(disabled=True),
+            }
+
             df_corr_editado = st.data_editor(
                 df_corr_original,
                 use_container_width=True,
-                num_rows="fixed"
+                num_rows="fixed",
+                column_config=column_config_coord
             )
 
             if st.button("Guardar cambios"):
-
                 cambios = df_corr_editado.compare(df_corr_original)
 
                 if cambios.empty:
                     st.info("No hay cambios para guardar.")
-                    st.stop()
+                else:
+                    for idx in cambios.index.get_level_values(0).unique():
+                        fila_nueva = df_corr_editado.loc[idx]
+                        fila_original = df_corr_original.loc[idx]
 
-                for idx in cambios.index.get_level_values(0).unique():
+                        columnas_cambiadas = [
+                            col for col in df_corr_original.columns
+                            if fila_nueva[col] != fila_original[col]
+                        ]
+                        # Excluir columnas que no deberían editarse (aunque ya están deshabilitadas)
+                        columnas_permitidas = [c for c in columnas_cambiadas if c not in ("id", "usuario", "nombre", "fecha", "tabla", "id_asociado")]
+                        if not columnas_permitidas:
+                            continue
 
-                    fila_nueva = df_corr_editado.loc[idx]
-                    fila_original = df_corr_original.loc[idx]
+                        set_clause = ", ".join(f"{col} = %s" for col in columnas_permitidas)
+                        valores = [to_python(fila_nueva[col]) for col in columnas_permitidas]
+                        id_python = to_python(fila_nueva["id"])
 
-                    columnas_cambiadas = [
-                        col for col in df_corr_original.columns
-                        if fila_nueva[col] != fila_original[col]
-                    ]
+                        sql = f"""
+                            UPDATE correcciones
+                            SET {set_clause}
+                            WHERE id = %s
+                        """
+                        cursor.execute(sql, valores + [id_python])
 
-                    set_clause = ", ".join(f"{col} = %s" for col in columnas_cambiadas)
-                    valores = [to_python(fila_nueva[col]) for col in columnas_cambiadas]
-                    id_python = to_python(fila_nueva["id"])
+                    con.commit()
+                    st.success("Cambios guardados correctamente")
 
-                    sql = f"""
-                        UPDATE correcciones
-                        SET {set_clause}
-                        WHERE id = %s
-                    """
+        # Fin del bloque Coordinador
 
-                    cursor.execute(sql, valores + [id_python])
-
-                con.commit()
-                st.success("Cambios guardados correctamente")
-
-        pass  # fin coordinador
+    # =========================================================
+    # Cerrar cursor y conexión
+    # =========================================================
+    cursor.close()
+    con.close()
 
     # =========================================================
     # Regresar a Procesos
@@ -348,9 +371,10 @@ def Correcciones(usuario, puesto):
         st.session_state.Procesos = False
         st.session_state.Correcciones = False
 
+        # Corregido: usar 'con' en lugar de 'uri'
         perfil = pd.read_sql(
             f"SELECT perfil FROM usuarios WHERE usuario = '{usuario}'",
-            uri
+            con
         ).loc[0, "perfil"]
 
         if perfil == "1":
@@ -359,4 +383,3 @@ def Correcciones(usuario, puesto):
             Procesos.Procesos2(usuario, puesto)
         elif perfil == "3":
             Procesos.Procesos3(usuario, puesto)
-
