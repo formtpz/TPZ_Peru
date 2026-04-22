@@ -161,134 +161,125 @@ def Correcciones(usuario, puesto):
                                 st.success("Solicitud registrada. Ahora puedes editar los detalles abajo.")
                                 st.rerun()
 
-            # ---------- Edición de solicitudes pendientes (AgGrid) ----------
-            st.subheader("✏️ Editar detalles de mis solicitudes pendientes")
+# -------------------------------------------------
+# EDICIÓN DE SOLICITUDES PENDIENTES (data_editor nativo)
+# -------------------------------------------------
+st.subheader("✏️ Editar detalles de mis solicitudes pendientes")
 
-            query_pendientes = f"""
-                SELECT id, fecha, tabla, id_asociado, solucion, columna, nuevo_valor, estado
-                FROM correcciones
-                WHERE usuario = '{usuario}' AND estado = 'Pendiente'
-                ORDER BY fecha DESC
-            """
-            df_pendientes = pd.read_sql(query_pendientes, con)
-            if "id" in df_pendientes.columns:
-                df_pendientes["id"] = df_pendientes["id"].astype(str)
+query_pendientes = f"""
+    SELECT id, fecha, tabla, id_asociado, solucion, columna, nuevo_valor, estado
+    FROM correcciones
+    WHERE usuario = '{usuario}' AND estado = 'Pendiente'
+    ORDER BY fecha DESC
+"""
+df_pendientes = pd.read_sql(query_pendientes, con)
+if "id" in df_pendientes.columns:
+    df_pendientes["id"] = df_pendientes["id"].astype(str)
 
-            if df_pendientes.empty:
-                st.info("No tienes solicitudes pendientes para editar.")
+if df_pendientes.empty:
+    st.info("No tienes solicitudes pendientes para editar.")
+else:
+    # Definir las columnas editables por tabla (según lo que indicaste)
+    COLUMNAS_EDITABLES = {
+        "registro": [
+            "fecha", "horas", "observaciones",
+            "distrito", "tipo", "lotes", "aprobados", "rechazados",
+            "manzana", "sector", "numero_lote", "estado", "area",
+            "edificas", "partida", "zona", "tipo_calidad",
+            "total_de_errores", "errores_por_excepcion",
+            "tipo_de_errores", "conteo_de_errores"
+        ],
+        "otros_registros": ["fecha", "horas", "observaciones"],
+        "capacitaciones": ["fecha", "horas", "observaciones"]
+    }
+
+    # Unir todas las opciones posibles para el dropdown de "columna"
+    todas_columnas = sorted(set(
+        COLUMNAS_EDITABLES["registro"] +
+        COLUMNAS_EDITABLES["otros_registros"] +
+        COLUMNAS_EDITABLES["capacitaciones"]
+    ))
+
+    st.caption("✏️ Haz doble clic en 'Solución' para cambiar entre Eliminar/Modificar.")
+    st.caption("📂 Haz doble clic en 'Columna' y elige de la lista desplegable (incluye columnas de todas las tablas).")
+    st.caption("⚠️ Asegúrate de elegir una columna válida para la tabla indicada en cada fila.")
+    st.info(f"Columnas válidas por tabla:\n\n"
+            f"**Registro**: {', '.join(COLUMNAS_EDITABLES['registro'])}\n\n"
+            f"**Otros Registros**: {', '.join(COLUMNAS_EDITABLES['otros_registros'])}\n\n"
+            f"**Capacitaciones**: {', '.join(COLUMNAS_EDITABLES['capacitaciones'])}")
+
+    column_config = {
+        "id": st.column_config.Column(disabled=True),
+        "fecha": st.column_config.Column(disabled=True),
+        "tabla": st.column_config.Column(disabled=True),
+        "id_asociado": st.column_config.Column(disabled=True),
+        "estado": st.column_config.Column(disabled=True),
+        "solucion": st.column_config.SelectboxColumn(
+            "Solución",
+            options=["Eliminar", "Modificar"],
+            required=True
+        ),
+        "columna": st.column_config.SelectboxColumn(
+            "Columna a modificar",
+            options=todas_columnas,
+            required=False
+        ),
+        "nuevo_valor": st.column_config.TextColumn("Nuevo valor"),
+    }
+
+    df_editado = st.data_editor(
+        df_pendientes,
+        use_container_width=True,
+        num_rows="fixed",
+        column_config=column_config,
+        key="editor_pendientes"
+    )
+
+    if st.button("💾 Guardar cambios en solicitudes"):
+        cambios = df_editado.compare(df_pendientes)
+        if cambios.empty:
+            st.info("No se detectaron cambios.")
+        else:
+            errores = []
+            for idx in cambios.index.get_level_values(0).unique():
+                fila_nueva = df_editado.loc[idx]
+                fila_original = df_pendientes.loc[idx]
+
+                # Validar que la columna elegida sea válida para la tabla
+                tabla_actual = fila_nueva["tabla"]
+                columna_elegida = fila_nueva["columna"]
+                if fila_nueva["solucion"] == "Modificar":
+                    if columna_elegida not in COLUMNAS_EDITABLES.get(tabla_actual, []):
+                        errores.append(f"Fila ID {fila_nueva['id']}: La columna '{columna_elegida}' no es editable en la tabla '{tabla_actual}'.")
+                        continue
+
+                # Actualizar solo si hubo cambios en solucion, columna o nuevo_valor
+                if (fila_nueva["solucion"] == fila_original["solucion"] and
+                    fila_nueva["columna"] == fila_original["columna"] and
+                    fila_nueva["nuevo_valor"] == fila_original["nuevo_valor"]):
+                    continue
+
+                cursor.execute("""
+                    UPDATE correcciones
+                    SET solucion = %s,
+                        columna = %s,
+                        nuevo_valor = %s
+                    WHERE id = %s
+                """, (
+                    fila_nueva["solucion"],
+                    fila_nueva["columna"],
+                    fila_nueva["nuevo_valor"],
+                    fila_nueva["id"]
+                ))
+
+            if errores:
+                for err in errores:
+                    st.error(err)
+                st.warning("Corrige los errores antes de guardar.")
             else:
-                st.caption("✏️ Doble clic en 'Solución' para elegir 'Eliminar' o 'Modificar'.")
-                st.caption("📂 Doble clic en 'Columna' para elegir entre las columnas reales de esa tabla.")
-                st.caption("📝 'Nuevo valor' se edita como texto libre.")
-
-                # ========== DEFINICIÓN ESTÁTICA DE COLUMNAS POR TABLA ==========
-                # Cambia estas listas por los nombres reales de tus columnas
-                COLUMNAS_POR_TABLA = {
-                    "registro": [
-                        "id", "usuario", "nombre", "fecha", "hora_inicio", "hora_fin",
-                        "actividad", "resultado", "observaciones", "estado"
-                    ],
-                    "otros_registros": [
-                        "id", "usuario", "nombre", "fecha", "descripcion",
-                        "horas", "aprobado", "comentario"
-                    ],
-                    "capacitaciones": [
-                        "id", "usuario", "nombre", "fecha", "tema",
-                        "instructor", "duracion", "lugar", "comentarios"
-                    ]
-                }
-
-                # Si prefieres seguir consultando la BD, descomenta esto:
-                # @st.cache_data(show_spinner=False)
-                # def get_columnas(tabla):
-                #     cursor.execute("""
-                #         SELECT column_name FROM information_schema.columns
-                #         WHERE table_name = %s ORDER BY ordinal_position
-                #     """, (tabla,))
-                #     return [col[0] for col in cursor.fetchall()]
-                # for tabla in df_pendientes["tabla"].unique():
-                #     COLUMNAS_POR_TABLA[tabla] = get_columnas(tabla)
-
-                # Función JS para dropdown dinámico por fila
-                column_dropdown_params = JsCode("""
-                function(params) {
-                    const tabla = params.data.tabla;
-                    const opciones = params.colDef.cellEditorParams.opcionesPorTabla[tabla] || [];
-                    return { values: opciones };
-                }
-                """)
-
-                gb = GridOptionsBuilder.from_dataframe(df_pendientes)
-                gb.configure_default_column(editable=False)
-
-                # Columna "solucion" con opciones fijas
-                gb.configure_column(
-                    "solucion",
-                    editable=True,
-                    cellEditor="agSelectCellEditor",
-                    cellEditorParams={"values": ["Eliminar", "Modificar"]}
-                )
-
-                # Columna "columna" con dropdown dinámico
-                gb.configure_column(
-                    "columna",
-                    editable=True,
-                    cellEditor="agSelectCellEditor",
-                    cellEditorParams={
-                        "opcionesPorTabla": COLUMNAS_POR_TABLA,
-                        "function": column_dropdown_params
-                    }
-                )
-
-                # Columna "nuevo_valor" editable como texto
-                gb.configure_column("nuevo_valor", editable=True)
-
-                # Las demás columnas no editables
-                for col in ["id", "fecha", "tabla", "id_asociado", "estado"]:
-                    gb.configure_column(col, editable=False)
-
-                gb.configure_grid_options(domLayout='autoHeight')
-                grid_options = gb.build()
-
-                grid_response = AgGrid(
-                    df_pendientes,
-                    gridOptions=grid_options,
-                    update_mode=GridUpdateMode.VALUE_CHANGED | GridUpdateMode.SELECTION_CHANGED,
-                    data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
-                    fit_columns_on_grid_load=True,
-                    allow_unsafe_jscode=True,
-                    theme="streamlit"
-                )
-
-                df_editado = grid_response['data']
-
-                if st.button("💾 Guardar cambios en solicitudes"):
-                    cambios = df_editado.compare(df_pendientes)
-                    if cambios.empty:
-                        st.info("No se detectaron cambios.")
-                    else:
-                        for idx in cambios.index.get_level_values(0).unique():
-                            fila_nueva = df_editado.loc[idx]
-                            fila_original = df_pendientes.loc[idx]
-
-                            if (fila_nueva["solucion"] == fila_original["solucion"] and
-                                fila_nueva["columna"] == fila_original["columna"] and
-                                fila_nueva["nuevo_valor"] == fila_original["nuevo_valor"]):
-                                continue
-
-                            cursor.execute("""
-                                UPDATE correcciones
-                                SET solucion = %s, columna = %s, nuevo_valor = %s
-                                WHERE id = %s
-                            """, (
-                                fila_nueva["solucion"],
-                                fila_nueva["columna"],
-                                fila_nueva["nuevo_valor"],
-                                fila_nueva["id"]
-                            ))
-                        con.commit()
-                        st.success("Cambios guardados correctamente.")
-                        st.rerun()
+                con.commit()
+                st.success("Cambios guardados correctamente.")
+                st.rerun()
 
             # ---------- Ver todas mis solicitudes ----------
             with st.expander("📋 Ver todas mis solicitudes"):
