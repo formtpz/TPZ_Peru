@@ -5,6 +5,7 @@ import psycopg2
 from datetime import datetime, timedelta
 import pytz
 from urllib.parse import urlparse
+from pandas.tseries.offsets import BDay
 import Procesos
 
 
@@ -25,6 +26,7 @@ def Correcciones(usuario, puesto):
     )
     cursor = con.cursor()
 
+    # Utilidad numpy → python
     def to_python(v):
         return v.item() if hasattr(v, "item") else v
 
@@ -45,7 +47,7 @@ def Correcciones(usuario, puesto):
         with page.container():
 
             st.title("Corrección de Reportes")
-            st.write("Aquí puedes visualizar tus reportes recientes y solicitar correcciones o eliminaciones.")
+            st.write("Aquí puedes visualizar tus reportes recientes y solicitar correcciones o eliminaciones (solo últimos 3 días hábiles).")
 
             # -------------------------------------------------
             # Obtener nombre del usuario
@@ -57,26 +59,35 @@ def Correcciones(usuario, puesto):
             nombre = df_nombre.loc[0, "nombre"]
 
             # -------------------------------------------------
-            # Filtro fijo: últimos 3 días
+            # Calcular fecha límite (3 días hábiles hacia atrás)
             # -------------------------------------------------
-            fecha_limite = datetime.now().date() - timedelta(days=3)
+            hoy = datetime.now().date()
+            fecha_limite = (datetime.now() - BDay(3)).date()
+            st.caption(f"Se muestran reportes desde el **{fecha_limite.strftime('%d/%m/%Y')}** (3 días hábiles atrás).")
 
+            # -------------------------------------------------
+            # Consultar reportes de los últimos 3 días hábiles
+            # -------------------------------------------------
+            # Nota: las tablas tienen columna "fecha". Si es timestamp se convertirá al leer.
             query_registro = f"""
                 SELECT *
                 FROM registro
-                WHERE usuario = '{usuario}' AND fecha >= '{fecha_limite}'
+                WHERE usuario = '{usuario}'
+                  AND fecha::date >= '{fecha_limite}'
                 ORDER BY fecha DESC
             """
             query_otros = f"""
                 SELECT *
                 FROM otros_registros
-                WHERE usuario = '{usuario}' AND fecha >= '{fecha_limite}'
+                WHERE usuario = '{usuario}'
+                  AND fecha::date >= '{fecha_limite}'
                 ORDER BY fecha DESC
             """
             query_capacitacion = f"""
                 SELECT *
                 FROM capacitaciones
-                WHERE usuario = '{usuario}' AND fecha >= '{fecha_limite}'
+                WHERE usuario = '{usuario}'
+                  AND fecha::date >= '{fecha_limite}'
                 ORDER BY fecha DESC
             """
 
@@ -89,7 +100,7 @@ def Correcciones(usuario, puesto):
                     df["id"] = df["id"].astype(str)
 
             # ---------- Filtro para mostrar una sola tabla ----------
-            st.subheader("📋 Mis reportes recientes (últimos 3 días)")
+            st.subheader("📋 Mis reportes recientes (últimos 3 días hábiles)")
             tabla_viz = st.radio(
                 "Selecciona la tabla que deseas visualizar:",
                 ("Registro", "Otros Registros", "Capacitaciones"),
@@ -127,7 +138,7 @@ def Correcciones(usuario, puesto):
                     else:
                         # Verificar que el ID exista y pertenezca al usuario
                         cursor.execute(
-                            f"SELECT usuario FROM {tabla} WHERE id = %s",
+                            f"SELECT usuario, fecha FROM {tabla} WHERE id = %s",
                             (id_reporte,)
                         )
                         resultado = cursor.fetchone()
@@ -136,6 +147,16 @@ def Correcciones(usuario, puesto):
                         elif resultado[0] != usuario:
                             st.error("No puedes solicitar corrección de un reporte que no te pertenece.")
                         else:
+                            # Validación de fecha: máximo 3 días hábiles de antigüedad
+                            fecha_reporte = resultado[1]
+                            if hasattr(fecha_reporte, 'date'):
+                                fecha_reporte = fecha_reporte.date()
+                            # Reutilizamos la misma fecha_limite (3 días hábiles)
+                            if fecha_reporte < fecha_limite:
+                                st.error(f"No se pueden solicitar correcciones para reportes con más de 3 días hábiles de antigüedad. Este reporte es del {fecha_reporte.strftime('%d/%m/%Y')}.")
+                                st.stop()
+
+                            # Verificar que no exista ya una corrección para ese ID en esa tabla
                             cursor.execute("""
                                 SELECT 1 FROM correcciones
                                 WHERE tabla = %s AND id_asociado = %s
