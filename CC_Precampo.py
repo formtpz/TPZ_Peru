@@ -83,7 +83,13 @@ def CC_Precampo(usuario,puesto):
 "Monserrath Romero Bermudez",
 "Older Torres Blanco",
 "Sebastian Alvarado Camacho",
-"Valeria Centeno Mora"), key="operador_3")
+"Valeria Centeno Mora",                                                                                                                                             
+"Kenneth Paez Carrillo",
+"Keisy Aishira Lazaro Rojas",
+"Brandon Murillo Zamora",
+"Alvaro Jose Alvarado Solorzano",
+"Raul Avendano Fernandez",
+"Christopher Cadena Calvo"), key="operador_3")
 
   placeholder14_3= st.empty()
   tipo_3= placeholder14_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Inspección Horas Extras","Control de Calidad Supervisión"), key="tipo_3")
