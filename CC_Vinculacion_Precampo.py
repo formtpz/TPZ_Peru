@@ -110,7 +110,8 @@ def CC_Vinculacion_Precampo(usuario,puesto):
 "Monserrath Romero Bermudez",
 "Older Torres Blanco",
 "Sebastian Alvarado Camacho",
-"Valeria Centeno Mora"), key="operador_3")
+"Valeria Centeno Mora",
+"Maria Jose Farrier Briceno"), key="operador_3")
 
   placeholder15_3= st.empty()
   tipo_3= placeholder15_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Inspección Horas Extras","Control de Calidad Supervisión"), key="tipo_3")
