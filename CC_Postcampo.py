@@ -191,7 +191,7 @@ def CC_Postcampo(usuario,puesto):
     "Diego Rodriguez Fernandez"), key="operador_3")
 
   placeholder15_3= st.empty()
-  tipo_3= placeholder15_3.selectbox("Tipo", options=("Inspección","Inspección Reproceso","Primera Reinspección","Inspección Horas Extras","Control de Calidad Supervisión"), key="tipo_3")
+  tipo_3= placeholder15_3.selectbox("Tipo", options=("Inspección","Inspección Reproceso","Inspección Reproceso Horas Extra","Primera Reinspección","Inspección Horas Extras","Control de Calidad Supervisión"), key="tipo_3")
 
   placeholder16_3= st.empty()
   tipo_de_errores_3= placeholder16_3.multiselect("Tipo Errores", options=("Atributos incompletos/erroneos","Autoensamblado","Diferencia de áreas","Errores gráficos","Puertas no coinciden","Recapitulación errónea"), key="tipo_de_errores_3")
