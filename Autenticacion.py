@@ -18,7 +18,7 @@ port_id = result.port
 def contraseña(usuario):
     query = f"""
         SELECT contraseña 
-        FROM usuarios 
+        FROM public.usuarios 
         WHERE usuario = '{usuario}' 
           AND estado = 'Activo'
     """
