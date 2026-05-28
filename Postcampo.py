@@ -139,7 +139,7 @@ def Postcampo(usuario,puesto):
     st.session_state.Procesos=False
     st.session_state.Postcampo=False
 
-    perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
+    perfil=pd.read_sql(f"select perfil from public.usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
 
     if perfil=="1":        
@@ -311,10 +311,10 @@ def Postcampo(usuario,puesto):
 
     marca_3= datetime.now(pytz.timezone('America/Guatemala')).strftime("%Y-%m-%d %H:%M:%S")
     
-    nombre_3= pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
+    nombre_3= pd.read_sql(f"select nombre from public.usuarios where usuario ='{usuario}'",uri)
     nombre_3 = nombre_3.loc[0,'nombre']
       
-    supervisor_3= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
+    supervisor_3= pd.read_sql(f"select supervisor from public.usuarios where usuario ='{usuario}'",uri)
     supervisor_3 = supervisor_3.loc[0,'supervisor']
     semana_3 = fecha_3.isocalendar()[1]
     año_3 = fecha_3.isocalendar()[0]
