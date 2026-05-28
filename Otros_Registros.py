@@ -40,13 +40,13 @@ def Otros_Registros(usuario,puesto):
 
   if puesto== "Coordinador":
 
-    nombre_13= pd.read_sql(f"select nombre from usuarios where usuario='{usuario}'",uri)
+    nombre_13= pd.read_sql(f"select nombre from public.usuarios where usuario='{usuario}'",uri)
     nombre_13 = nombre_13.loc[0,'nombre']
 
     placeholder8_13 = st.empty()
     otros_registros_registro_13 = placeholder8_13.subheader("Registro")
 
-    data_personal_13 = pd.read_sql(f"select nombre from usuarios where estado='Activo'", con)
+    data_personal_13 = pd.read_sql(f"select nombre from public.usuarios where estado='Activo'", con)
     placeholder9_13 = st.empty()
     personal_13= placeholder9_13.multiselect("Personal",data_personal_13,key="personal_13")
 
@@ -102,13 +102,13 @@ def Otros_Registros(usuario,puesto):
 
   elif puesto=="Supervisor":   
     
-    nombre_13= pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
+    nombre_13= pd.read_sql(f"select nombre from public.usuarios where usuario ='{usuario}'",uri)
     nombre_13 = nombre_13.loc[0,'nombre']   
 
     placeholder8_13 = st.empty()
     otros_registros_registro_13 = placeholder8_13.subheader("Registro")
 
-    data_personal_13 = pd.read_sql(f"select nombre from usuarios where estado='Activo' and supervisor='{nombre_13}' or usuario='{usuario}'", con)
+    data_personal_13 = pd.read_sql(f"select nombre from public.usuarios where estado='Activo' and supervisor='{nombre_13}' or usuario='{usuario}'", con)
     placeholder9_13 = st.empty()
     personal_13= placeholder9_13.multiselect("Personal",data_personal_13,key="personal_13")
 
@@ -211,7 +211,7 @@ def Otros_Registros(usuario,puesto):
     st.session_state.Procesos=False
     st.session_state.Otros_Registros=False
 
-    perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
+    perfil=pd.read_sql(f"select perfil from public.usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
 
     if perfil=="1":        
@@ -372,13 +372,13 @@ def Otros_Registros(usuario,puesto):
           
           marca_13= datetime.now(pytz.timezone('America/Guatemala')).strftime("%Y-%m-%d %H:%M:%S")
 
-          usuario_13= pd.read_sql(f"select usuario from usuarios where nombre ='{nombre}'",uri)
+          usuario_13= pd.read_sql(f"select usuario from public.usuarios where nombre ='{nombre}'",uri)
           usuario_13 = usuario_13.loc[0,'usuario']
 
-          puesto_13= pd.read_sql(f"select puesto from usuarios where nombre ='{nombre}'",uri)
+          puesto_13= pd.read_sql(f"select puesto from public.usuarios where nombre ='{nombre}'",uri)
           puesto_13 = puesto_13.loc[0,'puesto']
 
-          supervisor_13= pd.read_sql(f"select supervisor from usuarios where nombre ='{nombre}'",uri)
+          supervisor_13= pd.read_sql(f"select supervisor from public.usuarios where nombre ='{nombre}'",uri)
           supervisor_13 = supervisor_13.loc[0,'supervisor']
 
           horas_bi = float(horas_13)
