@@ -48,7 +48,7 @@ def Historial(usuario,puesto):
   placeholder9_7 = st.empty()
   fecha_de__finalizacion_7 = placeholder9_7.date_input("Fecha de Finalización",value=default_date_7,key="fecha_de_finalizacion_7")
   
-  nombre_7= pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
+  nombre_7= pd.read_sql(f"select nombre from public.usuarios where usuario ='{usuario}'",uri)
   nombre_7 = nombre_7.loc[0,'nombre']
 
   # ----- Supervisor y Coordinador ---- #
@@ -880,7 +880,7 @@ def Historial(usuario,puesto):
     st.session_state.Procesos=False
     st.session_state.Historial=False
 
-    perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
+    perfil=pd.read_sql(f"select perfil from public.usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
 
     if perfil=="1":        
