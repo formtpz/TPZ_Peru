@@ -41,10 +41,10 @@ def Bonos_Extras(usuario,puesto):
   placeholder7_9 = st.empty()
   registro_bonos_extras_9 = placeholder7_9.title("Registros de Bonos y Horas Extra")
 
-  nombre_9= pd.read_sql(f"select nombre from usuarios where usuario='{usuario}'",uri)
+  nombre_9= pd.read_sql(f"select nombre from public.usuarios where usuario='{usuario}'",uri)
   nombre_9 = nombre_9.loc[0,'nombre']
 
-  perfil_9= pd.read_sql(f"select perfil from usuarios where usuario='{usuario}'",uri)
+  perfil_9= pd.read_sql(f"select perfil from public.usuarios where usuario='{usuario}'",uri)
   perfil_9 = perfil_9.loc[0,'perfil']
   
   if nombre_9=="Brayan Rojas Pastrana" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarria":
@@ -114,7 +114,7 @@ def Bonos_Extras(usuario,puesto):
 
   elif nombre_9=="Gabriel Martin Prieto" or nombre_9=="Madeline Hernandez Gamboa":
 
-    data_personal_9 = pd.read_sql(f"select nombre from usuarios where estado='Activo'", con)
+    data_personal_9 = pd.read_sql(f"select nombre from public.usuarios where estado='Activo'", con)
     Todo = pd.DataFrame({"nombre": ["Todos"]})
     data_personal_9 = pd.concat([data_personal_9,Todo],ignore_index=True)
 
@@ -409,7 +409,7 @@ def Bonos_Extras(usuario,puesto):
         historial_9_extras=placeholder29_9.dataframe(data=data_extras)
   
   elif nombre_9=="Ignacio Aguglino":
-    data_personal_9 = pd.read_sql(f"select nombre from usuarios where puesto='Profesional Jurídico' and estado='Activo'", con)
+    data_personal_9 = pd.read_sql(f"select nombre from public.usuarios where puesto='Profesional Jurídico' and estado='Activo'", con)
     Todo = pd.DataFrame({"nombre": ["Todos"]})
     data_personal_9 = pd.concat([data_personal_9,Todo],ignore_index=True)
 
@@ -1034,7 +1034,7 @@ def Bonos_Extras(usuario,puesto):
     st.session_state.Procesos=False
     st.session_state.Bonos_Extras=False
 
-    perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
+    perfil=pd.read_sql(f"select perfil from public.usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
 
     if perfil=="1":        
