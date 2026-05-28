@@ -38,13 +38,13 @@ def Capacitacion(usuario,puesto):
 
   if puesto== "Coordinador":
 
-    nombre_8= pd.read_sql(f"select nombre from usuarios where usuario='{usuario}'",uri)
+    nombre_8= pd.read_sql(f"select nombre from public.usuarios where usuario='{usuario}'",uri)
     nombre_8 = nombre_8.loc[0,'nombre']
 
     placeholder8_8 = st.empty()
     capacitacion_registro_8 = placeholder8_8.subheader("Registro")
 
-    data_personal_8 = pd.read_sql(f"select nombre from usuarios where estado='Activo'", con)
+    data_personal_8 = pd.read_sql(f"select nombre from public.usuarios where estado='Activo'", con)
     placeholder9_8 = st.empty()
     personal_8= placeholder9_8.multiselect("Personal",data_personal_8,key="personal_8")
 
@@ -100,13 +100,13 @@ def Capacitacion(usuario,puesto):
       
   elif puesto=="Supervisor":   
 
-    nombre_8= pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
+    nombre_8= pd.read_sql(f"select nombre from public.usuarios where usuario ='{usuario}'",uri)
     nombre_8 = nombre_8.loc[0,'nombre']   
 
     placeholder8_8 = st.empty()
     capacitacion_registro_8 = placeholder8_8.subheader("Registro")
 
-    data_personal_8 = pd.read_sql(f"select nombre from usuarios where estado='Activo' and supervisor='{nombre_8}' or usuario='{usuario}'", con)
+    data_personal_8 = pd.read_sql(f"select nombre from public.usuarios where estado='Activo' and supervisor='{nombre_8}' or usuario='{usuario}'", con)
     placeholder9_8 = st.empty()
     personal_8= placeholder9_8.multiselect("Personal",data_personal_8,key="personal_8")
 
@@ -209,7 +209,7 @@ def Capacitacion(usuario,puesto):
     st.session_state.Procesos=False
     st.session_state.Capacitacion=False
     
-    perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
+    perfil=pd.read_sql(f"select perfil from public.usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
 
     if perfil=="1":        
@@ -370,13 +370,13 @@ def Capacitacion(usuario,puesto):
           
           marca_8= datetime.now(pytz.timezone('America/Guatemala')).strftime("%Y-%m-%d %H:%M:%S")
 
-          usuario_8= pd.read_sql(f"select usuario from usuarios where nombre ='{nombre}'",uri)
+          usuario_8= pd.read_sql(f"select usuario from public.usuarios where nombre ='{nombre}'",uri)
           usuario_8 = usuario_8.loc[0,'usuario']
     
-          puesto_8= pd.read_sql(f"select puesto from usuarios where nombre ='{nombre}'",uri)
+          puesto_8= pd.read_sql(f"select puesto from public.usuarios where nombre ='{nombre}'",uri)
           puesto_8 = puesto_8.loc[0,'puesto']
 
-          supervisor_8= pd.read_sql(f"select supervisor from usuarios where nombre ='{nombre}'",uri)
+          supervisor_8= pd.read_sql(f"select supervisor from public.usuarios where nombre ='{nombre}'",uri)
           supervisor_8 = supervisor_8.loc[0,'supervisor']
           
           cursor01.execute(f"INSERT INTO capacitaciones (marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte)VALUES('{marca_8}','{usuario_8}','{nombre}','{puesto_8}','{supervisor_8}','{fecha_8}','{tema_8}','{horas_8}','{observaciones_8}','{nombre_8}')")
