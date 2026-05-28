@@ -71,10 +71,10 @@ if st.session_state.Ingreso:
     placeholder3_1.empty()
     placeholder4_1.empty()
     
-    puesto=pd.read_sql(f"select puesto from usuarios where usuario ='{usuario}'",uri)
+    puesto=pd.read_sql(f"select puesto from public.usuarios where usuario ='{usuario}'",uri)
     puesto= puesto.loc[0,'puesto']
 
-    perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
+    perfil=pd.read_sql(f"select perfil from public.usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
 
     if perfil=="1":        
@@ -111,7 +111,7 @@ if iniciar_sesion_1:
 
             if contraseña == contraseña_1:
 
-                nombre_1=pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
+                nombre_1=pd.read_sql(f"select nombre from public.usuarios where usuario ='{usuario}'",uri)
                 nombre_1 = nombre_1.loc[0,'nombre']
                 st.success(f'¡Saludos {nombre_1}!')
 
@@ -150,10 +150,10 @@ if iniciar_sesion_1:
                 st.session_state.CC_Vinculacion_precampo=False
                 st.session_state.Estado_UIT_Hito=False
                                     
-                puesto=pd.read_sql(f"select puesto from usuarios where usuario ='{usuario}'",uri)
+                puesto=pd.read_sql(f"select puesto from public.usuarios where usuario ='{usuario}'",uri)
                 puesto= puesto.loc[0,'puesto']
                    
-                perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
+                perfil=pd.read_sql(f"select perfil from public.usuarios where usuario ='{usuario}'",uri)
                 perfil= perfil.loc[0,'perfil']
 
                 if perfil=="1":        
