@@ -53,7 +53,7 @@ def Correcciones(usuario, puesto):
             # Obtener nombre del usuario
             # -------------------------------------------------
             df_nombre = pd.read_sql(
-                f"SELECT nombre FROM usuarios WHERE usuario = '{usuario}'",
+                f"SELECT nombre FROM public.usuarios WHERE usuario = '{usuario}'",
                 con
             )
             nombre = df_nombre.loc[0, "nombre"]
@@ -403,7 +403,7 @@ def Correcciones(usuario, puesto):
 
         # Obtener perfil usando la conexión activa
         perfil = pd.read_sql(
-            f"SELECT perfil FROM usuarios WHERE usuario = '{usuario}'",
+            f"SELECT perfil FROM public.usuarios WHERE usuario = '{usuario}'",
             con
         ).loc[0, "perfil"]
 
